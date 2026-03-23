@@ -42,7 +42,15 @@ def load_yaml(name: str):
     return yaml.safe_load((BASE_DIR / name).read_text(encoding="utf-8"))
 
 
+def knowledge_area_anchor(knowledge_area_id: str) -> str:
+    return slugify(f"knowledge-area-{knowledge_area_id}")
+
+
 def render_top_readme(domains, knowledge_areas, controls, crosswalks, framework_pages):
+    controls_by_knowledge_area: dict[str, list[dict]] = defaultdict(list)
+    for control in controls:
+        controls_by_knowledge_area[control["knowledge_area"]].append(control)
+
     lines = [
         "# SAFE-K8S Public Security Control Catalog",
         "",
@@ -89,15 +97,42 @@ def render_top_readme(domains, knowledge_areas, controls, crosswalks, framework_
     lines.append("- Crosswalk pages keep `framework_mapping_notes` because they carry useful interpretive context.")
     lines.append("- `strength_reason_note` is intentionally not published in this export.")
     lines.append("")
-    lines.append("## Controls")
+    lines.append("## Knowledge Areas")
     lines.append("")
-    lines.append("| Control ID | Domain | Knowledge Area | Title | Maturity | Class |")
-    lines.append("| --- | --- | --- | --- | --- | --- |")
-    for control in controls:
-        control_link = f"markdown/controls/{control['control_id']}.md"
+    for knowledge_area in knowledge_areas:
+        anchor = knowledge_area_anchor(knowledge_area["knowledge_area"])
         lines.append(
-            f"| [{control['control_id']}]({control_link}) | {control['domain_code']} | {control['knowledge_area']} | {control['control_title']} | {control['maturity']} | {control['baseline_or_ai_specific']} |"
+            f"- [{knowledge_area['knowledge_area']} - {knowledge_area['knowledge_area_name']}](#{anchor})"
         )
+
+    for knowledge_area in knowledge_areas:
+        area_controls = controls_by_knowledge_area.get(knowledge_area["knowledge_area"], [])
+        anchor = knowledge_area_anchor(knowledge_area["knowledge_area"])
+        lines.extend(
+            [
+                "",
+                f'<a id="{anchor}"></a>',
+                f"## {knowledge_area['knowledge_area']} - {knowledge_area['knowledge_area_name']}",
+                "",
+                f"- Domain: {knowledge_area['domain_code']} - {knowledge_area['domain_name']}",
+                f"- Maturity: {knowledge_area['maturity']}",
+                f"- Controls: {len(area_controls)}",
+                "",
+                "### Description",
+                "",
+                md_escape(knowledge_area.get("knowledge_area_description")) or "None.",
+                "",
+                "### Controls",
+                "",
+                "| Control ID | Title | Maturity | Class |",
+                "| --- | --- | --- | --- |",
+            ]
+        )
+        for control in area_controls:
+            control_link = f"markdown/controls/{control['control_id']}.md"
+            lines.append(
+                f"| [{control['control_id']}]({control_link}) | {control['control_title']} | {control['maturity']} | {control['baseline_or_ai_specific']} |"
+            )
     return "\n".join(lines)
 
 
