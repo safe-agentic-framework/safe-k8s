@@ -1,0 +1,75 @@
+# NIST SP 800-53 Revision 5 5.2.0 - AC-2
+
+- Framework Code: NIST-800-53R5
+- Requirement Title: Account Management
+
+## Mapping Notes
+
+Agent/service account lifecycle management
+
+4.2 - Secure service accounts and workload identity (account management and lifecycle)
+
+## SAFE-K8S Controls
+
+### [SAFE-K8S-0402-002 - Inactive service account and stale credential remediation](../../controls/SAFE-K8S-0402-002.md)
+
+- Domain: D04 - Identity, Access, and Secrets Management
+- Knowledge Area: 4.2
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0402-003 - Service account identifier exposure prevention](../../controls/SAFE-K8S-0402-003.md)
+
+- Domain: D04 - Identity, Access, and Secrets Management
+- Knowledge Area: 4.2
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0402-004 - Workload identity attribute integrity](../../controls/SAFE-K8S-0402-004.md)
+
+- Domain: D04 - Identity, Access, and Secrets Management
+- Knowledge Area: 4.2
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0402-006 - Cloud workload identity federation for AI services](../../controls/SAFE-K8S-0402-006.md)
+
+- Domain: D04 - Identity, Access, and Secrets Management
+- Knowledge Area: 4.2
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0402-007 - OIDC authentication integration](../../controls/SAFE-K8S-0402-007.md)
+
+- Domain: D04 - Identity, Access, and Secrets Management
+- Knowledge Area: 4.2
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0402-008 - Distinct identity assignment for AI workload types](../../controls/SAFE-K8S-0402-008.md)
+
+- Domain: D04 - Identity, Access, and Secrets Management
+- Knowledge Area: 4.2
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0402-010 - Cross-cluster and cross-cloud cryptographic identity federation](../../controls/SAFE-K8S-0402-010.md)
+
+- Domain: D04 - Identity, Access, and Secrets Management
+- Knowledge Area: 4.2
+- Relation Type: supports
+- Strength: moderate
+- Applicability: required
+- Strength Reason Code: framework-language-interpretation

@@ -1,0 +1,20 @@
+- domain_code: D01
+  domain_name: Control Plane and Cluster Hardening
+- domain_code: D02
+  domain_name: Node, Runtime, and OS Security
+- domain_code: D03
+  domain_name: Workload and Pod Security
+- domain_code: D04
+  domain_name: Identity, Access, and Secrets Management
+- domain_code: D05
+  domain_name: Network Security and Communication
+- domain_code: D06
+  domain_name: Supply Chain, Images, and Admission Control
+- domain_code: D07
+  domain_name: Storage, Multi-tenancy, and Resource Governance
+- domain_code: D08
+  domain_name: GPU, Accelerator, and Confidential Computing
+- domain_code: D09
+  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
+- domain_code: D10
+  domain_name: Observability, Incident Response, and Governance
