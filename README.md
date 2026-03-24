@@ -111,7 +111,7 @@ This repository publishes the public SAFE-K8S security control catalog for Kuber
 
 ### Description
 
-API server hardening flags: anonymous auth disabling, profiling endpoint removal, admission controller chain, audit logging activation TLS configuration for API server front-end and back-end connections including certificate rotation Encryption at rest configuration for Secrets and other sensitive API resources using EncryptionConfiguration API server access controls: RBAC bootstrapping, ABAC removal, Node and webhook authorization modes Streaming connection idle timeout: --streaming-connection-idle-timeout configuration to terminate idle exec, attach, and port-forward sessions API server audit policy coverage and event detail: tiered verbosity policy configuration capturing Metadata for all resources, Request for sensitive resources, and RequestResponse for authentication and authorization decisions API server audit log backend durability and retention: durable backend configuration (log file with rotation or webhook to SIEM), persistent storage for audit logs, and retention period enforcement per organizational policy
+This knowledge area focuses on: API server hardening flags, API server TLS configuration and certificate rotation, Encryption at rest for Secrets and sensitive API resources, API server access controls and authorization modes, and Streaming connection idle timeout enforcement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -148,7 +148,7 @@ API server hardening flags: anonymous auth disabling, profiling endpoint removal
 
 ### Description
 
-etcd encryption at rest for all cluster state data with KMS provider integration etcd access controls: client certificate authentication, peer TLS, and network-level isolation from non-control-plane components etcd backup encryption: encrypt snapshots at rest with a separate key and in transit over TLS (SAFE-K8S-0102-003) etcd backup integrity verification: cryptographic checksum or signature generated at creation, verified before storage and before restore (SAFE-K8S-0102-006) etcd backup storage access restriction: least-privilege IAM or ACL policy limiting access to backup service account and named break-glass administrators with audit logging (SAFE-K8S-0102-007) etcd cluster health monitoring, compaction, and defragmentation as security-relevant operational practices
+This knowledge area focuses on: etcd storage-layer disk encryption with externally managed keys, etcd access controls and network isolation, etcd backup and restore security, etcd cluster health monitoring, compaction, and defragmentation, and etcd certificate rotation and lifecycle management. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -189,7 +189,7 @@ etcd encryption at rest for all cluster state data with KMS provider integration
 
 ### Description
 
-Controller-manager hardening: bound service account tokens, disabled legacy token provisioning, feature gate configuration Scheduler security: restricted access to scheduling decisions, custom scheduler trust, scheduler extender authentication Cloud controller-manager isolation: minimal cloud IAM permissions, separate deployment from core controllers, credential rotation Leader election security and high-availability configuration for control plane components Profiling endpoint disablement for controller-manager and scheduler: --profiling=false on all control-plane components beyond the API server
+This knowledge area focuses on: Controller-manager service account token hardening, Scheduler access restriction and extender authentication, Cloud controller-manager isolation and credential management, Leader election security and control-plane high availability, and Pod garbage collection threshold configuration. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -224,7 +224,7 @@ Controller-manager hardening: bound service account tokens, disabled legacy toke
 
 ### Description
 
-CIS Kubernetes Benchmark application: automated assessment with kube-bench, remediation workflows, exception documentation Kubernetes version lifecycle management: upgrade strategy planning, version skew policy compliance, deprecation tracking CVE monitoring and prioritization: monitoring Kubernetes security announcements (kubernetes-security-announce, CVE databases, provider advisories), CVE prioritization framework based on CVSS score, exploitability, and cluster exposure Emergency patch deployment: emergency upgrade procedures for Kubernetes components, organization-defined SLA windows, rollback plans, post-patch validation Feature gate governance: security-relevant feature gates, alpha/beta feature risk assessment, gate lifecycle management
+This knowledge area focuses on: CIS Kubernetes Benchmark automated assessment and remediation, Kubernetes version lifecycle and upgrade strategy management, Kubernetes CVE monitoring, prioritization, and emergency patching, Feature gate governance and lifecycle management, and Control plane configuration file permissions. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -263,7 +263,7 @@ CIS Kubernetes Benchmark application: automated assessment with kube-bench, reme
 
 ### Description
 
-Kubelet hardening flags: authentication/authorization enforcement, read-only port disabling, anonymous access prevention Kubelet certificate rotation, TLS bootstrapping, and serving certificate management Node allocatable resource configuration and eviction thresholds for system stability Kubelet configuration file permissions, systemd unit security, and node-level audit controls Kubelet hostname override governance: --hostname-override risk assessment, documentation requirements for legitimate use cases (cloud provider node naming), and verification that overrides do not bypass Node authorization identity binding
+This knowledge area focuses on: Kubelet authentication, authorization, and anonymous access hardening, Kubelet certificate rotation and TLS bootstrap, Node allocatable resources and eviction thresholds, Kubelet configuration file permissions and node-level audit controls, and Kubelet hostname override governance. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -295,7 +295,7 @@ Kubelet hardening flags: authentication/authorization enforcement, read-only por
 
 ### Description
 
-Container runtime hardening for containerd and CRI-O: configuration baselines, socket permissions, default runtime settings RuntimeClass configuration for workload-appropriate runtimes: standard runc, sandboxed runtimes (gVisor, Kata Containers), and GPU-compatible runtimes Container runtime vulnerability management: patching cadence, version pinning, compatibility validation Runtime socket protection and prevention of container escape through runtime vulnerabilities
+This knowledge area focuses on: Container runtime configuration baselines and socket protection, RuntimeClass configuration for workload-appropriate isolation, Container runtime patching and version management, Runtime socket mount prevention, and Container escape prevention through kernel security profiles. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -322,7 +322,7 @@ Container runtime hardening for containerd and CRI-O: configuration baselines, s
 
 ### Description
 
-Minimal host OS selection and hardening (unnecessary service removal, package minimization, purpose-built OS distributions) Immutable root filesystem enforcement (dm-verity, read-only root mounts) to prevent persistent host modifications Kernel parameter hardening via sysctl: network stack, memory protection, and namespace isolation settings Cloud provider metadata service protection (IMDSv2 enforcement, network-level metadata endpoint restriction) Secure boot and verified boot chain enforcement Kernel module restriction and lockdown mode (module loading controls, blacklisting, kernel lockdown mode)
+This knowledge area focuses on: Minimal and immutable host OS configuration, Kernel parameter hardening via sysctl, Cloud metadata service protection and IMDSv2 enforcement, Secure boot and verified boot chain enforcement, and Kernel module restriction and lockdown mode. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -353,7 +353,7 @@ Minimal host OS selection and hardening (unnecessary service removal, package mi
 
 ### Description
 
-Runtime security tools deployment and configuration: Falco, Tetragon, KubeArmor for syscall and network monitoring Detection rule development for Kubernetes-specific threats: container escape, privilege escalation, lateral movement, cryptomining Drift detection for container filesystems: identifying unexpected binary execution, library loading, or configuration changes Forensic capture capabilities: container snapshot, memory dump, network flow logging for incident investigation
+This knowledge area focuses on: Runtime security tool deployment for syscall and network monitoring, Kubernetes-specific runtime detection rules, Container filesystem drift detection, and Forensic capture capabilities for container incident investigation.
 
 ### Controls
 
@@ -373,7 +373,7 @@ Runtime security tools deployment and configuration: Falco, Tetragon, KubeArmor 
 
 ### Description
 
-kube-proxy mode selection and hardening: iptables, IPVS, and eBPF-based (kube-proxy replacement) security tradeoffs NodePort and HostPort restriction policies to limit node-level network exposure Node-level firewall configuration and integration with Kubernetes network policies eBPF-based networking security: Cilium, Calico eBPF mode, and kernel-level network policy enforcement
+This knowledge area focuses on: kube-proxy mode selection and security hardening, NodePort and HostPort restriction policies, Node-level firewall and Kubernetes network policy integration, eBPF-based kernel-level network policy enforcement, and eBPF program integrity verification and loading monitoring. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -400,7 +400,7 @@ kube-proxy mode selection and hardening: iptables, IPVS, and eBPF-based (kube-pr
 
 ### Description
 
-Pod Security Standards levels (Privileged, Baseline, Restricted): requirements, use cases, and enforcement implications Pod Security Admission (PSA) configuration: namespace labels, enforcement modes (enforce, audit, warn), and version pinning Migration strategies from legacy PodSecurityPolicy to PSA: gap analysis, policy mapping, phased rollout Exemption management for system workloads and legitimate privileged pods (e.g., GPU device plugins, CNI agents)
+This knowledge area focuses on: Pod Security Standards level assignment, Pod Security Admission configuration and version pinning, PodSecurityPolicy to PSA migration, PSA exemption management for privileged system and GPU workloads, and PSA exemption register and justification tracking. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -422,7 +422,7 @@ Pod Security Standards levels (Privileged, Baseline, Restricted): requirements, 
 
 ### Description
 
-Pod and container security context configuration: runAsNonRoot, runAsUser, readOnlyRootFilesystem, allowPrivilegeEscalation Linux capability management: dropping ALL capabilities, adding only required capabilities, understanding capability implications (including elevated capabilities required for GPU access vs. least-privilege alternatives) Privilege escalation prevention: no-new-privileges flag, UID/GID management, filesystem ownership controls Host namespace restrictions: hostPID, hostIPC, hostNetwork controls and their security implications AI workload security context patterns: seccomp/AppArmor profiles tailored to GPU workload syscall patterns (GPU ioctl, shared memory, RDMA), read-only root filesystems and non-root execution for inference servers and training jobs
+This knowledge area focuses on: Pod and container security context enforcement, Linux capability drop-all and least-privilege add-back, Privilege escalation prevention controls, Host namespace isolation enforcement, and AI workload security context hardening profiles. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -445,7 +445,7 @@ Pod and container security context configuration: runAsNonRoot, runAsUser, readO
 
 ### Description
 
-Seccomp profile enforcement: RuntimeDefault profile, custom profiles for specific workloads, profile auditing and generation AppArmor profile management: loading profiles on nodes, annotating pods, profile development for Kubernetes workloads SELinux context assignment for containers: MCS labels, type enforcement, and multi-tenancy isolation through SELinux Profile creation workflows: generating profiles from runtime behavior, testing in audit mode, iterative refinement
+This knowledge area focuses on: Seccomp profile enforcement, AppArmor profile management and enforcement, SELinux context assignment and multi-tenancy isolation, MAC profile generation from runtime behavior, and MAC profile pre-enforcement audit-mode validation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -469,7 +469,7 @@ Seccomp profile enforcement: RuntimeDefault profile, custom profiles for specifi
 
 ### Description
 
-Cloud Native 8 secure defaults: applying the CNCF-recommended baseline security principles to Kubernetes workloads Resource limits and requests: CPU, memory, and ephemeral storage constraints for workload stability and noisy-neighbor prevention Quality of Service (QoS) classes: Guaranteed, Burstable, BestEffort - security implications of eviction behavior Ephemeral container security controls, host volume restriction, and service account token opt-out for pods that do not need API access Ephemeral storage and scratch space controls for training jobs: emptyDir size limits, tmpfs for sensitive intermediate data, and temporary checkpoint storage security
+This knowledge area focuses on: Cloud Native 8 secure defaults enforcement, CPU, memory, and ephemeral storage resource limits, QoS class assignment for workload stability, Ephemeral container security context enforcement, and Training job ephemeral storage and scratch space security. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -498,7 +498,7 @@ Cloud Native 8 secure defaults: applying the CNCF-recommended baseline security 
 
 ### Description
 
-RBAC primitives: Roles, ClusterRoles, RoleBindings, ClusterRoleBindings - design for least-privilege access Permission audit and analysis: identifying overly permissive roles, detecting privilege escalation paths, RBAC tooling (rakkess, kubectl-who-can) Aggregated ClusterRole management: understanding controller-managed role aggregation and preventing unintended permission grants RBAC for custom resources: securing access to AI operators' CRDs (InferenceService, TrainingJob, RayCluster, PodGroup) Separation of duties between ML engineers (model deployment), platform engineers (cluster config), and security teams (policy enforcement); RBAC for GPU resource management (who can request GPU quotas, override scheduling priorities, access GPU metrics)
+This knowledge area focuses on: RBAC least-privilege design, RBAC permission audit and analysis, Aggregated ClusterRole governance, RBAC for AI operator custom resources, and Separation of duties for ML, platform, and security roles. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -521,7 +521,7 @@ RBAC primitives: Roles, ClusterRoles, RoleBindings, ClusterRoleBindings - design
 
 ### Description
 
-Default service account restrictions: disabling auto-mount of service account tokens, creating dedicated service accounts per workload Inactive service account identification and disabling, stale credential revocation Preventing service account identifiers from public exposure Identity attribute maintenance and protection for workload identities Projected service account tokens: audience-scoped, time-bound tokens replacing legacy static tokens Workload identity federation with cloud providers: GKE Workload Identity, EKS IRSA/Pod Identity, AKS Workload Identity for secure cloud service access (model registries, data lakes, feature stores) OIDC integration for Kubernetes authentication: external identity provider configuration, token validation, group mappings AI workload identity patterns: pod identity assignment for training jobs, inference servers, and pipeline components with distinct access needs Identity lifecycle management for ephemeral training jobs: short-lived credentials, automatic rotation, cleanup on job completion Cross-cluster and cross-cloud cryptographic identity federation for federated training and multi-cluster inference: SPIFFE/SPIRE trust domain federation (hub-spoke, mesh, and hierarchical topologies), trust bundle exchange and rotation, cloud-native cross-account trust (AWS cross-account roles with IRSA, GCP cross-project service account impersonation, Azure cross-subscription workload identity), hybrid cloud identity bridging via OIDC federation from on-premises SPIRE to cloud IAM, credential lifecycle for cross-cluster workloads, federation audit trail, trust boundary inventory, and break-glass trust revocation procedures Prohibition on shared static credentials or replicated secrets for cross-environment access in federated training and multi-cluster inference: identification of prohibited credential patterns (replicated kubeconfigs, long-lived cross-cluster tokens, shared API keys), admission control enforcement, periodic credential scanning, CI/CD pipeline gates, and remediation path for migrating from static credentials to federated mechanisms
+This knowledge area focuses on: Default service account restriction, Inactive service account and stale credential remediation, Service account identifier exposure prevention, Workload identity attribute integrity, and Projected service account token configuration. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -560,7 +560,7 @@ Default service account restrictions: disabling auto-mount of service account to
 
 ### Description
 
-Kubernetes Secrets encryption at rest: EncryptionConfiguration with KMS providers (AWS KMS, GCP KMS, Azure Key Vault, HashiCorp Vault) External secrets management: External Secrets Operator, Vault CSI Provider, cloud-native secret stores with automatic sync and rotation Secret injection patterns: environment variables vs. volume mounts vs. init containers vs. sidecar agents - security tradeoffs Secret lifecycle management: rotation policies, expiration enforcement, revocation procedures, and leak detection Prevention of secret leakage through training logs, model artifacts, checkpoint files, and pipeline metadata; secrets management for model registry credentials, training data access tokens, and API keys used by inference endpoints Per-workload credential scoping for AI jobs: resource-level IAM policies, Vault templated paths, and admission enforcement ensuring each training job, inference server, and pipeline step receives credentials scoped to exactly the storage prefixes, model repositories, and API endpoints it requires AI platform key hierarchy and envelope encryption architecture: structured key hierarchy using envelope encryption with distinct key domains for training data, model artifacts, model signing, and inference payloads ensuring compromise of one domain does not propagate to others HSM-backed root key protection for AI platform KMS: root keys and KEKs protected by HSMs with FIPS 140-2 Level 3 or higher certification, key material non-exportable outside HSM boundary, HSM attestation records maintained for audit Per-domain automated key rotation for AI platform: domain-specific rotation schedules reflecting risk profile (inference payload keys more frequent than signing keys), automated rotation with workload health verification, rotation monitoring and alerting Key access policy separation between AI pipeline environments: KMS policies enforcing strict separation between training, serving, and governance identities, preventing cross-domain key access, with audit-only governance access and monitoring for policy violations Credential inventory and sprawl governance at scale: automated tracking of all active AI workload credentials, orphaned credential detection for completed jobs, credential scope drift monitoring, and lifecycle metrics dashboards for governing credential sprawl across AI platforms
+This knowledge area focuses on: Kubernetes Secrets external KMS integration and key lifecycle, External secrets management integration, Approved secret injection pattern standards, Secret rotation and expiration enforcement, and AI pipeline secret leakage prevention. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -606,7 +606,7 @@ Kubernetes Secrets encryption at rest: EncryptionConfiguration with KMS provider
 
 ### Description
 
-cert-manager deployment and configuration: Issuers, ClusterIssuers, Certificate resources, ACME integration TLS certificate provisioning for webhooks, API aggregation, and internal service communication mTLS bootstrapping for service-to-service authentication within the cluster Certificate rotation automation, expiry monitoring, and incident response for compromised certificates
+This knowledge area focuses on: cert-manager deployment and Issuer configuration, TLS provisioning for webhooks, API aggregation, and internal services, mTLS for service-to-service authentication, Certificate rotation, expiry monitoring, and compromise response, and Certificate rotation execution and expiry monitoring. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -632,7 +632,7 @@ cert-manager deployment and configuration: Issuers, ClusterIssuers, Certificate 
 
 ### Description
 
-Impersonation control: restricting and auditing the use of Kubernetes API impersonation headers Privilege escalation detection: monitoring for RBAC changes, service account token theft, and unauthorized cluster-admin usage kubeconfig hygiene: secure storage, credential expiry, context management, and kubeconfig audit for shared environments Operator security awareness: recognizing social engineering and credential phishing targeting Kubernetes administrators (kubeconfig theft, cloud console credential harvesting, CI/CD token exfiltration); security awareness requirements for personnel with cluster-admin or GPU resource access Credential management best practices and DoS/availability controls for authentication endpoints (see Appendix A: Identity Governance Patterns) Attribute-based access control for AI artifacts based on data classification, model sensitivity, and deployment environment (see Appendix A: Identity Governance Patterns)
+This knowledge area focuses on: API impersonation restriction and auditing, Privilege escalation detection and monitoring, Kubeconfig security and hygiene, Security awareness for Kubernetes and GPU administrators, and Credential management and multi-factor authentication. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -672,7 +672,7 @@ Impersonation control: restricting and auditing the use of Kubernetes API impers
 
 ### Description
 
-Default deny ingress and egress policies as namespace security baselines Namespace isolation patterns: restricting cross-namespace communication while allowing required system services (DNS, monitoring) Egress controls: restricting outbound access by workload, allowing only required external endpoints, DNS-based egress policies CNI-specific network policy extensions: Cilium CiliumNetworkPolicy, Calico GlobalNetworkPolicy, advanced L7 policies AI workload network segmentation: microsegmentation between training, inference, pipeline, and notebook workloads; isolation of model download paths from training data paths to prevent cross-contamination; east-west traffic monitoring between AI workloads for anomalous communication patterns Multi-cluster network segmentation for federated AI workloads: cross-cluster network models (multi-cluster service mesh, Kubernetes Multi-Cluster Services API, VPN/interconnect with gateway pods, API gateway federation), cross-cluster communication matrix definition and enforcement, Cilium Cluster Mesh and Istio multi-cluster policy for AI traffic, gateway-based segmentation with identity-aware routing, cross-cluster egress restriction for federated learning participants, unified cross-cluster flow logging and anomaly detection, cross-cluster network policy audit and connectivity testing
+This knowledge area focuses on: Default deny ingress and egress network policies, Namespace network isolation patterns, Workload egress controls, CNI-specific network policy extensions, and AI workload network segmentation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -697,7 +697,7 @@ Default deny ingress and egress policies as namespace security baselines Namespa
 
 ### Description
 
-CNI plugin selection criteria: security features, network policy support, encryption capabilities, performance characteristics Pod-to-pod encryption: WireGuard (Cilium, Calico), IPsec, and transparent encryption for in-transit data protection IPAM security: IP address management, IP exhaustion prevention, and IP spoofing protection CNI plugin hardening: configuration baselines, vulnerability management, and upgrade procedures Data path encryption between compute nodes and storage backends for training and inference workloads; network policy design for AI-specific traffic patterns (NCCL inter-node training communication, model download paths, inference traffic)
+This knowledge area focuses on: CNI plugin security selection criteria, Pod-to-pod traffic encryption, IPAM security and IP spoofing protection, CNI plugin hardening and lifecycle management, and AI workload data path encryption in transit. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -723,7 +723,7 @@ CNI plugin selection criteria: security features, network policy support, encryp
 
 ### Description
 
-Ingress controller hardening: TLS termination configuration, WAF integration, request filtering, and rate limiting DNS security: CoreDNS configuration, DNS policy enforcement, DNS-based service discovery security, and DNS exfiltration prevention External traffic policy: Local vs. Cluster traffic routing, source IP preservation, and client IP-based access controls LoadBalancer and NodePort security: restricting service exposure, internal load balancer annotations, and cloud load balancer security groups
+This knowledge area focuses on: Ingress controller hardening, DNS infrastructure hardening, External traffic policy and source IP preservation, Internal load balancer annotation enforcement, and DNS exfiltration detection. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -755,7 +755,7 @@ Ingress controller hardening: TLS termination configuration, WAF integration, re
 
 ### Description
 
-Zero trust architecture principles for Kubernetes: identity-centric access, continuous verification, microsegmentation, least-privilege networking Service mesh deployment and security: Istio, Linkerd, or Cilium service mesh for automatic mTLS, authorization policies, and traffic observability SPIFFE/SPIRE for workload identity: cryptographic identity issuance, trust domain management, and cross-cluster identity federation Microsegmentation beyond network policies: L7 authorization, service-level access control, and API-aware security policies Service mesh considerations for AI workloads: mTLS overhead on high-throughput GPU training traffic, sidecar resource consumption impact on GPU workloads, and ingress/API gateway hardening for model serving endpoints
+This knowledge area focuses on: Zero trust networking principles for Kubernetes, Service mesh mTLS and authorization policies, SPIFFE/SPIRE workload identity management, L7 microsegmentation and API-aware policies, and Service mesh tuning for AI workloads. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -780,7 +780,7 @@ Zero trust architecture principles for Kubernetes: identity-centric access, cont
 
 ### Description
 
-API server network access: restricting access to control plane endpoints, private cluster configuration, bastion host patterns LoadBalancer and NodePort restriction policies: preventing unintended service exposure to the internet Internal service endpoint protection: ClusterIP services, headless services, and service account-based access patterns API server audit log analysis for network-based attack detection and unauthorized access attempts
+This knowledge area focuses on: API server network access restriction, LoadBalancer, NodePort, and ExternalIP restriction policies, Internal service endpoint protection, API server audit log analysis for network-based attack detection, and Identity-based internal service access control. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -803,7 +803,7 @@ API server network access: restricting access to control plane endpoints, privat
 
 ### Description
 
-Base image selection and hardening: minimal images (distroless, scratch), multi-stage builds, unnecessary package removal; AI-specific base image considerations (CUDA base images, ML framework images, inference server images) and GPU compatibility constraints Container image vulnerability scanning: integration with CI/CD, registry-level scanning, runtime scanning; vulnerability scanning for AI-specific dependencies (PyTorch, TensorFlow, JAX, ONNX Runtime, Triton) and their native library chains Registry access controls: authentication, authorization, network restrictions, and image pull secrets management Image hardening practices: non-root users, read-only filesystems, no shell binaries, and minimal attack surface; minimal image construction for inference (distroless, multi-stage builds) to reduce attack surface while maintaining GPU compatibility
+This knowledge area focuses on: Base image selection and hardening, Container image vulnerability scanning, Registry access controls, Image hardening practices, and Container image and artifact retention policy. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -842,7 +842,7 @@ Base image selection and hardening: minimal images (distroless, scratch), multi-
 
 ### Description
 
-Sigstore/cosign keyless signing with Fulcio, signature storage in Rekor transparency log, verification workflows Notary v2 (notation) trust policy configuration, signature verification, and registry integration Admission enforcement of image signatures: configuring admission controllers (Kyverno, OPA/Gatekeeper, Sigstore policy-controller) to reject unsigned images
+This knowledge area focuses on: Sigstore/cosign keyless signing and Rekor transparency logging, Notary v2 (notation) trust policy and signature verification, Admission enforcement of image signatures, Notary v2 trust policy and signing identity governance, and Notary v2 OCI signature artifact registry integration. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -865,7 +865,7 @@ Sigstore/cosign keyless signing with Fulcio, signature storage in Rekor transpar
 
 ### Description
 
-Artifact attestation: in-toto attestations, SBOMit, SLSA provenance, and build-time metadata attached to container images Build attestation taxonomy per NIST SP 800-204D: environment attestation (build platform inventory), process attestation (build tools and transformations), materials attestation (source inputs and dependencies), and artifacts attestation (build outputs and intermediate products) Attestation policy evaluation: signed policies that encode artifact requirements, lifecycle compliance tracing through attestation verification at each pipeline stage, and policy-based admission decisions grounded in verified attestation chains Cryptographic agility and post-quantum readiness: algorithm selection for long-lived model artifacts, migration planning for post-quantum signature schemes, and hashing/signing coverage across the full ML lifecycle (inputs, models, outputs, intermediate artifacts) Cryptographic module authentication and validation requirements (FIPS 140 compliance for signing and verification operations) TUF (The Update Framework) for secure software update systems: threshold and quorum trust for signing keys, HSM-based key storage for online signing roles, key rotation procedures, and protection against known attacks on software update metadata
+This knowledge area focuses on: Artifact attestation with in-toto and SLSA provenance, Build attestation taxonomy per NIST SP 800-204D, Attestation policy evaluation and lifecycle compliance, Cryptographic agility and post-quantum readiness, and FIPS 140 cryptographic module validation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -895,7 +895,7 @@ Artifact attestation: in-toto attestations, SBOMit, SLSA provenance, and build-t
 
 ### Description
 
-SBOM generation: producing SBOMs in SPDX, CycloneDX, and SWID formats during CI/CD builds; SBOM generation for AI container images and model artifacts ML-BOM (ML Bill of Materials): extending SBOMs to capture model lineage, training data provenance, hyperparameter configurations, framework versions, training infrastructure identity, and dataset composition - enabling end-to-end ML supply chain transparency per CTA-2114 SBOM storage and distribution: attaching SBOMs to container images as OCI artifacts, registry-based SBOM discovery VEX (Vulnerability Exploitability eXchange): communicating vulnerability applicability, reducing false-positive noise in scanning results Dependency tracking and build provenance: SLSA levels, hermetic builds, and source-to-artifact integrity verification Vulnerability prioritization for AI workloads: distinguishing training-time vs. inference-time exposure, GPU driver CVEs vs. application-layer CVEs; automated rebuild and redeployment pipelines for patching AI workload images without retraining models
+This knowledge area focuses on: SBOM generation for container and AI artifacts, ML-BOM (ML Bill of Materials) generation, SBOM storage and distribution as OCI artifacts, VEX (Vulnerability Exploitability eXchange) publication, and Dependency tracking and SLSA build provenance. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -925,7 +925,7 @@ SBOM generation: producing SBOMs in SPDX, CycloneDX, and SWID formats during CI/
 
 ### Description
 
-OPA/Gatekeeper constraint templates and constraints for Kubernetes policy enforcement; AI workload admission policies including GPU request validation, image provenance, and runtime class enforcement Kyverno policies: validation, mutation, generation, and image verification rules Kubewarden policies: WebAssembly-based admission policies, policy development, and runtime Admission webhook security: failure policies (Fail vs. Ignore), timeout configuration, webhook certificate management, and availability considerations CRD validation and webhook hardening for AI custom resources (InferenceService, TrainingJob, RayCluster, PodGroup); PSA label enforcement via admission policies
+This knowledge area focuses on: OPA/Gatekeeper policies for Kubernetes and AI workloads, Kyverno admission policies, Kubewarden WebAssembly-based admission policies, Admission webhook security and availability, and CRD validation and webhook hardening for AI custom resources. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -951,7 +951,7 @@ OPA/Gatekeeper constraint templates and constraints for Kubernetes policy enforc
 
 ### Description
 
-CNCF lifecycle security: applying security controls across Develop → Distribute → Deploy phases; zero trust for CI/CD pipelines per NIST SP 800-204D - trust established and verified at every pipeline step through artifact integrity verification, authenticated handoffs between stages, and concurrent evidence generation with higher trust than the build process itself CI/CD build environment hardening: isolated build platforms (sandboxed CI runner pods, ephemeral build VMs), CI/CD runner pod security in Kubernetes (credential isolation, network restrictions, ephemeral storage), prevention of credential theft from build environments (signing keys, cloud credentials, environment variables), and real-time monitoring of CI/CD server activity for tampering or exfiltration CI pipeline security gates: SAST (static application security testing), DAST (dynamic application security testing), and SCA (software composition analysis) integrated into CI pipelines; secret scanning with push protection to prevent credentials from entering repositories; dependency review at pull request time; code freshness enforcement ("build horizon" - deployed artifacts must not exceed a maximum age from committed code); OpenSSF Scorecard for automated SCM security posture assessment GitOps security with Flux and ArgoCD: repository access controls, signed commits, branch protection, reconciliation integrity; drift detection and remediation - monitoring for runtime configuration deviations from Git-declared state with automated resync or notification; no manual runtime changes (kubectl apply) - Git as the single source of truth; release metadata preservation for all deployed packages, versions, and configuration files Helm chart security: chart provenance, signature verification, values injection controls, and dependency pinning Manifest signing, SSDF v1.1 alignment for secure development practices, and infrastructure as code (IaC) security for deployment platform definitions; policy as code for runtime settings and configuration code integrity verification
+This knowledge area focuses on: CNCF lifecycle security and zero-trust CI/CD pipelines, CI/CD build environment hardening, CI pipeline security gates, GitOps repository security, and Helm chart security and provenance. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1001,7 +1001,7 @@ CNCF lifecycle security: applying security controls across Develop → Distribut
 
 ### Description
 
-PersistentVolume and PersistentVolumeClaim access modes: ReadWriteOnce, ReadOnlyMany, ReadWriteMany - security implications per mode; PV security for training datasets, model checkpoints, and feature stores CSI driver security: driver privilege requirements, volume snapshot access controls, and storage class restrictions; high-performance AI storage (Lustre, GPFS, NFS, object storage) and their elevated privilege requirements Encryption at rest for persistent volumes: cloud provider encryption, dm-crypt/LUKS, and storage-level encryption PV reclaim policy security: Retain vs. Delete policies, data remnant prevention, and secure volume cleanup; dual authorization requirements for destruction of training data backups and model checkpoint archives Data versioning and immutability controls in Kubernetes-native storage: PV snapshots, object storage versioning, and DVC integration for training data and model artifact integrity
+This knowledge area focuses on: PersistentVolume and PersistentVolumeClaim access mode enforcement, CSI driver security and privilege restriction, Encryption at rest for persistent volumes, PV reclaim policy enforcement for AI data volumes, and Data versioning and immutability for training data and model artifacts. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1026,7 +1026,7 @@ PersistentVolume and PersistentVolumeClaim access modes: ReadWriteOnce, ReadOnly
 
 ### Description
 
-Namespace as a security boundary: isolation properties, limitations, and supplementary controls needed for true multi-tenancy; namespace-per-team vs. namespace-per-workload-type isolation models for mixed AI/non-AI clusters Resource quotas per namespace: CPU, memory, storage, GPU, and object count limits to prevent resource monopolization; ResourceQuota and LimitRange configuration specific to GPU and AI namespaces LimitRange enforcement: default and maximum resource limits per container and pod within a namespace Virtual cluster approaches (vCluster, HNC) for stronger tenant isolation while sharing underlying infrastructure Label and annotation standards for AI workload classification (training vs. inference, data sensitivity, model tier) Data type classification labels for pipeline data flows Maintaining classification attributes across model lifecycle stages (dev to staging to production) Automated reclassification mechanisms during model promotion to apply environment-specific security controls Validation gate preventing model promotion to production without validated classification metadata Tenant boundary enforcement through admission control, network policy, and RBAC at the namespace level
+This knowledge area focuses on: Namespace isolation model for multi-tenant AI clusters, Resource quotas per namespace for GPU and AI workloads, LimitRange enforcement for containers and pods, Virtual cluster isolation for multi-tenant environments, and Label and annotation schema definition for AI workload classification. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1073,7 +1073,7 @@ Namespace as a security boundary: isolation properties, limitations, and supplem
 
 ### Description
 
-Priority classes and preemption: system-critical, high-priority, and default priority classes - preemption policies for training jobs vs. inference workloads vs. development notebooks; Kueue and Volcano queue management for fair-share GPU scheduling across tenants Pod Disruption Budgets: maintaining availability during node maintenance and cluster upgrades GPU cost governance: per-namespace, per-team, and per-job GPU cost attribution and chargeback; idle GPU detection and reclamation (abandoned training jobs, over-provisioned inference deployments, unused GPU reservations); spending limits and budget alerts with automatic enforcement (job suspension, scale-down triggers) Detection and prevention of GPU resource squatting, quota circumvention, and unauthorized GPU usage (cryptomining, personal workloads, resource policy violations) Resource exhaustion resilience: chaos engineering for GPU and AI resource controls, queue management with bounded queues and backpressure handling, training-time resource protection (job-level memory ceilings, training data size limits), and Economic Denial of Sustainability (EDoS) awareness for cloud-hosted AI infrastructure Node affinity rules, taints, and tolerations to prevent AI workloads from impacting non-AI services, ensuring GPU nodes are dedicated to AI workloads and preventing noisy-neighbor scheduling conflicts Topology-aware scheduling for GPU locality (NVLink, NVSwitch) for distributed training workloads, balanced against blast-radius containment through failure domain distribution
+This knowledge area focuses on: Priority classes and preemption policies for AI workloads, Pod Disruption Budgets for workload availability, GPU cost attribution and chargeback mechanisms, GPU resource abuse detection and prevention, and AI workload resource exhaustion guardrails. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1112,7 +1112,7 @@ Priority classes and preemption: system-critical, high-priority, and default pri
 
 ### Description
 
-Cloud IAM to Kubernetes RBAC mapping: cloud-native role bindings for managed Kubernetes services (EKS, GKE, AKS) VPC and security group integration: node network isolation, control plane endpoint access, and cloud firewall alignment with K8s network policies Cloud audit log integration: correlating cloud provider audit logs with Kubernetes audit events for unified security monitoring Metadata service protections: IMDSv2 enforcement, network-level restrictions, and preventing credential theft from cloud metadata endpoints Restricted use policies for non-organizationally owned systems and external AI services; cloud provider contingency plan requirements for managed Kubernetes services
+This knowledge area focuses on: Cloud IAM to Kubernetes RBAC mapping, VPC and security group integration with Kubernetes network policies, Cloud audit log correlation with Kubernetes audit events, IMDSv2 enforcement on Kubernetes nodes, and Restricted use policies for non-organizationally owned systems and external AI services. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1148,7 +1148,7 @@ Cloud IAM to Kubernetes RBAC mapping: cloud-native role bindings for managed Kub
 
 ### Description
 
-Device plugin framework: how GPU device plugins expose accelerators to the kubelet and scheduling implications; NVIDIA device plugin, GPU Operator, and GPU Feature Discovery security configuration and hardening MIG (Multi-Instance GPU) partitioning: hardware-enforced isolation between tenants, MIG profile configuration, and resource advertisement MPS and time-slicing: shared GPU access patterns, security tradeoffs between utilization efficiency and isolation guarantees; GPU memory isolation verification, side-channel resistance assessment, and cross-tenant data remnant prevention vGPU configuration: hypervisor-based GPU virtualization, resource allocation granularity, and vendor-specific security controls Hardware topology exposure risks and metadata leakage through Kubernetes device plugin advertisements and node labels; GPU request validation through admission control policies
+This knowledge area focuses on: GPU device plugin security configuration and hardening, MIG partitioning for hardware-enforced GPU isolation, MPS and time-slicing isolation and memory safety controls, vGPU virtualization security controls, and GPU topology metadata protection and admission control. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1178,7 +1178,7 @@ Device plugin framework: how GPU device plugins expose accelerators to the kubel
 
 ### Description
 
-GPU driver version management: vulnerability patching, compatibility validation, driver containers, and NVIDIA GPU Operator lifecycle CUDA library and runtime security: container toolkit configuration, compat libraries, driver persistence mode implications Device plugin socket security: kubelet communication integrity, unauthorized GPU access prevention, and device health monitoring GPU firmware integrity: monitoring for firmware tampering, driver replacement, and unauthorized kernel module loading
+This knowledge area focuses on: GPU driver lifecycle and vulnerability management, CUDA library and container toolkit security, Device plugin socket and kubelet communication security, GPU firmware integrity monitoring, and GPU kernel module and driver binary integrity enforcement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1203,7 +1203,7 @@ GPU driver version management: vulnerability patching, compatibility validation,
 
 ### Description
 
-NVLink and NVSwitch security for multi-GPU training: traffic isolation, topology exposure risks, and cross-tenant data leakage prevention InfiniBand and RoCE security: subnet manager access controls, partition key configuration, and network fabric isolation RDMA security: memory region access controls, queue pair isolation, and protection against remote memory attacks DPU/SmartNIC security: firmware integrity, policy enforcement at the network device level, and offload trust boundaries
+This knowledge area focuses on: NVLink and NVSwitch traffic isolation for multi-GPU training, InfiniBand and RoCE fabric security controls, RDMA memory region and queue pair isolation, DPU and SmartNIC firmware integrity and trust boundaries, and DPU and SmartNIC firmware cryptographic verification and Secure Boot integrity. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1225,7 +1225,7 @@ NVLink and NVSwitch security for multi-GPU training: traffic isolation, topology
 
 ### Description
 
-TEE-based model protection: NVIDIA H100 Confidential Computing, Intel TDX, and AMD SEV-SNP for inference and training Remote attestation workflows: verifying TEE integrity before loading models or sensitive training data Key management and sealed storage for models and data within confidential computing enclaves Performance, compatibility, and operational constraints of confidential AI workloads on Kubernetes
+This knowledge area focuses on: TEE-based model and data protection for AI workloads, Remote attestation for TEE integrity verification, Key management and sealed storage for confidential AI enclaves, Confidential AI workload operational constraints and risk assessment, and Attestation-conditioned enclave key release. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1247,7 +1247,7 @@ TEE-based model protection: NVIDIA H100 Confidential Computing, Intel TDX, and A
 
 ### Description
 
-GPU telemetry collection: DCGM exporter, NVML metrics for utilization, memory, temperature, and error injection detection Accelerator allocation audit trails: tracking which pods used which GPUs, for how long, and with what workload identity GPU-based attack detection: cryptocurrency mining on training clusters, GPU memory scraping, covert channels via GPU shared memory Side-channel awareness: GPU shared memory timing attacks, memory access pattern leakage, and cross-tenant information disclosure
+This knowledge area focuses on: GPU telemetry collection and anomaly detection, GPU allocation audit trail and workload identity tracking, GPU-based attack detection for cryptomining and memory scraping, and GPU side-channel attack awareness and mitigation.
 
 ### Controls
 
@@ -1267,7 +1267,7 @@ GPU telemetry collection: DCGM exporter, NVML metrics for utilization, memory, t
 
 ### Description
 
-Multi-node training job security: PyTorchJob, MPIJob, TFJob - inter-worker authentication, encrypted gradient communication (NCCL, MPI); inter-worker encryption for all data in transit within distributed training pipelines Parameter server and all-reduce security: protection against gradient poisoning, worker impersonation, and Byzantine fault injection Checkpoint security: encrypted storage, integrity verification, and access controls for model checkpoints and optimizer state Training fault tolerance and security: corrupted data detection and recovery, adversary-exploitable fault tolerance mechanisms (retry logic manipulation, corruption injection during recovery), backup and rollback strategies for training state Federated learning security on Kubernetes: secure aggregation protocols, differential privacy for gradient updates, gradient leakage and model inversion prevention, Byzantine-resilient aggregation, participant authentication, and isolation of federated training participants; cross-cluster FL architecture (Flower, FATE, NVIDIA FLARE deployment patterns on Kubernetes), SPIFFE-based FL participant enrollment and revocation, cross-cluster FL network security (end-to-end mTLS, network path control, gradient payload inspection), data residency and sovereignty enforcement for cross-cluster FL (local data verification, residency labels, gradient-only egress, compliance audit trail), FL-specific monitoring and anomaly detection (gradient norm tracking, privacy budget monitoring, participant contribution rate analysis, aggregation round duration) Gang scheduling security (Volcano, Kueue): prevention of resource manipulation and priority abuse during distributed training Security implications of AI operators (NVIDIA GPU Operator, KServe, Kubeflow, Ray, Volcano, Kueue) and their elevated privileges; operator RBAC scoping, namespace restrictions, least-privilege service accounts, and upgrade/vulnerability management for AI operators and their dependencies
+This knowledge area focuses on: Multi-node training worker authentication and encrypted communication, Parameter server and all-reduce security, Checkpoint security, Training fault tolerance and security, and Federated learning security on Kubernetes. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1293,7 +1293,7 @@ Multi-node training job security: PyTorchJob, MPIJob, TFJob - inter-worker authe
 
 ### Description
 
-Inference server hardening (vLLM, Triton, TGI, KServe): minimal privilege, read-only model mounts, restricted network access; inference server vulnerability management (patching cadence for serving frameworks, CUDA runtime, and API dependencies) Model loading security: verifying model integrity at server startup, preventing model replacement, and secure model caching; model endpoint authentication and authorization via API gateway integration, token validation, and per-model access controls Input validation and sanitization for inference requests: adversarial input detection, payload size controls, request format enforcement, and injection attack prevention; response filtering and output controls to prevent model output from leaking training data, PII, or sensitive patterns Multi-model serving security: model mesh isolation, shared-memory protections, and per-model resource accounting; TLS termination and end-to-end encryption for inference traffic including internal service-to-service model calls Multi-cluster inference routing and failover security: geographic routing, active-active, active-passive failover, and canary cross-cluster deployment patterns; model version consistency verification across serving clusters (central model registry, staleness detection, promotion synchronization via GitOps); authenticated cross-cluster request routing with federated identity, request integrity and authorization forwarding, policy consistency enforcement across serving clusters; failover security controls (model version verification before failover, cluster health validation, failover audit logging); multi-cluster inference observability (unified distributed tracing, cross-cluster metrics, incident correlation across serving federation)
+This knowledge area focuses on: Inference server hardening, Model loading integrity verification, Inference request validation and input sanitization, Multi-model serving isolation and encryption, and Multi-cluster inference routing and failover security. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1320,7 +1320,7 @@ Inference server hardening (vLLM, Triton, TGI, KServe): minimal privilege, read-
 
 ### Description
 
-Adversarial example defenses at the serving layer: input transformation and data augmentation as detection mechanisms, adversarial input rejection policies, perturbation detection, and infrastructure requirements for adversarial training; explainable AI (xAI) integration for security - using model explanations to detect adversarial inputs, identify poisoned model behavior, and flag anomalous predictions, while managing xAI as an attack surface (explanation exploitation for model reverse engineering) Autoscaling safety: GPU-aware HPA configuration, maximum replica bounds, cooldown periods, and denial-of-wallet prevention; inference request queue security (priority queuing, timeout enforcement, queue depth limits to prevent backpressure attacks) Inference-time resource controls: computational complexity bounds per request, input size restrictions, multi-level timeouts (request, session, batch), GPU memory ceilings per inference pod, and overload handling (graceful degradation, circuit breakers); Economic Denial of Sustainability (EDoS) prevention for cloud-hosted inference
+This knowledge area focuses on: Adversarial example defenses at the serving layer, Autoscaling safety and queue security, Inference-time resource controls, LLM context window and token resource controls, and GPU inference autoscaling safety bounds and budget guardrails. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1344,7 +1344,7 @@ Adversarial example defenses at the serving layer: input transformation and data
 
 ### Description
 
-Pipeline orchestrator hardening: Kubeflow Pipelines, Argo Workflows, Airflow, and Tekton - RBAC for pipeline definitions, execution isolation, and secret management Pipeline artifact security: intermediate data, model artifacts, and metadata storage protection in MinIO, S3, or GCS; pipeline step isolation to prevent data leakage between stages with different sensitivity levels; procedural and authorization requirements for data transfer between pipeline stages with different classification levels Notebook and experimentation security: per-user isolation, kernel security, resource limits, network restrictions, approved base images, extension vetting; data access controls from notebook environments to prevent unauthorized dataset access, model exfiltration, and credential harvesting Experiment tracking security (MLflow, Weights & Biases): protecting experiment metadata, hyperparameters, and metric data from unauthorized access; pipeline definition integrity with signed manifests, immutable versions, and rollback controls Kubernetes CronJob and batch job security for scheduled feature computation and data refresh; feature freshness and integrity monitoring to detect stale, poisoned, or tampered features before they reach training or inference
+This knowledge area focuses on: Pipeline orchestrator hardening, Pipeline artifact encryption and access controls, Notebook and experimentation environment security, Experiment tracking security and pipeline integrity, and Scheduled job security and feature freshness monitoring. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1378,7 +1378,7 @@ Pipeline orchestrator hardening: Kubeflow Pipelines, Argo Workflows, Airflow, an
 
 ### Description
 
-System classification and security controls: differentiating train-verify-lock systems (model fixed at deployment) from continuous learning systems (model updates post-deployment) - each classification requires distinct control profiles for integrity verification, update authorization, and drift monitoring on Kubernetes Model signing and provenance: Sigstore for models, in-toto attestations for training pipelines, model origin verification at deploy time; OCI artifact storage for models with digest pinning, tag immutability, and access-controlled registries; hashing and signing of all ML lifecycle artifacts (inputs, models, outputs, intermediate artifacts) with integrity verification at each transition point Model registry hardening (Harbor, MLflow, Hugging Face Hub on-prem): access controls, audit logging, retention policies; registry federation and replication security for multi-cluster and multi-region AI deployments ML dependency vulnerability management: software composition analysis for ML frameworks (PyTorch, TensorFlow, JAX), CUDA toolkits, and Python ecosystem dependencies to identify and remediate known CVEs, including deserialization vulnerability tracking in model loading libraries Model promotion gates: security scan pass, bias evaluation, performance threshold, and adversarial robustness test before production deployment; reviewer identity validation in promotion approval workflows; A/B testing and canary infrastructure security (isolation between model versions, traffic splitting integrity, rollback safety) Artifact lifecycle management: model deprecation, archival, and secure deletion of retired model versions; propagation of data correction and deletion notices to derived model artifacts; development-to-production environment separation to prevent training environment credentials from leaking to production inference Model format security and deserialization controls: enforcement of safe serialization formats (SafeTensors, ONNX, GGUF) over unsafe pickle-based formats (Python pickle, PyTorch .pt/.pth, joblib, cloudpickle); deserialization hardening (torch.load with weights_only=True); model file structure validation before loading; format allowlisting for production deployment; admission policies that reject pods loading models via unsafe deserialization paths; CI/CD scanning for malicious pickle opcodes using tools such as fickling; container image hardening to remove unsafe deserialization libraries Public model hub security and third-party model vetting: quarantine and scanning workflow for models from public hubs (Hugging Face Hub, model zoos, community repositories); malicious model payload scanning (embedded code, pickle exploits, steganographic payloads, backdoor triggers); typosquatting detection for model repository names; dependency confusion prevention; sandbox execution with syscall monitoring; provenance verification (commit signatures, model cards, community trust scores); internal re-signing of externally sourced models; curated allowlist of approved external model sources with periodic governance review
+This knowledge area focuses on: AI system lifecycle classification, ML artifact signing and attestation generation, Model registry hardening, ML dependency vulnerability management and ML-BOM, and Automated model promotion gates. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1453,7 +1453,7 @@ System classification and security controls: differentiating train-verify-lock s
 
 ### Description
 
-Training data provenance tracking: lineage from ingestion through feature engineering to model training; secure data pipeline ingestion with integrity checks at each transformation stage Data integrity at scale: hierarchical hashing for large training datasets, manifest-based integrity verification, segmented integrity checking for datasets across distributed storage, and erasure coding vs. mirroring tradeoffs for ML data resilience Data poisoning detection: statistical drift detection, outlier analysis, label verification, and input validation controls; label modification attack detection - integrity verification for annotation pipelines, annotator authentication, and detection of targeted label flipping distinct from broader data poisoning
+This knowledge area focuses on: Training data provenance and pipeline integrity, Large-scale data integrity verification, Data poisoning and label attack detection, Statistical drift, outlier, and input validation for training data poisoning detection, and Annotation pipeline integrity and targeted label attack detection. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1476,7 +1476,7 @@ Training data provenance tracking: lineage from ingestion through feature engine
 
 ### Description
 
-Feature store security (Feast, Tecton): access controls for feature definitions, online/offline store separation, serving authentication; data preprocessing job security (raw data access controls, PII handling during feature engineering, output validation); feature leakage prevention (unintended exposure of target variables or future information in features) and target leakage controls Privacy controls for training data: PII handling, data classification, anonymization, and data access audit trails (see Appendix A: AI Data Privacy Governance for consent management, privacy notices, and individual data rights) Data access controls for training datasets stored in persistent volumes, object storage, and feature stores; Kubernetes-native and external authorization for model download and deployment (who can pull which models, deploy to which namespaces)
+This knowledge area focuses on: Feature store security and leakage prevention, Training data privacy controls, Training dataset and model deployment access controls, Feature store access boundary enforcement and serving authentication, and Feature engineering privacy controls and leakage validation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1499,7 +1499,7 @@ Feature store security (Feast, Tecton): access controls for feature definitions,
 
 ### Description
 
-Oracle attack prevention at the serving infrastructure layer: model extraction (stealing model weights through systematic queries), model inversion (reconstructing training data from model outputs), and membership inference (determining whether specific data was in the training set) - rate limiting per principal, query pattern analysis, and anomaly detection as infrastructure-level controls Information exposure controls: inference API design to minimize information disclosure, output confidence score restriction, logit/probability access controls, feature leakage prevention, and model architecture obfuscation at the serving boundary Watermarking and fingerprinting integration at the serving layer to detect stolen model outputs Differential privacy and output perturbation controls deployed at inference time to limit information leakage; secure aggregation for privacy-preserving model outputs Logging and alerting for model abuse patterns: query volume anomalies, input distribution shifts, coordinated extraction campaigns, and evasion attack detection (adversarial inputs designed to cause misclassification); monitoring external sites and channels for leaked or stolen model outputs
+This knowledge area focuses on: Oracle attack prevention, Inference API information exposure controls, Model watermarking and fingerprinting, Differential privacy and output perturbation, and Model abuse logging and alerting. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1525,7 +1525,7 @@ Oracle attack prevention at the serving infrastructure layer: model extraction (
 
 ### Description
 
-Vector database access controls and encryption: authentication, RBAC, and collection-level access controls for vector databases (Milvus, Weaviate, Qdrant, pgvector, Chroma); encryption at rest and in transit; network isolation for vector database pods Embedding pipeline integrity: embedding model signature verification and version pinning; input document validation and sanitization; deterministic embedding configurations for auditability Document ingestion and chunking security: source repository access controls; document provenance and integrity verification; security-aware chunking that preserves classification boundaries and prevents cross-classification content mixing Retrieved context integrity verification: chunk metadata validation; source provenance checking; index change monitoring and alerting; retrieval audit logging; context poisoning detection via snapshot diffing; source attribution and redundant retrieval strategies Retrieval relevance threshold enforcement: minimum similarity threshold configuration; top-K result limiting; per-query-type threshold profiles; threshold rejection rate monitoring for poisoning detection RAG prompt injection defense: indirect prompt injection mitigation through retrieved chunk sanitization, instruction-data separation in prompt templates, and monitoring for prompt injection patterns in retrieval results Vector index lifecycle management: versioned index snapshots, integrity verification, controlled rebuild and migration procedures, and secure deletion of retired indexes and associated embedding data
+This knowledge area focuses on: Vector database access controls and encryption, Embedding pipeline integrity, Document ingestion and chunking security, Retrieval integrity and context poisoning defense, and RAG prompt injection defense. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1555,7 +1555,7 @@ Vector database access controls and encryption: authentication, RBAC, and collec
 
 ### Description
 
-Cross-cluster orchestration identity and audit security: authenticated and authorized cross-cluster API calls using federated workload identity; centralized orchestration audit trails for placement and routing decisions Security-aware multi-cluster placement and federation isolation: target-cluster security posture verification before workload placement; circuit-breaker isolation and controlled re-admission for compromised clusters Cross-cluster model registry federation and replication security: signature re-verification on pull, authenticated replication channels, provenance chain-of-custody across cluster boundaries, replication integrity verification, federation membership governance Multi-cluster network security for distributed AI workloads: cross-cluster encryption and authentication, cross-cluster network policy, cross-cluster traffic monitoring, bandwidth and latency governance Federated learning cross-cluster coordination security: cross-cluster participant authentication, cross-boundary secure aggregation, consistent privacy enforcement, single-cluster compromise resilience, cross-cluster FL audit trail Multi-cluster AI governance and compliance consistency: policy federation, configuration drift detection, unified compliance reporting, centralized secret and certificate governance, multi-cluster incident coordination
+This knowledge area focuses on: Multi-cluster AI workload orchestration security, Cross-cluster model registry federation and replication security, Multi-cluster network security for distributed AI workloads, Federated learning cross-cluster coordination security, and Multi-cluster AI governance and compliance consistency. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1604,7 +1604,7 @@ Cross-cluster orchestration identity and audit security: authenticated and autho
 
 ### Description
 
-Kubernetes audit policy configuration: audit levels (None, Metadata, Request, RequestResponse), stage filtering, and backend selection; audit policy rules for AI-relevant API requests (CRD operations, GPU resource changes, admission decisions); supplemental application-level telemetry for non-API events (model loading, GPU process activity, inference request content) Cluster-level logging architecture: node-level log collection, centralized log aggregation, log integrity, and retention policies Centralized logging for AI workloads: training logs, inference request/response logs (with PII redaction), and pipeline execution logs Audit volume management for high-throughput AI workloads: selective audit policy design (tiered levels, omitStages), backend tuning (batching, throttling, buffer sizing, capacity planning), and drop/backpressure monitoring Permitted responses to audit findings and dual authorization requirements for audit log deletion or modification SIEM integration: forwarding Kubernetes audit logs and security events to SIEM platforms, correlation rule development
+This knowledge area focuses on: Kubernetes audit policy coverage for AI-relevant API events, Cluster-level logging architecture, Centralized logging for AI workloads, Audit volume management for AI workloads, and Audit log protection and dual authorization for modification. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1659,7 +1659,7 @@ Kubernetes audit policy configuration: audit levels (None, Metadata, Request, Re
 
 ### Description
 
-Metrics security: Prometheus/metrics-server access controls, metric endpoint authentication, and sensitive metric redaction; AI workload telemetry integration (GPU metrics via DCGM exporter, training job progress, inference latency, and model performance indicators) Distributed tracing for ML pipelines: end-to-end trace propagation from data ingestion through training to inference serving; alert design for AI-specific failure modes (training divergence, model staleness, GPU errors, inference accuracy degradation)
+This knowledge area focuses on: Metric endpoint authentication, Distributed tracing for ML pipelines, AI workload telemetry integration into cluster monitoring, AI-specific alerting and failure mode detection, and Metric endpoint authorization and RBAC. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1681,7 +1681,7 @@ Metrics security: Prometheus/metrics-server access controls, metric endpoint aut
 
 ### Description
 
-STRIDE methodology applied to Kubernetes: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege - mapped to K8s components OCTAVE methodology: risk-based threat assessment for Kubernetes environments, asset identification, and threat profiling MITRE ATT&CK Threat Matrix for Containers: understanding tactics and techniques specific to container and Kubernetes attacks
+This knowledge area focuses on: STRIDE threat modeling for Kubernetes AI systems, OCTAVE risk-based threat assessment for Kubernetes AI environments, MITRE ATT&CK for Containers threat mapping, MITRE ATT&CK for Containers coverage mapping and gap analysis, and Technique-aligned detection engineering for Kubernetes AI attack scenarios.
 
 ### Controls
 
@@ -1702,7 +1702,7 @@ STRIDE methodology applied to Kubernetes: Spoofing, Tampering, Repudiation, Info
 
 ### Description
 
-ML threat taxonomy per CTA-2114: formal classification of AI-specific threats - Data Poisoning, Model Poisoning, Targeted Poisoning, Label Modification, Model Disclosure, Data Disclosure, Evasion (adversarial examples), Oracle Attacks (extraction, inversion, membership inference), and Denial of Service via computational complexity - mapped to Kubernetes infrastructure attack surfaces and control points Software supply chain threat model per NIST SP 800-204D: three-stage SSC attack lifecycle (Compromise → Propagation → Exploitation), SSC defects vs. SSC attacks distinction, attack targets (source code, credentials, build systems, internal operations), and attack vectors (dependency confusion, typosquatting, malicious PRs, compromised build tools) applied to Kubernetes CI/CD and AI pipeline infrastructure Threat intelligence integration: consuming Kubernetes CVE feeds, runtime threat intelligence, and attack pattern libraries for detection rule development; NISTIR 8269 adversarial ML taxonomy for structured threat classification; correlating technical audit data with business context and non-technical sources (organizational risk indicators, physical security events, HR actions)
+This knowledge area focuses on: ML threat taxonomy per CTA-2114 mapped to Kubernetes, Software supply chain threat model per NIST SP 800-204D, Threat intelligence integration for Kubernetes AI environments, Kubernetes AI threat intelligence feed ingestion and detection enrichment, and Adversarial ML threat taxonomy and structured classification. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1724,7 +1724,7 @@ ML threat taxonomy per CTA-2114: formal classification of AI-specific threats - 
 
 ### Description
 
-IR lifecycle for Kubernetes environments: preparation, detection and analysis, containment, eradication and recovery, post-incident activity; AI-specific IR playbooks for compromised training jobs, model poisoning detection, GPU cryptomining, and inference endpoint abuse Containment strategies: draining compromised nodes, isolating namespaces with network policies, suspending workloads, revoking credentials; AI-specific containment (draining GPU nodes, quarantining inference services, suspending pipeline executions) Automated containment triggers: automated node cordoning on anomaly detection, programmatic namespace isolation via network policy templates, automated inference service scaling to zero, and pipeline controller suspension without manual intervention Forensic evidence collection: container snapshots, audit log preservation, network flow capture, and chain-of-custody procedures; AI-specific forensic evidence (GPU allocation logs, model access audit trails, training data provenance records) Ransomware and destructive attack response: backup verification, etcd restoration, workload recovery prioritization, and lessons-learned processes Post-incident model validation: verifying model integrity after infrastructure compromise, retraining decisions, rollback procedures, and protection against lateral movement from compromised AI workloads to cluster control plane or other tenants; component protection during recovery operations (preventing reinfection, integrity verification before restoration)
+This knowledge area focuses on: Kubernetes incident response lifecycle, Kubernetes and AI workload containment strategies, Forensic evidence collection for Kubernetes AI incidents, Ransomware and destructive attack response for Kubernetes, and Post-incident model integrity verification and recovery decisions. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1770,7 +1770,7 @@ IR lifecycle for Kubernetes environments: preparation, detection and analysis, c
 
 ### Description
 
-Regulatory compliance mapping: NIST AI RMF, applicable EU AI Act obligations based on organizational role (provider or deployer) and AI system risk classification, SOC 2 considerations for Kubernetes platforms (see Appendix A: Compliance Framework Mapping for detailed regulatory mapping) SSDF v1.1 and SP 800-218A alignment: mapping Kubernetes security practices to NIST SSDF v1.1 (SP 800-218) requirements and the SP 800-218A AI/ML-specific community profile (see Appendix A: Compliance Framework Mapping for SSDF adaptation for AI/ML systems) Policy-as-code for compliance: OPA/Gatekeeper, Kyverno, and Kubewarden policies generating continuous compliance evidence; AI workload governance policies (enforce image provenance, GPU limits, security contexts) Audit readiness: automated compliance evidence collection, configuration snapshot generation, and framework crosswalk documentation (see Appendix A: Compliance Framework Mapping for extended audit readiness and metrics review)
+This knowledge area focuses on: Regulatory compliance mapping for Kubernetes AI platforms, SSDF v1.1 and SP 800-218A alignment for Kubernetes AI development, Policy-as-code for AI workload compliance, Automated audit readiness for Kubernetes AI platforms, and Policy-as-code enforcement for AI workload compliance. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1796,7 +1796,7 @@ Regulatory compliance mapping: NIST AI RMF, applicable EU AI Act obligations bas
 
 ### Description
 
-Kubernetes upgrade plan documentation: version skew policy requirements, component-by-component upgrade sequencing procedures, rollback procedures per component, and AI infrastructure component compatibility matrix (GPU drivers, CUDA toolkits, operators, and serving frameworks) Non-disruptive cluster upgrade execution: staging-environment validation before production promotion, training job schedule coordination, GPU node drain and cordon procedures, and post-upgrade security posture verification Deprecation tracking: API version migration, removed feature detection, and proactive compatibility testing AI infrastructure asset inventory: automated discovery and classification of models, datasets, pipelines, inference endpoints, and GPU allocations Security posture management: continuous assessment of cluster configuration drift, benchmark compliance, and vulnerability exposure; capacity planning and security implications of GPU cluster scaling (new node onboarding security, hardware attestation, driver verification) Change management for model deployments: approval workflows, deployment windows, and rollback procedures for production model updates; AI workload decommissioning (secure cleanup of training data, model artifacts, GPU reservations, secrets, and access grants); protection of cluster-level services (DNS, metrics, logging) from resource exhaustion by large-scale training jobs
+This knowledge area focuses on: Kubernetes and AI infrastructure upgrade planning, Kubernetes API deprecation and removal tracking, AI infrastructure asset inventory and classification, Continuous security posture management for AI clusters, and Change management for production AI model deployments. Additional controls in the table below extend this coverage.
 
 ### Controls
 

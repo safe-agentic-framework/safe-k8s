@@ -46,6 +46,24 @@ def knowledge_area_anchor(knowledge_area_id: str) -> str:
     return slugify(f"knowledge-area-{knowledge_area_id}")
 
 
+def summarize_knowledge_area(area_controls: list[dict]) -> str:
+    if not area_controls:
+        return "This knowledge area is represented by the control set below."
+
+    focus_titles = [control["control_title"] for control in area_controls[:5]]
+    if len(focus_titles) == 1:
+        summary = focus_titles[0]
+    elif len(focus_titles) == 2:
+        summary = f"{focus_titles[0]} and {focus_titles[1]}"
+    else:
+        summary = ", ".join(focus_titles[:-1]) + f", and {focus_titles[-1]}"
+
+    sentence = f"This knowledge area focuses on: {summary}."
+    if len(area_controls) > len(focus_titles):
+        sentence += " Additional controls in the table below extend this coverage."
+    return sentence
+
+
 def render_top_readme(domains, knowledge_areas, controls, crosswalks, framework_pages):
     controls_by_knowledge_area: dict[str, list[dict]] = defaultdict(list)
     for control in controls:
@@ -120,7 +138,7 @@ def render_top_readme(domains, knowledge_areas, controls, crosswalks, framework_
                 "",
                 "### Description",
                 "",
-                md_escape(knowledge_area.get("knowledge_area_description")) or "None.",
+                summarize_knowledge_area(area_controls),
                 "",
                 "### Controls",
                 "",
