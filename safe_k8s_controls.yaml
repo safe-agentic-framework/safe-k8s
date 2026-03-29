@@ -9498,25 +9498,6 @@
   superseded_by_control_id: null
   date_created: '2026-03-16'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0704-012
-  domain_code: D07
-  domain_name: Storage, Multi-tenancy, and Resource Governance
-  knowledge_area: '7.4'
-  control_seq: '012'
-  control_title: Pod identity mechanisms replacing node-level instance profiles
-  control_statement: Organizations must configure per-workload cloud identity mechanisms and must not rely on node-level instance profiles to supply cloud API credentials to pods.
-  objective: Bind cloud API permissions to individual workloads instead of node-scoped credentials so a compromised pod cannot inherit cloud access intended for other workloads on the same node.
-  rationale: Node-level instance profiles attach cloud permissions to the underlying node and expose a broad lateral-movement opportunity when workloads can obtain those credentials through metadata access. Per-pod identity mechanisms narrow credential scope to the specific service account or workload identity binding, making cloud authorization independently auditable from metadata endpoint protections.
-  scope: Applies to all pods that require cloud API access on managed Kubernetes platforms. Covers IRSA, Pod Identity, Workload Identity Federation, Entra Workload ID, and restriction of node instance profiles to node bootstrap or infrastructure-only permissions.
-  primary_enforcement_point: Per-Workload Cloud Identity Binding
-  implementation_surface: OIDC federation setup, workload identity bindings, service account annotations, pod identity admission/webhook configuration, and node instance profile restriction.
-  owner_primary: Cloud Platform Engineering
-  owner_supporting: Platform Engineering; Security Engineering
-  baseline_or_ai_specific: baseline
-  maturity: Foundational
-  superseded_by_control_id: SAFE-K8S-0704-019
-  date_created: '2026-03-16'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0704-013
   domain_code: D07
   domain_name: Storage, Multi-tenancy, and Resource Governance
@@ -9783,44 +9764,6 @@
   superseded_by_control_id: null
   date_created: '2026-03-07'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0801-007
-  domain_code: D08
-  domain_name: GPU, Accelerator, and Confidential Computing
-  knowledge_area: '8.1'
-  control_seq: '007'
-  control_title: MPS and time-slicing residual-risk acceptance and workload eligibility controls
-  control_statement: Clusters using NVIDIA MPS or GPU time-slicing must document the reduced isolation guarantees compared to MIG, restrict shared-GPU use to approved workload classes and same-trust co-location patterns, and require explicit risk acceptance when sensitive workloads use weaker GPU-sharing modes.
-  objective: Ensure organizations make a conscious governance decision before using weaker GPU-sharing modes and restrict those modes to workload combinations with acceptable trust assumptions.
-  rationale: MPS and time-slicing do not provide the hardware isolation guarantees of MIG. Organizations need a separate control to decide when weaker sharing is acceptable, which workloads may use it, and which compensating controls such as same-trust co-location and admission restrictions must be enforced before deployment.
-  scope: Applies to any Kubernetes cluster using NVIDIA MPS or GPU time-slicing for multi-workload GPU sharing. Sensitive or regulated workloads must not use these modes without documented risk acceptance and workload eligibility restrictions.
-  primary_enforcement_point: GPU sharing policy, admission restrictions, and workload scheduling eligibility for shared GPU modes.
-  implementation_surface: GPU Operator time-slicing configuration, NVIDIA MPS daemon usage policy, admission control policies restricting sensitive workloads from time-sliced or MPS GPU pools, and node affinity or taint policies enforcing same-trust co-location for shared GPU contexts.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; Data Protection Office
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0801-011
-  date_created: '2026-03-16'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0801-008
-  domain_code: D08
-  domain_name: GPU, Accelerator, and Confidential Computing
-  knowledge_area: '8.1'
-  control_seq: 008
-  control_title: MPS and time-slicing memory isolation verification and side-channel assessment
-  control_statement: Clusters using NVIDIA MPS or GPU time-slicing must verify GPU memory isolation, prevent cross-tenant data remnants between workload transitions, and perform side-channel resistance assessments for shared GPU deployments.
-  objective: Provide technical assurance that weaker GPU-sharing modes do not expose recoverable memory remnants or unassessed side-channel leakage risks between co-located workloads.
-  rationale: Even when use of MPS or time-slicing is formally approved, organizations still need independent evidence that memory remnants are cleared or otherwise prevented and that side-channel risks have been assessed. This technical assurance obligation is distinct from deciding which workloads may use the weaker-sharing mode.
-  scope: Applies to any Kubernetes cluster using NVIDIA MPS or GPU time-slicing. Covers GPU memory remnant testing, memory clearing or reset verification, and side-channel assessment activities for shared GPU deployments.
-  primary_enforcement_point: GPU memory isolation tests, GPU memory clearing controls, and side-channel assessment activities for shared GPU modes.
-  implementation_surface: GPU memory isolation verification tests, GPU reset or clearing mechanisms between workload transitions, side-channel assessment processes for shared GPU deployments, and technical evidence showing no recoverable data remnants across tenant transitions.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; Data Protection Office
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0801-013
-  date_created: '2026-03-16'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0801-009
   domain_code: D08
   domain_name: GPU, Accelerator, and Confidential Computing
@@ -9973,25 +9916,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0802-003
-  domain_code: D08
-  domain_name: GPU, Accelerator, and Confidential Computing
-  knowledge_area: '8.2'
-  control_seq: '003'
-  control_title: Device plugin socket and kubelet communication security
-  control_statement: Device plugin Unix domain sockets must be protected with restrictive filesystem permissions, device plugin registration with the kubelet must be authenticated and monitored, and unauthorized GPU access attempts through device plugin interfaces must be detected and blocked.
-  objective: Secure the communication channel between GPU device plugins and the kubelet to prevent unauthorized processes from registering rogue device plugins or intercepting GPU allocation decisions.
-  rationale: GPU device plugins communicate with the kubelet over Unix domain sockets in /var/lib/kubelet/device-plugins/. An attacker with access to this socket directory can register a malicious device plugin that intercepts GPU allocation requests, reports false device health to disrupt scheduling, or redirects workloads to compromised devices. Unmonitored device health reporting can mask hardware failures or tampering that degrades model training integrity.
-  scope: Applies to all Kubernetes nodes where GPU device plugins are registered with the kubelet. Covers the device plugin socket directory, gRPC registration interface, and device health monitoring callbacks. Managed Kubernetes services where kubelet configuration is provider-managed must verify socket permission controls through provider attestation.
-  primary_enforcement_point: Node-level filesystem permissions on /var/lib/kubelet/device-plugins/, kubelet device plugin registration monitoring, and host intrusion detection rules for unauthorized socket access.
-  implementation_surface: Filesystem permissions on /var/lib/kubelet/device-plugins/ directory and Unix domain sockets (nvidia.sock), kubelet device plugin registration gRPC protocol monitoring, admission control policies (OPA/Gatekeeper, Kyverno) restricting hostPath mounts to the device-plugins directory, runtime security tools (Falco, Tetragon) detecting unauthorized socket creation and rogue plugin registration, device plugin inventory tracking (resource names, socket paths, source images), and host intrusion detection rules for the device-plugins directory.
-  owner_primary: Platform Engineering
-  owner_supporting: ML Platform Engineering; Security Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0802-006
-  date_created: '2026-02-28'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0802-004
   domain_code: D08
   domain_name: GPU, Accelerator, and Confidential Computing
@@ -10010,25 +9934,6 @@
   maturity: Advanced
   superseded_by_control_id: null
   date_created: '2026-02-28'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0802-005
-  domain_code: D08
-  domain_name: GPU, Accelerator, and Confidential Computing
-  knowledge_area: '8.2'
-  control_seq: '005'
-  control_title: GPU kernel module and driver binary integrity enforcement
-  control_statement: GPU kernel module loading must be restricted to signed and approved modules using Secure Boot and kernel module signing enforcement, and GPU driver binary paths must be monitored with file integrity tools to detect unauthorized replacement or tampering.
-  objective: Prevent unauthorized kernel module loading and driver binary replacement that could substitute legitimate GPU drivers with backdoored versions, compromising all workloads on the affected node.
-  rationale: Unauthorized kernel module loading can replace legitimate GPU drivers with backdoored versions that intercept GPU operations at the kernel level. Driver binary replacement on the filesystem achieves the same result by modifying the shared libraries that containers link against. These are OS-level and filesystem-level attacks with different enforcement points from firmware-level tampering (SAFE-K8S-0802-004), requiring distinct kernel and filesystem integrity controls.
-  scope: Applies to all Kubernetes GPU nodes running NVIDIA kernel modules (nvidia.ko, nvidia-uvm.ko) and GPU driver shared libraries. Covers kernel module signing enforcement, Secure Boot validation of GPU modules in the boot chain, and file integrity monitoring of GPU driver binary paths.
-  primary_enforcement_point: Kernel module signing enforcement (CONFIG_MODULE_SIG_FORCE), Secure Boot configuration for GPU node boot chain, and file integrity monitoring tools on driver binary paths.
-  implementation_surface: Kernel module signing enforcement (CONFIG_MODULE_SIG_FORCE, modinfo nvidia signature validation), Secure Boot configuration for GPU node boot chain, file integrity monitoring tools (AIDE, OSSEC) on GPU driver binary paths (/usr/lib/x86_64-linux-gnu/libnvidia-*.so*), and runtime security tools detecting unauthorized module load events.
-  owner_primary: Platform Engineering
-  owner_supporting: Security Engineering; GPU Infrastructure Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0802-008
-  date_created: '2026-03-06'
   date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0802-006
   domain_code: D08
@@ -10163,25 +10068,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0803-004
-  domain_code: D08
-  domain_name: GPU, Accelerator, and Confidential Computing
-  knowledge_area: '8.3'
-  control_seq: '004'
-  control_title: DPU and SmartNIC firmware integrity and trust boundaries
-  control_statement: DPU (Data Processing Unit) and SmartNIC devices used for AI workload acceleration or network offload must maintain firmware integrity through cryptographic verification, enforce clear trust boundaries between offloaded and host-processed functions, and restrict policy enforcement capabilities to authorized administrators.
-  objective: Ensure that DPUs and SmartNICs operating as independent compute elements with their own firmware and policy engines do not become a vector for bypassing host-level security controls or injecting unauthorized network policies into AI workload traffic paths.
-  rationale: DPUs run independent operating systems and firmware with direct access to network traffic and storage I/O, operating below the host OS trust boundary. Compromised DPU firmware can intercept, modify, or redirect all network traffic including distributed training data, bypass host-level firewalls and network policies, and manipulate storage I/O to tamper with model checkpoints. The offload trust boundary between host and DPU creates a security gap where policies enforced at the DPU level may not be visible to host-level security monitoring.
-  scope: Applies to Kubernetes nodes equipped with DPUs (NVIDIA BlueField, AMD/Pensando, Intel IPU) or SmartNICs with programmable firmware. Covers firmware integrity, DPU-enforced network policies, and offload trust boundary configuration. Standard NICs without programmable firmware or policy engines are not in scope.
-  primary_enforcement_point: DPU firmware management platform (BlueField BMC, DPU OS), Secure Boot configuration for DPU firmware chain, DPU policy engine access controls, and host-to-DPU trust boundary configuration.
-  implementation_surface: DPU firmware management platforms (NVIDIA BlueField BMC, AMD Pensando, Intel IPU management interfaces), DPU Secure Boot configuration and firmware cryptographic signature verification, DPU ARM core OS and policy engine access controls, host-to-DPU trust boundary documentation and configuration, DPU-enforced NetworkPolicy consistency verification against Kubernetes-level policies, SmartNIC programmable firmware integrity monitoring, and DPU management interface RBAC restricting tenant pod access.
-  owner_primary: Network Engineering
-  owner_supporting: GPU Infrastructure Engineering; Security Engineering; Platform Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0803-005
-  date_created: '2026-02-28'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0803-005
   domain_code: D08
   domain_name: GPU, Accelerator, and Confidential Computing
@@ -10256,25 +10142,6 @@
   baseline_or_ai_specific: ai-specific
   maturity: Advanced
   superseded_by_control_id: null
-  date_created: '2026-02-28'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0804-003
-  domain_code: D08
-  domain_name: GPU, Accelerator, and Confidential Computing
-  knowledge_area: '8.4'
-  control_seq: '003'
-  control_title: Key management and sealed storage for confidential AI enclaves
-  control_statement: Encryption keys protecting models and data within confidential computing enclaves must be managed through a hardware-rooted key management system, with key release conditioned on successful TEE attestation, and sealed storage must be used to bind encrypted model artifacts and data to specific attested enclave configurations.
-  objective: Ensure that cryptographic keys for model decryption and data access are only released to verified TEE environments and that model artifacts remain bound to their authorized enclave configuration, preventing key extraction or model decryption outside the trusted environment.
-  rationale: If encryption keys for models and training data are managed through standard key management systems without attestation-conditioned release, a compromised host or operator can retrieve the keys and decrypt protected assets outside the TEE. Sealed storage binds encrypted artifacts to a specific hardware and software measurement, ensuring that models encrypted for one enclave configuration cannot be decrypted if the platform configuration is modified. Without these controls, confidential computing provides memory encryption but not a complete trust chain for model protection.
-  scope: Applies to all confidential AI workloads where models or training data are encrypted at rest and require key release into TEE enclaves. Covers integration with KMS (Vault, cloud KMS, HSM), sealed storage mechanisms, and attestation-conditioned key release policies. This is an emerging control requiring vendor-specific sealed storage implementations.
-  primary_enforcement_point: Key management system attestation-conditioned release policies, sealed storage configuration in enclave runtime, and model encryption and decryption workflow integration with attestation verification.
-  implementation_surface: Hardware-rooted key management systems (HashiCorp Vault with attestation plugin, cloud KMS with TEE attestation integration, hardware security modules), attestation-conditioned key release policies, TEE sealed storage mechanisms binding encrypted model artifacts to attested enclave measurements (sealing identity), key rotation procedures triggered by TEE firmware updates, escrow key backup with dual-authorization access controls, and model encryption/decryption workflow integration within enclave runtimes.
-  owner_primary: Security Engineering
-  owner_supporting: Key Management; ML Platform Engineering; GPU Infrastructure Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0804-005
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0804-004
@@ -10714,25 +10581,6 @@
   superseded_by_control_id: null
   date_created: '2026-03-05'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0902-007
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.2'
-  control_seq: '007'
-  control_title: Infrastructure-layer prompt injection defense and token output filtering
-  control_statement: LLM serving infrastructure must deploy infrastructure-layer prompt injection defenses (input classification, instruction hierarchy enforcement, and system/user prompt boundary validation) and token-level output filtering (streaming token scanners for PII, secrets, and policy-violating content) that operate independently of the model's own safety training.
-  objective: Provide defense-in-depth against prompt injection attacks and sensitive data leakage at the infrastructure layer, complementing model-level safety training with serving-infrastructure controls that are significantly harder to bypass through prompt manipulation than model-level defenses alone.
-  rationale: Model-level safety training (RLHF, constitutional AI) is the primary defense against prompt injection and harmful outputs, but it is probabilistic and bypassable through novel attack techniques. Infrastructure-layer defenses operate outside the model's context window, making them significantly more resistant to prompt-based bypass techniques. Input classifiers can detect known injection patterns before the prompt reaches the model. Instruction hierarchy enforcement ensures system prompts cannot be overridden by user content. Token-level output scanners inspect the generation stream in real time, catching PII, secrets, or policy violations that the model's own filters miss, including in streaming responses where post-hoc filtering is too late.
-  scope: Applies to all LLM inference endpoints deployed on Kubernetes. Covers preprocessing defenses (prompt injection classifiers, boundary validators) and postprocessing defenses (streaming token-level output scanners). Excludes model training-time safety alignment, which is outside infrastructure scope. Complements SAFE-K8S-0902-003 (general request validation and response filtering) with LLM-specific controls.
-  primary_enforcement_point: Inference preprocessing middleware or sidecar containers for prompt injection classification, LLM serving framework instruction hierarchy configuration, and streaming output filter middleware or sidecar proxies.
-  implementation_surface: Preprocessing sidecar containers or middleware deploying prompt injection classifiers, LLM serving framework instruction hierarchy configuration (system/user/assistant role enforcement), API gateway schema validation for system/user prompt boundary enforcement, streaming token-level output filter middleware or sidecar proxies, PII and secrets detection regex and NER models in the output pipeline, content-policy classifiers for output token windows, and red team bypass testing infrastructure.
-  owner_primary: Security Engineering
-  owner_supporting: ML Platform Engineering; Application Security
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0902-010
-  date_created: '2026-03-05'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0902-008
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -10828,25 +10676,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0903-002
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.3'
-  control_seq: '002'
-  control_title: Autoscaling safety and queue security
-  control_statement: GPU-aware Horizontal Pod Autoscaler configurations for inference workloads must enforce maximum replica bounds and cooldown periods to prevent denial-of-wallet attacks, and inference request queues must implement priority controls, timeout enforcement, and queue depth limits to prevent backpressure attacks.
-  objective: Prevent cost-based denial-of-service through uncontrolled GPU autoscaling and protect inference availability through hardened request queue management.
-  rationale: GPU-based inference pods are extremely expensive to scale. Without maximum replica bounds and cooldown periods, an attacker can trigger runaway autoscaling by flooding the inference endpoint, causing massive cloud costs (denial-of-wallet). Without queue depth limits and timeouts, an attacker can fill the request queue with slow or malformed requests, creating backpressure that blocks legitimate inference traffic.
-  scope: Applies to all autoscaled inference deployments on Kubernetes using HPA, KEDA, or custom GPU-aware autoscalers. Covers HPA configuration, replica bounds, cooldown settings, and inference request queue configurations. Excludes training job scheduling, which is covered by SAFE-K8S-0901-006.
-  primary_enforcement_point: HPA resource definitions, KEDA ScaledObject configurations, inference server queue settings, and API gateway rate limiting policies.
-  implementation_surface: Kubernetes HorizontalPodAutoscaler (autoscaling/v2) with maxReplicas bounds, stabilizationWindowSeconds cooldown, and rate-limited scale-up policies, KEDA ScaledObject configurations, custom metrics adapters (Prometheus Adapter) for GPU utilization and inference queue depth, API gateway rate limiting returning HTTP 429, inference request queue depth limits and per-request timeout settings, priority queuing configuration, and FinOps budget integration triggering scale-up disablement.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Platform Engineering; FinOps
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0903-005
-  date_created: '2026-02-28'
-  date_modified: '2026-03-16'
 - control_id: SAFE-K8S-0903-003
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -10884,25 +10713,6 @@
   maturity: Practitioner
   superseded_by_control_id: null
   date_created: '2026-03-05'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0903-005
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.3'
-  control_seq: '005'
-  control_title: GPU inference autoscaling safety bounds and budget guardrails
-  control_statement: GPU-aware autoscaling for inference workloads must enforce maximum replica bounds, cooldown or stabilization settings, and budget-aware scale-up guardrails to prevent denial-of-wallet attacks.
-  objective: Prevent cost-based denial-of-service through uncontrolled GPU autoscaling by enforcing bounded, rate-limited, and budget-governed inference scale-out.
-  rationale: GPU-based inference pods are expensive to scale. Without hard replica ceilings, cooldown windows, and budget-linked suppression of additional scale-out, an attacker can drive runaway autoscaling and cause material cloud spend through denial-of-wallet attacks.
-  scope: Applies to all autoscaled inference deployments on Kubernetes using HPA, KEDA, or custom GPU-aware autoscalers. Covers replica bounds, stabilization or cooldown settings, scale-up guardrails, and budget-aware autoscaling controls. Excludes queue priority and timeout hardening, which are covered by SAFE-K8S-0903-006.
-  primary_enforcement_point: HPA and KEDA resource definitions, autoscaler policy, custom metrics adapters, and FinOps budget integration.
-  implementation_surface: Kubernetes HorizontalPodAutoscaler and KEDA ScaledObject configurations with max replica bounds, stabilization or cooldown windows, controlled scale-up behavior, custom GPU utilization or queue metrics, tenant quota enforcement, and budget thresholds that disable further scale-up or trigger degraded service responses.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Platform Engineering; FinOps
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0903-007
-  date_created: '2026-03-16'
   date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0903-006
   domain_code: D09
@@ -10980,25 +10790,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0904-002
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.4'
-  control_seq: '002'
-  control_title: Pipeline artifact encryption and access controls
-  control_statement: Pipeline artifacts (intermediate data, model artifacts, metadata) must be stored with encryption at rest and access controls in object storage, with per-pipeline-stage service accounts scoped to minimum required resources and retention policies aligned with data classification requirements.
-  objective: Protect ML pipeline artifacts from unauthorized access through storage encryption and least-privilege access controls.
-  rationale: ML pipelines produce intermediate artifacts containing training data subsets, feature vectors, model weights, and evaluation metrics. Without storage encryption and access controls, these artifacts are accessible to any pod with storage access.
-  scope: Applies to all artifact storage used by ML pipelines on Kubernetes, including MinIO, S3, GCS, and persistent volumes. Covers intermediate pipeline outputs, model artifacts, and pipeline metadata. Excludes stage isolation and cross-classification authorization covered by SAFE-K8S-0904-006.
-  primary_enforcement_point: Object storage bucket policies and IAM configuration for pipeline artifact stores.
-  implementation_surface: Encrypted object storage (S3, GCS, MinIO) with per-namespace or per-pipeline bucket policies, object versioning for audit traceability, per-pipeline-stage service accounts scoped to minimum required resources, and retention policies aligned with data classification requirements.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Data Engineering; Security Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0904-013
-  date_created: '2026-02-28'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0904-003
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -11018,25 +10809,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0904-004
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.4'
-  control_seq: '004'
-  control_title: Experiment tracking security and pipeline integrity
-  control_statement: Experiment tracking systems (MLflow, Weights & Biases) must enforce access controls on experiment metadata, hyperparameters, and metrics data, and pipeline definitions must be protected through signed manifests, immutable versions, and rollback controls to prevent unauthorized modification.
-  objective: Protect the confidentiality and integrity of experiment tracking data and ensure that pipeline definitions cannot be tampered with or silently modified.
-  rationale: Experiment metadata includes hyperparameters, performance metrics, and model configurations that reveal proprietary ML techniques and intellectual property. Without access controls, competitors or insider threats can access this data. Pipeline definitions control the entire ML workflow; without signed manifests and immutable versions, an attacker can modify a pipeline to inject backdoors, exfiltrate data, or deploy compromised models without leaving an audit trail.
-  scope: Applies to all experiment tracking platforms and pipeline definition stores deployed on Kubernetes. Covers MLflow tracking server, Weights & Biases server instances, and pipeline definition repositories. Includes RBAC for experiment data and pipeline versioning systems. Excludes model artifact storage covered by KA 9.5.
-  primary_enforcement_point: Experiment tracking server RBAC configuration, pipeline definition version control with signature verification, and immutable artifact storage settings.
-  implementation_surface: Experiment tracking server RBAC configuration (MLflow authentication and project-level access controls, Weights & Biases server access policies), audit logging for experiment tracking operations, pipeline definition signing using cosign or in-toto attestations, immutable pipeline version storage (Argo WorkflowTemplates, Kubeflow Pipeline YAML), pipeline definition signature verification at execution time via admission control (Kyverno, Gatekeeper), and rollback-capable pipeline version management.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; ML Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0904-009
-  date_created: '2026-02-28'
-  date_modified: '2026-03-16'
 - control_id: SAFE-K8S-0904-005
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -11054,25 +10826,6 @@
   baseline_or_ai_specific: ai-specific
   maturity: Practitioner
   superseded_by_control_id: null
-  date_created: '2026-02-28'
-  date_modified: '2026-03-16'
-- control_id: SAFE-K8S-0904-006
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.4'
-  control_seq: '006'
-  control_title: Pipeline stage isolation and cross-classification authorization
-  control_statement: Pipeline steps must be isolated to prevent data leakage between stages of different sensitivity levels, and data transfers between pipeline stages with different classification levels must require explicit authorization through pipeline-level authorization gates.
-  objective: Prevent data leakage between pipeline stages operating at different sensitivity levels and enforce authorization for cross-classification data movement.
-  rationale: Without stage isolation, a low-sensitivity pipeline step can read artifacts from a high-sensitivity stage. Without authorization gates on cross-classification transfers, data classification boundaries are bypassed, potentially exposing restricted data to unauthorized pipeline components.
-  scope: Applies to all ML pipeline orchestration on Kubernetes where pipeline stages operate at different data classification levels. Covers namespace-level stage isolation, authorization controls for cross-stage and cross-classification data movement, and data leakage testing between stages. Excludes artifact encryption and storage access controls covered by SAFE-K8S-0904-002.
-  primary_enforcement_point: Pipeline orchestrator step isolation settings and data classification gateway policies for cross-stage transfers.
-  implementation_surface: Data classification gateway policies for cross-stage transfers, admission control or pipeline-level authorization gates for cross-classification data movement, namespace isolation between pipeline stages of different classification levels, and network policies restricting cross-stage communication.
-  owner_primary: Data Engineering
-  owner_supporting: ML Platform Engineering; Security Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0904-011
   date_created: '2026-02-28'
   date_modified: '2026-03-16'
 - control_id: SAFE-K8S-0904-007
@@ -11111,44 +10864,6 @@
   baseline_or_ai_specific: ai-specific
   maturity: Practitioner
   superseded_by_control_id: null
-  date_created: '2026-03-16'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0904-009
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.4'
-  control_seq: 009
-  control_title: Experiment tracking metadata access control and audit logging
-  control_statement: Experiment tracking systems must enforce access controls on experiment metadata, hyperparameters, metrics, and run history, and must log access and modification activity to prevent unauthorized disclosure or manipulation.
-  objective: Protect the confidentiality and integrity of experiment tracking data by restricting access to experiment metadata and preserving auditable records of access and change activity.
-  rationale: Experiment metadata reveals proprietary model configurations, hyperparameters, performance metrics, and fine-tuning decisions. Without strong access control and auditability, insiders or external attackers can harvest sensitive ML intellectual property or tamper with experimental results without clear attribution.
-  scope: Applies to experiment tracking platforms such as MLflow and Weights & Biases deployed on Kubernetes or used by Kubernetes-based ML platforms. Covers RBAC, project or run-level access control, tenant isolation for experiment metadata, and audit logging for experiment access and modification events. Excludes pipeline definition signing and rollback integrity, which are covered by SAFE-K8S-0904-010.
-  primary_enforcement_point: Experiment tracking server access policy and audit log configuration.
-  implementation_surface: Experiment tracking platform authentication and authorization settings, project and run-level RBAC, tenant-scoped metadata visibility controls, and audit logging for read, write, and administrative operations on experiment records.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; ML Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0904-015
-  date_created: '2026-03-16'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0904-010
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.4'
-  control_seq: '010'
-  control_title: Pipeline definition signing, immutability, and rollback integrity
-  control_statement: Pipeline definitions must be protected through signed manifests, immutable version storage, and controlled rollback procedures to prevent unauthorized modification or execution of tampered ML workflows.
-  objective: Ensure that pipeline definitions cannot be silently modified and that only authenticated, versioned, and recoverable pipeline specifications are executed.
-  rationale: Pipeline definitions govern the full ML workflow. If manifests can be modified without signing, immutability, and rollback discipline, an attacker can inject malicious stages, exfiltrate data, or deploy compromised models while obscuring provenance and recovery paths.
-  scope: Applies to ML pipeline definitions, templates, and workflow manifests stored and executed on Kubernetes-based orchestration platforms such as Argo Workflows and Kubeflow Pipelines. Covers definition signing, immutable version storage, signature verification workflows, and controlled rollback of pipeline definitions. Excludes experiment metadata access control, which is covered by SAFE-K8S-0904-009.
-  primary_enforcement_point: Pipeline definition repository, signature verification point, and rollback process.
-  implementation_surface: Signed pipeline manifests, immutable workflow or template version storage, signature verification before execution or admission, and rollback-capable version management for workflow definitions.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; ML Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0904-017
   date_created: '2026-03-16'
   date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0904-011
@@ -11417,25 +11132,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0905-007
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '007'
-  control_title: Model format security and deserialization controls
-  control_statement: Organizations must enforce safe model serialization formats for all model loading operations, must block or quarantine models using unsafe deserialization (Python pickle, torch.load without weights_only=True), must validate model file structure and metadata before loading, and must maintain an allowlist of approved model formats (SafeTensors, ONNX, GGUF) for production deployment.
-  objective: Prevent arbitrary code execution through malicious model files by enforcing safe serialization formats and validating model file integrity before any deserialization occurs in training or inference workloads.
-  rationale: Python pickle-based model formats (PyTorch .pt/.pth, joblib, cloudpickle) execute arbitrary code during deserialization. An attacker who can substitute a model file with a pickle-based payload achieves code execution in the context of the loading process, typically with full access to GPU resources, training data, and inference infrastructure. SafeTensors and other safe formats store only tensor data without executable code, eliminating this attack vector. Without format enforcement, a single malicious model file can compromise an entire inference cluster.
-  scope: Applies to all model loading operations on Kubernetes, including inference servers, training pipelines loading pre-trained weights, and fine-tuning jobs. Covers model format validation, deserialization controls, format allowlisting, CI/CD static analysis for unsafe deserialization calls, and container image hardening to remove unsafe deserialization libraries. Excludes research and experimentation environments where controlled use of pickle may be acceptable with compensating controls.
-  primary_enforcement_point: Model loading configuration in inference servers and training jobs, admission controllers validating model file formats, CI/CD pipeline gates that scan model files before registry publication, and model promotion gate format verification.
-  implementation_surface: Model format allowlist policy (SafeTensors, ONNX, GGUF), admission controllers (Kyverno, Gatekeeper) rejecting pods mounting pickle-based model files or using unsafe deserialization, inference server safe deserialization configuration (torch.load with weights_only=True), CI/CD static analysis flagging unsafe torch.load calls, model file structure validation (header magic bytes, size bounds, ONNX operator allowlist, TensorFlow custom op validation), pickle opcode analysis tools (fickling), seccomp and AppArmor profiles restricting deserialization syscalls, and SafeTensors migration tooling and tracking.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; ML Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0905-032
-  date_created: '2026-03-05'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0905-008
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -11474,44 +11170,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0905-010
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '010'
-  control_title: Model promotion approval and reviewer identity validation
-  control_statement: Model promotion approval workflows must validate reviewer identity through authenticated approval mechanisms, must enforce separation of duties between model developers and promotion approvers, and must record reviewer identity in the promotion audit trail.
-  objective: Ensure that model promotion approvals are attributable to authenticated, authorized reviewers with appropriate separation of duties.
-  rationale: Without reviewer identity validation, promotion approvals can be forged or attributed to unauthorized personnel. Without separation of duties, a single individual can both develop and approve a model for production, bypassing the intent of the review gate.
-  scope: Applies to all model promotion workflows requiring human approval on Kubernetes. Covers reviewer authentication, identity recording, and separation of duties enforcement. Excludes automated gate checks (SAFE-K8S-0905-005) and deployment infrastructure (SAFE-K8S-0905-011).
-  primary_enforcement_point: Deployment approval workflow settings and identity provider integration for reviewer authentication.
-  implementation_surface: Promotion approval workflows with reviewer identity recording, identity provider integration (SSO, OIDC) for approval authentication, separation of duties policies preventing self-approval, and audit trail recording reviewer identity, timestamp, and approval decision.
-  owner_primary: Governance
-  owner_supporting: ML Platform Engineering; Security Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-024
-  date_created: '2026-02-28'
-  date_modified: '2026-03-16'
-- control_id: SAFE-K8S-0905-011
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '011'
-  control_title: Canary and A/B deployment isolation and rollback safety
-  control_statement: A/B testing and canary deployment infrastructure must enforce isolation between model versions to prevent a compromised candidate from affecting the stable production version, must maintain traffic splitting integrity, and must implement automatic rollback on error rate or latency degradation.
-  objective: Ensure that multi-version serving infrastructure maintains isolation between model versions and provides safe, automatic rollback capability.
-  rationale: Without isolation between A/B or canary model versions, a compromised candidate model can affect the stable production version. Without rollback safety, a failed deployment cannot be quickly reverted, extending the blast radius of a bad model release.
-  scope: Applies to all multi-version model serving on Kubernetes, including canary deployments, A/B testing, and blue-green deployments. Covers resource isolation between model versions, traffic splitting configuration, and automatic rollback triggers. Excludes promotion gates (SAFE-K8S-0905-005) and approval workflows (SAFE-K8S-0905-010).
-  primary_enforcement_point: Canary/A-B deployment controller configurations (Argo Rollouts, Flagger, or equivalent).
-  implementation_surface: Canary and A/B deployment controllers (Argo Rollouts, Flagger), Istio VirtualService or Envoy route configuration for traffic splitting, automatic rollback triggers on error rate or latency degradation, and resource isolation between canary and production model versions.
-  owner_primary: ML Platform Engineering
-  owner_supporting: DevOps Engineering; Security Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-034
-  date_created: '2026-02-28'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0905-012
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -11530,44 +11188,6 @@
   maturity: Advanced
   superseded_by_control_id: null
   date_created: '2026-02-28'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0905-013
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '013'
-  control_title: Approved external model source allowlist enforcement
-  control_statement: Organizations must maintain a curated allowlist of approved external model sources, must enforce the allowlist through NetworkPolicy blocking direct pulls from public hubs to production namespaces, and must deploy admission controllers that reject pods pulling models from unapproved external sources.
-  objective: Restrict external model ingestion to approved sources and prevent direct pulls from unapproved public model hubs into production infrastructure.
-  rationale: Without an enforced allowlist, engineers can pull models from any public source, including typosquatted or impersonated repositories distributing malicious models under trusted names. Network-level and admission control enforcement ensures the allowlist cannot be bypassed.
-  scope: Applies to all external model sources accessed from Kubernetes infrastructure. Covers the curated allowlist of approved sources, NetworkPolicy enforcement blocking unauthorized hub access, and admission controller validation of model source URLs. Excludes the quarantine and vetting workflow covered by SAFE-K8S-0905-008.
-  primary_enforcement_point: NetworkPolicy blocking direct public hub access from production namespaces and admission controllers rejecting pods that pull models from unapproved external sources.
-  implementation_surface: Approved external model source allowlist (repository URLs, organization identifiers), NetworkPolicy blocking direct public hub access from production namespaces, admission controllers (Kyverno, Gatekeeper) rejecting pods pulling from unapproved external sources, and periodic allowlist review and update procedures.
-  owner_primary: Security Engineering
-  owner_supporting: ML Platform Engineering; Governance
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-026
-  date_created: '2026-03-05'
-  date_modified: '2026-03-16'
-- control_id: SAFE-K8S-0905-014
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '014'
-  control_title: AI workload circuit-breaker and emergency halt mechanisms
-  control_statement: Organizations must implement circuit-breaker mechanisms that can automatically or manually halt AI workloads (training jobs, inference services, pipeline stages) when predefined safety or security thresholds are breached. Circuit-breakers must cover anomalous resource consumption, model output quality degradation, data pipeline integrity failures, and security policy violations. Emergency halt must be achievable within a defined maximum response time and must preserve forensic evidence.
-  objective: Enable rapid containment of AI workloads that exhibit anomalous, unsafe, or compromised behavior by providing reliable circuit-breaker and emergency halt capabilities.
-  rationale: 'AI workloads can fail in ways that are difficult to detect through traditional monitoring: training runs may silently produce poisoned models, inference services may begin returning adversarially manipulated outputs, or pipelines may process tampered data. Without circuit-breaker mechanisms, these failures continue unchecked, potentially causing cascading damage. Emergency halt capabilities are also required by regulatory frameworks (EU AI Act Article 14) for human oversight of high-risk AI systems.'
-  scope: Applies to all AI workloads running on Kubernetes infrastructure, including training jobs, inference services, and data pipelines. Covers automated circuit-breakers triggered by threshold violations and manual emergency halt procedures invokable by authorized operators.
-  primary_enforcement_point: Workload controller configuration (Job termination, Deployment scaling to zero, service mesh circuit-breaking) and operator runbook procedures.
-  implementation_surface: Kubernetes Job activeDeadlineSeconds and backoffLimit, HPA/KEDA scale-to-zero triggers, service mesh circuit-breaker configuration (Istio OutlierDetection, Envoy circuit-breaking), custom operator health checks with automated remediation, operator emergency halt runbooks, and forensic evidence preservation procedures (pod logs, metrics snapshots, artifact checksums before termination).
-  owner_primary: AI/ML Engineering
-  owner_supporting: Security Operations; SRE
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-036
-  date_created: '2026-03-06'
   date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0905-015
   domain_code: D09
@@ -11588,139 +11208,6 @@
   superseded_by_control_id: null
   date_created: '2026-03-12'
   date_modified: '2026-03-12'
-- control_id: SAFE-K8S-0905-016
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '016'
-  control_title: Model registry RBAC, service account scoping, and access review
-  control_statement: Model registries must enforce role-based access controls for publish, pull, modify, and delete operations, scope workload and service-account access to approved repositories and environments, and perform periodic access reviews to detect excessive or stale registry permissions.
-  objective: Prevent unauthorized publication, retrieval, and modification of model artifacts by tightly controlling which users, groups, and workloads can access specific model repositories and versions.
-  rationale: The model registry is the operational source of truth for deployable model artifacts. If registry privileges are broad or unreviewed, an attacker or over-privileged workload can publish malicious models, pull restricted model weights, or bypass environment approvals.
-  scope: Applies to all model registry deployments on Kubernetes, including Harbor, MLflow Model Registry, and on-premises Hugging Face Hub instances. Covers project-scoped roles, OIDC or IAM integration, workload pull permissions, and periodic review of registry access. Excludes replication-channel security and model-retention lifecycle governance.
-  primary_enforcement_point: Model registry RBAC and IAM configuration, service-account authorization policy, and periodic access review workflow.
-  implementation_surface: Project-scoped registry roles, OIDC and cloud IAM integration, registry robot or service-account credentials, per-environment repository access rules, pull-only permissions for inference workloads, and access-review evidence for human and workload identities.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; Platform Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0905-038
-  date_created: '2026-03-15'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0905-017
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '017'
-  control_title: Model registry operation audit logging and forwarding
-  control_statement: Model registries must generate audit logs for model publish, pull, tag, permission, deletion, and administrative operations and must forward those events to centralized monitoring so abnormal registry activity can be investigated and alerted on.
-  objective: Create reliable accountability and detection coverage for model-registry abuse by ensuring registry activity is recorded, forwarded, and reviewable.
-  rationale: Registry compromises often manifest first as unusual publish, pull, deletion, or permission-change activity. Without complete audit logs and forwarding, malicious model substitution, unauthorized access, and registry tampering can occur without timely detection or forensic traceability.
-  scope: Applies to all model registry deployments on Kubernetes, including Harbor, MLflow Model Registry, and on-premises Hugging Face Hub instances. Covers registry audit events, forwarding to centralized monitoring, and operational review of anomalous registry activity. Excludes artifact-retention lifecycle governance and cross-cluster replication security.
-  primary_enforcement_point: Registry audit log configuration and forwarding pipeline into centralized monitoring or SIEM.
-  implementation_surface: Registry audit log enablement, event export or webhook forwarding, log ingestion verification, alerting for sensitive registry actions, and periodic review of anomalous registry operations.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; Platform Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-0905-040
-  date_created: '2026-03-15'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0905-018
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: 018
-  control_title: ML framework and CUDA dependency vulnerability management
-  control_statement: Organizations must perform software composition analysis and vulnerability triage for ML frameworks, CUDA toolkits, and Python ecosystem dependencies used in training and inference environments, and must track remediation or compensating actions for identified ML dependency vulnerabilities.
-  objective: Reduce exploitability of vulnerable ML software components by continuously identifying, prioritizing, and remediating defects in frameworks, accelerators, and supporting package dependencies.
-  rationale: ML workloads depend on large dependency graphs across frameworks, GPU libraries, and Python packages. Without focused vulnerability management, known defects in those components remain deployable and exploitable across training and inference environments.
-  scope: Applies to all ML software dependencies used in training and inference environments on Kubernetes. Covers ML frameworks, CUDA toolkits, cuDNN, NCCL, Python packages, and transitive dependencies. Excludes model provenance record generation and deployment-time signature verification.
-  primary_enforcement_point: CI/CD and image-build SCA scanning, dependency inventory review, and remediation governance.
-  implementation_surface: SCA scanning for PyTorch, TensorFlow, JAX, CUDA, cuDNN, NCCL, and Python dependencies; vulnerability triage workflows; dependency update records; compensating-control approvals; and tracking of unsafe deserialization or dependency-related exposure in ML libraries.
-  owner_primary: Security Engineering
-  owner_supporting: ML Platform Engineering; DevOps Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-028
-  date_created: '2026-03-15'
-  date_modified: '2026-03-16'
-- control_id: SAFE-K8S-0905-019
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: 019
-  control_title: ML-BOM generation and model lineage metadata capture
-  control_statement: Organizations must generate ML Bills of Materials for production-bound models that capture model provenance metadata including training data lineage, hyperparameters, framework versions, and training infrastructure identity, and must attach those ML-BOM records to model artifacts in a durable, reviewable form.
-  objective: Maintain auditable model lineage and supply-chain transparency so organizations can determine what data, software, and infrastructure produced a given model artifact.
-  rationale: Without ML-BOM generation, organizations cannot reliably trace which datasets, framework versions, and training conditions produced a model. That weakens impact analysis for vulnerability disclosures, provenance investigations, and data correction or deletion events.
-  scope: Applies to production-bound model artifacts generated or promoted through Kubernetes-connected AI delivery workflows. Covers CTA-2114-aligned ML-BOM generation, attachment to model artifacts, and preservation of model lineage metadata. Excludes generic software dependency scanning and deployment-time provenance verification.
-  primary_enforcement_point: ML-BOM generation tooling integrated into training, registration, and artifact publication workflows.
-  implementation_surface: CTA-2114-aligned ML-BOM tooling, capture of model identity, training data lineage, hyperparameters, framework versions, training infrastructure metadata, and durable attachment of ML-BOM records to model artifacts or registries.
-  owner_primary: Security Engineering
-  owner_supporting: ML Platform Engineering; DevOps Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-042
-  date_created: '2026-03-15'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0905-020
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '020'
-  control_title: Public model quarantine scanning and sandbox vetting
-  control_statement: Organizations must route externally sourced models through an isolated quarantine workflow that scans for malicious payloads, validates model formats and structure, and performs sandboxed or behavioral vetting before those models are approved for internal use.
-  objective: Prevent malicious or unsafe third-party model artifacts from entering organizational infrastructure by requiring isolated scanning and vetting before ingestion.
-  rationale: Public model hubs routinely host unvetted artifacts. Without quarantine scanning and sandbox vetting, malicious pickle payloads, embedded files, unsafe formats, and backdoored model weights can move directly into training or serving environments.
-  scope: Applies to all models sourced from public hubs and community repositories. Covers quarantine namespaces, malware and format scanning, sandbox execution, behavioral checks, and documented disposition decisions. Excludes source allowlist governance, which is covered by SAFE-K8S-0905-013, and internal artifact signing, which is covered separately.
-  primary_enforcement_point: Quarantine namespace with isolated scanning and behavioral vetting pipeline.
-  implementation_surface: Quarantine Kubernetes namespace with restricted egress, automated format and payload scanning, sandboxed execution with monitoring, behavioral validation against standard datasets, and workflow records showing pass, fail, or reject decisions.
-  owner_primary: Security Engineering
-  owner_supporting: ML Platform Engineering; ML Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-044
-  date_created: '2026-03-15'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0905-021
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '021'
-  control_title: External model provenance verification and internal re-registration
-  control_statement: Organizations must verify available provenance metadata for externally sourced models and must internally re-sign, annotate, and re-register approved external models before they are deployable within organizational environments.
-  objective: Preserve chain of custody and organizational trust boundaries for external model intake by validating provenance signals and converting approved artifacts into internally governed assets.
-  rationale: Even when a model passes malware or behavioral screening, deployment remains unsafe if the organization cannot establish provenance context or if the artifact is used directly from an external source without internal signing and registry enrollment. Internal re-registration creates a controlled chain of custody.
-  scope: Applies to all externally sourced models admitted for internal use. Covers provenance review of model cards, publisher identity, commit or release signatures, internal re-signing, ML-BOM annotation of external origin, and internal registry enrollment. Excludes external source allowlist enforcement and pre-admission quarantine scanning.
-  primary_enforcement_point: Provenance review workflow and internal signing / registry admission process.
-  implementation_surface: Publisher identity checks, commit-signature review, trust-signal capture, internal artifact signing, ML-BOM annotation of external origin and scan results, and internal registry enrollment records for approved models.
-  owner_primary: Security Engineering
-  owner_supporting: ML Platform Engineering; ML Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-030
-  date_created: '2026-03-15'
-  date_modified: '2026-03-16'
-- control_id: SAFE-K8S-0905-022
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.5'
-  control_seq: '022'
-  control_title: ML artifact signing and training attestation generation
-  control_statement: All ML lifecycle artifacts produced by internal training and build pipelines must be cryptographically signed using Sigstore or equivalent signing infrastructure, and in-toto or equivalent attestations must be generated for the training pipeline steps that produced those artifacts.
-  objective: Establish build-time cryptographic chain of custody for model artifacts by signing internally produced artifacts and generating attestations that prove how they were built.
-  rationale: Without cryptographic signing and verifiable training attestations, there is no trustworthy proof that a model was produced by an authorized pipeline or that the build steps and inputs were not tampered with. Build-time signing and attestation generation create the evidence that downstream verification and promotion controls rely on.
-  scope: Applies to models, training input manifests, intermediate pipeline artifacts, final outputs, and related provenance records generated by internal ML training and packaging pipelines. Covers signing and attestation generation, but not deploy-time verification or registry retention policies.
-  primary_enforcement_point: Model signing pipeline and training attestation generation workflow.
-  implementation_surface: Sigstore cosign or equivalent signing infrastructure with identity-based trust, keyless or managed-key signing for models and related artifacts, in-toto attestation generation for training pipeline steps, attestation storage alongside OCI model artifacts, and internal re-signing workflow for externally sourced models admitted into internal registries.
-  owner_primary: ML Platform Engineering
-  owner_supporting: Security Engineering; DevOps Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0905-046
-  date_created: '2026-03-16'
-  date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0905-023
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -13222,25 +12709,6 @@
   superseded_by_control_id: null
   date_created: '2026-03-05'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0910-005
-  domain_code: D09
-  domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
-  knowledge_area: '9.10'
-  control_seq: '005'
-  control_title: Multi-cluster AI governance and compliance consistency
-  control_statement: Organizations operating AI workloads across multiple Kubernetes clusters must enforce consistent security policies, configuration baselines, and compliance controls across all clusters in the federation, must implement centralized governance that detects and remediates policy drift between clusters, and must maintain unified audit and compliance reporting that spans cluster boundaries.
-  objective: Prevent exploitable security inconsistencies between clusters in a multi-cluster AI platform by enforcing uniform governance and providing unified compliance visibility across the federation.
-  rationale: 'Multi-cluster AI platforms create governance challenges when each cluster is managed independently. Security policy drift between clusters creates exploitable inconsistencies: an attacker targets the cluster with the weakest admission controls, the least restrictive network policies, or the most permissive RBAC configuration. Without centralized drift detection, inconsistencies accumulate unnoticed. Without unified compliance reporting, auditors cannot assess the security posture of the multi-cluster platform holistically.'
-  scope: Applies to organizations operating AI workloads across multiple Kubernetes clusters. Covers policy federation, configuration drift detection, unified compliance reporting, centralized secret and certificate governance, and multi-cluster incident coordination. Single-cluster governance is addressed by D10 controls.
-  primary_enforcement_point: Centralized policy distribution system, configuration drift monitoring infrastructure, unified compliance reporting platform, and multi-cluster incident coordination procedures.
-  implementation_surface: Policy-as-code frameworks (OPA/Gatekeeper, Kyverno) with centralized Git-based policy distribution to all clusters, continuous configuration drift detection monitoring (admission controller config, NetworkPolicy, RBAC, security context constraints, AI operator versions), unified compliance reporting platform aggregating evidence across all clusters, centralized secret management (HashiCorp Vault, cloud KMS) with per-cluster authentication, centralized certificate lifecycle management, and multi-cluster incident response coordination procedures with cross-cluster scenario exercises.
-  owner_primary: Security Engineering
-  owner_supporting: Platform Engineering; GRC/Compliance; ML Platform Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Advanced
-  superseded_by_control_id: SAFE-K8S-0910-012
-  date_created: '2026-03-05'
-  date_modified: '2026-03-16'
 - control_id: SAFE-K8S-0910-006
   domain_code: D09
   domain_name: 'AI Workload Security: Training, Serving, and Pipelines'
@@ -15445,25 +14913,6 @@
   superseded_by_control_id: null
   date_created: '2026-02-28'
   date_modified: '2026-03-17'
-- control_id: SAFE-K8S-1006-003
-  domain_code: D10
-  domain_name: Observability, Incident Response, and Governance
-  knowledge_area: '10.6'
-  control_seq: '003'
-  control_title: Policy-as-code for AI workload compliance
-  control_statement: Organizations must implement policy-as-code engines (OPA/Gatekeeper, Kyverno, or Kubewarden) to enforce compliance policies on Kubernetes AI workloads, including image provenance verification, GPU resource limit enforcement, and security context constraints, and must configure these engines to generate continuous compliance evidence for audit purposes.
-  objective: Automate enforcement of compliance policies for AI workloads at admission time, eliminating reliance on manual review and producing continuous, machine-readable compliance evidence.
-  rationale: Manual compliance verification for AI workloads does not scale with the frequency of model deployments and training job submissions. Without policy-as-code enforcement, non-compliant AI workloads, such as containers running unsigned model images, training jobs requesting unbounded GPU resources, or inference services with privileged security contexts, can be deployed to production, creating security exposure and compliance violations that are only discovered during periodic audits.
-  scope: Applies to all Kubernetes clusters hosting AI workloads. Policy enforcement must cover AI workload admission, resource allocation, and security context validation. Compliance evidence generation must produce audit-ready artifacts. Policy exceptions must be documented and time-bounded.
-  primary_enforcement_point: Kubernetes admission controller (OPA/Gatekeeper, Kyverno, or Kubewarden) configuration and policy audit log output.
-  implementation_surface: Policy-as-code engines (OPA/Gatekeeper, Kyverno, Kubewarden), ClusterPolicy resources for image provenance verification (Kyverno verifyImages with cosign/keyless attestors), GPU resource limit enforcement policies (requiring nvidia.com/gpu limits on GPU-enabled namespaces), security context constraint policies, PolicyReport and Gatekeeper audit resources for periodic compliance status reporting, admission decision logging (allow/deny with policy name and rationale), policy version control in Git repositories, policy report and admission decision export to SIEM, and workload-type namespace labels (ai-inference, gpu-enabled) for targeted policy matching.
-  owner_primary: GRC/Compliance
-  owner_supporting: Platform Engineering; AI/ML Engineering; Security Engineering
-  baseline_or_ai_specific: ai-specific
-  maturity: Practitioner
-  superseded_by_control_id: SAFE-K8S-1006-005
-  date_created: '2026-02-28'
-  date_modified: '2026-03-11'
 - control_id: SAFE-K8S-1006-004
   domain_code: D10
   domain_name: Observability, Incident Response, and Governance
