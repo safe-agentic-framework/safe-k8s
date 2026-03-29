@@ -17,8 +17,8 @@ This repository publishes the public SAFE-K8S security control catalog for Kuber
 
 - Domains: 10
 - Knowledge areas: 55
-- Controls: 839
-- Crosswalk rows: 4724
+- Controls: 593
+- Crosswalk rows: 4723
 
 ## YAML Files
 
@@ -107,27 +107,20 @@ This repository publishes the public SAFE-K8S security control catalog for Kuber
 
 - Domain: D01 - Control Plane and Cluster Hardening
 - Maturity: Foundational
-- Controls: 21
+- Controls: 14
 
 ### Description
 
-This knowledge area focuses on: API server hardening flags, API server TLS configuration and certificate rotation, Encryption at rest for Secrets and sensitive API resources, API server access controls and authorization modes, and Streaming connection idle timeout enforcement. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Encryption at rest for Secrets and sensitive API resources, Streaming connection idle timeout enforcement, API server request rate limiting and API Priority and Fairness, API server audit policy coverage and event detail, and API server TLS enforcement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0101-001](markdown/controls/SAFE-K8S-0101-001.md) | API server hardening flags | Foundational | baseline |
-| [SAFE-K8S-0101-002](markdown/controls/SAFE-K8S-0101-002.md) | API server TLS configuration and certificate rotation | Foundational | baseline |
 | [SAFE-K8S-0101-003](markdown/controls/SAFE-K8S-0101-003.md) | Encryption at rest for Secrets and sensitive API resources | Foundational | baseline |
-| [SAFE-K8S-0101-004](markdown/controls/SAFE-K8S-0101-004.md) | API server access controls and authorization modes | Foundational | baseline |
 | [SAFE-K8S-0101-005](markdown/controls/SAFE-K8S-0101-005.md) | Streaming connection idle timeout enforcement | Foundational | baseline |
-| [SAFE-K8S-0101-006](markdown/controls/SAFE-K8S-0101-006.md) | API server audit logging policy and backend configuration | Foundational | baseline |
 | [SAFE-K8S-0101-007](markdown/controls/SAFE-K8S-0101-007.md) | API server request rate limiting and API Priority and Fairness | Practitioner | ai-specific |
 | [SAFE-K8S-0101-008](markdown/controls/SAFE-K8S-0101-008.md) | API server audit policy coverage and event detail | Foundational | baseline |
-| [SAFE-K8S-0101-009](markdown/controls/SAFE-K8S-0101-009.md) | API server audit log backend durability and retention | Foundational | baseline |
-| [SAFE-K8S-0101-010](markdown/controls/SAFE-K8S-0101-010.md) | API server anonymous authentication disablement and authorization mode hardening | Foundational | baseline |
-| [SAFE-K8S-0101-011](markdown/controls/SAFE-K8S-0101-011.md) | API server profiling disablement and approved admission controller configuration | Foundational | baseline |
 | [SAFE-K8S-0101-012](markdown/controls/SAFE-K8S-0101-012.md) | API server TLS enforcement | Foundational | baseline |
 | [SAFE-K8S-0101-013](markdown/controls/SAFE-K8S-0101-013.md) | API server certificate rotation and validation | Foundational | baseline |
 | [SAFE-K8S-0101-014](markdown/controls/SAFE-K8S-0101-014.md) | API server authorization mode baseline enforcement | Foundational | baseline |
@@ -144,33 +137,24 @@ This knowledge area focuses on: API server hardening flags, API server TLS confi
 
 - Domain: D01 - Control Plane and Cluster Hardening
 - Maturity: Foundational
-- Controls: 25
+- Controls: 16
 
 ### Description
 
-This knowledge area focuses on: etcd storage-layer disk encryption with externally managed keys, etcd access controls and network isolation, etcd backup and restore security, etcd cluster health monitoring, compaction, and defragmentation, and etcd certificate rotation and lifecycle management. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: etcd storage-layer disk encryption with externally managed keys, etcd encryption key rotation scheduling and verification, etcd backup storage encryption, etcd backup integrity verification and restore assurance, and etcd health monitoring and alerting. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0102-001](markdown/controls/SAFE-K8S-0102-001.md) | etcd storage-layer disk encryption with externally managed keys | Foundational | baseline |
-| [SAFE-K8S-0102-002](markdown/controls/SAFE-K8S-0102-002.md) | etcd access controls and network isolation | Foundational | baseline |
-| [SAFE-K8S-0102-003](markdown/controls/SAFE-K8S-0102-003.md) | etcd backup and restore security | Foundational | baseline |
-| [SAFE-K8S-0102-004](markdown/controls/SAFE-K8S-0102-004.md) | etcd cluster health monitoring, compaction, and defragmentation | Foundational | baseline |
-| [SAFE-K8S-0102-005](markdown/controls/SAFE-K8S-0102-005.md) | etcd certificate rotation and lifecycle management | Practitioner | baseline |
 | [SAFE-K8S-0102-006](markdown/controls/SAFE-K8S-0102-006.md) | etcd encryption key rotation scheduling and verification | Foundational | baseline |
 | [SAFE-K8S-0102-007](markdown/controls/SAFE-K8S-0102-007.md) | etcd backup storage encryption | Foundational | baseline |
 | [SAFE-K8S-0102-008](markdown/controls/SAFE-K8S-0102-008.md) | etcd backup integrity verification and restore assurance | Foundational | baseline |
-| [SAFE-K8S-0102-009](markdown/controls/SAFE-K8S-0102-009.md) | etcd backup storage access restriction and auditing | Foundational | baseline |
-| [SAFE-K8S-0102-010](markdown/controls/SAFE-K8S-0102-010.md) | etcd certificate rotation execution and testing | Practitioner | baseline |
-| [SAFE-K8S-0102-011](markdown/controls/SAFE-K8S-0102-011.md) | etcd certificate validity limits and expiration alerting | Practitioner | baseline |
 | [SAFE-K8S-0102-012](markdown/controls/SAFE-K8S-0102-012.md) | etcd health monitoring and alerting | Foundational | baseline |
 | [SAFE-K8S-0102-013](markdown/controls/SAFE-K8S-0102-013.md) | etcd compaction and periodic defragmentation | Foundational | baseline |
 | [SAFE-K8S-0102-014](markdown/controls/SAFE-K8S-0102-014.md) | etcd certificate rotation coverage and execution | Practitioner | baseline |
 | [SAFE-K8S-0102-015](markdown/controls/SAFE-K8S-0102-015.md) | etcd certificate rotation testing and recovery validation | Practitioner | baseline |
-| [SAFE-K8S-0102-016](markdown/controls/SAFE-K8S-0102-016.md) | etcd backup repository access restriction and break-glass authorization | Foundational | baseline |
-| [SAFE-K8S-0102-017](markdown/controls/SAFE-K8S-0102-017.md) | etcd backup repository access audit logging and review | Foundational | baseline |
 | [SAFE-K8S-0102-018](markdown/controls/SAFE-K8S-0102-018.md) | etcd client and peer certificate authentication | Foundational | baseline |
 | [SAFE-K8S-0102-019](markdown/controls/SAFE-K8S-0102-019.md) | etcd endpoint network isolation from worker and workload traffic | Foundational | baseline |
 | [SAFE-K8S-0102-020](markdown/controls/SAFE-K8S-0102-020.md) | etcd certificate maximum validity period enforcement | Practitioner | baseline |
@@ -185,27 +169,21 @@ This knowledge area focuses on: etcd storage-layer disk encryption with external
 
 - Domain: D01 - Control Plane and Cluster Hardening
 - Maturity: Practitioner
-- Controls: 19
+- Controls: 13
 
 ### Description
 
-This knowledge area focuses on: Controller-manager service account token hardening, Scheduler access restriction and extender authentication, Cloud controller-manager isolation and credential management, Leader election security and control-plane high availability, and Pod garbage collection threshold configuration. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Controller-manager service account token hardening, Pod garbage collection threshold configuration, Profiling endpoint disablement for controller-manager and scheduler, Cloud controller-manager deployment isolation, and Leader election configuration and lease object RBAC. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0103-001](markdown/controls/SAFE-K8S-0103-001.md) | Controller-manager service account token hardening | Foundational | baseline |
-| [SAFE-K8S-0103-002](markdown/controls/SAFE-K8S-0103-002.md) | Scheduler access restriction and extender authentication | Practitioner | baseline |
-| [SAFE-K8S-0103-003](markdown/controls/SAFE-K8S-0103-003.md) | Cloud controller-manager isolation and credential management | Practitioner | baseline |
-| [SAFE-K8S-0103-004](markdown/controls/SAFE-K8S-0103-004.md) | Leader election security and control-plane high availability | Practitioner | baseline |
 | [SAFE-K8S-0103-005](markdown/controls/SAFE-K8S-0103-005.md) | Pod garbage collection threshold configuration | Foundational | ai-specific |
 | [SAFE-K8S-0103-006](markdown/controls/SAFE-K8S-0103-006.md) | Profiling endpoint disablement for controller-manager and scheduler | Foundational | baseline |
-| [SAFE-K8S-0103-007](markdown/controls/SAFE-K8S-0103-007.md) | Controller-manager and scheduler bind-address and port hardening | Foundational | baseline |
 | [SAFE-K8S-0103-008](markdown/controls/SAFE-K8S-0103-008.md) | Cloud controller-manager deployment isolation | Practitioner | baseline |
-| [SAFE-K8S-0103-009](markdown/controls/SAFE-K8S-0103-009.md) | Cloud controller-manager IAM scoping and credential rotation | Practitioner | baseline |
 | [SAFE-K8S-0103-010](markdown/controls/SAFE-K8S-0103-010.md) | Leader election configuration and lease object RBAC | Practitioner | baseline |
-| [SAFE-K8S-0103-011](markdown/controls/SAFE-K8S-0103-011.md) | Control-plane high availability topology and failover | Practitioner | baseline |
 | [SAFE-K8S-0103-012](markdown/controls/SAFE-K8S-0103-012.md) | Cloud controller-manager cloud IAM least-privilege scoping | Practitioner | baseline |
 | [SAFE-K8S-0103-013](markdown/controls/SAFE-K8S-0103-013.md) | Cloud controller-manager workload identity and credential rotation | Practitioner | baseline |
 | [SAFE-K8S-0103-014](markdown/controls/SAFE-K8S-0103-014.md) | Scheduler API and decision endpoint access restriction | Practitioner | baseline |
@@ -220,28 +198,19 @@ This knowledge area focuses on: Controller-manager service account token hardeni
 
 - Domain: D01 - Control Plane and Cluster Hardening
 - Maturity: Foundational
-- Controls: 23
+- Controls: 14
 
 ### Description
 
-This knowledge area focuses on: CIS Kubernetes Benchmark automated assessment and remediation, Kubernetes version lifecycle and upgrade strategy management, Kubernetes CVE monitoring, prioritization, and emergency patching, Feature gate governance and lifecycle management, and Control plane configuration file permissions. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Control plane configuration file permissions, Emergency Kubernetes patch deployment procedures, Feature gate lifecycle transition tracking across Kubernetes upgrades, Kubernetes upgrade strategy, validation, and rollback planning, and Recurring CIS Kubernetes Benchmark scan execution. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0104-001](markdown/controls/SAFE-K8S-0104-001.md) | CIS Kubernetes Benchmark automated assessment and remediation | Foundational | baseline |
-| [SAFE-K8S-0104-002](markdown/controls/SAFE-K8S-0104-002.md) | Kubernetes version lifecycle and upgrade strategy management | Foundational | baseline |
-| [SAFE-K8S-0104-003](markdown/controls/SAFE-K8S-0104-003.md) | Kubernetes CVE monitoring, prioritization, and emergency patching | Foundational | baseline |
-| [SAFE-K8S-0104-004](markdown/controls/SAFE-K8S-0104-004.md) | Feature gate governance and lifecycle management | Practitioner | baseline |
 | [SAFE-K8S-0104-005](markdown/controls/SAFE-K8S-0104-005.md) | Control plane configuration file permissions | Foundational | baseline |
-| [SAFE-K8S-0104-006](markdown/controls/SAFE-K8S-0104-006.md) | Kubernetes CVE monitoring and prioritization | Foundational | baseline |
 | [SAFE-K8S-0104-007](markdown/controls/SAFE-K8S-0104-007.md) | Emergency Kubernetes patch deployment procedures | Foundational | baseline |
-| [SAFE-K8S-0104-008](markdown/controls/SAFE-K8S-0104-008.md) | Production feature gate approval and risk assessment governance | Practitioner | baseline |
 | [SAFE-K8S-0104-009](markdown/controls/SAFE-K8S-0104-009.md) | Feature gate lifecycle transition tracking across Kubernetes upgrades | Practitioner | baseline |
-| [SAFE-K8S-0104-010](markdown/controls/SAFE-K8S-0104-010.md) | Recurring CIS Kubernetes Benchmark assessment | Foundational | baseline |
-| [SAFE-K8S-0104-011](markdown/controls/SAFE-K8S-0104-011.md) | CIS Benchmark remediation tracking and exception governance | Foundational | baseline |
-| [SAFE-K8S-0104-012](markdown/controls/SAFE-K8S-0104-012.md) | Kubernetes supported version window and component skew compliance | Foundational | baseline |
 | [SAFE-K8S-0104-013](markdown/controls/SAFE-K8S-0104-013.md) | Kubernetes upgrade strategy, validation, and rollback planning | Foundational | baseline |
 | [SAFE-K8S-0104-014](markdown/controls/SAFE-K8S-0104-014.md) | Recurring CIS Kubernetes Benchmark scan execution | Foundational | baseline |
 | [SAFE-K8S-0104-015](markdown/controls/SAFE-K8S-0104-015.md) | CIS Benchmark result retention and posture trend reporting | Foundational | baseline |
@@ -259,26 +228,21 @@ This knowledge area focuses on: CIS Kubernetes Benchmark automated assessment an
 
 - Domain: D02 - Node, Runtime, and OS Security
 - Maturity: Foundational
-- Controls: 16
+- Controls: 11
 
 ### Description
 
-This knowledge area focuses on: Kubelet authentication, authorization, and anonymous access hardening, Kubelet certificate rotation and TLS bootstrap, Node allocatable resources and eviction thresholds, Kubelet configuration file permissions and node-level audit controls, and Kubelet hostname override governance. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Kubelet hostname override governance, Node system and kube reserved resource allocations, Node eviction threshold tuning for workload pressure, Kubelet configuration and credential file ownership and permissions, and Kubelet systemd unit hardening. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0201-001](markdown/controls/SAFE-K8S-0201-001.md) | Kubelet authentication, authorization, and anonymous access hardening | Foundational | baseline |
-| [SAFE-K8S-0201-002](markdown/controls/SAFE-K8S-0201-002.md) | Kubelet certificate rotation and TLS bootstrap | Foundational | baseline |
-| [SAFE-K8S-0201-003](markdown/controls/SAFE-K8S-0201-003.md) | Node allocatable resources and eviction thresholds | Foundational | baseline |
-| [SAFE-K8S-0201-004](markdown/controls/SAFE-K8S-0201-004.md) | Kubelet configuration file permissions and node-level audit controls | Foundational | baseline |
 | [SAFE-K8S-0201-005](markdown/controls/SAFE-K8S-0201-005.md) | Kubelet hostname override governance | Foundational | baseline |
 | [SAFE-K8S-0201-006](markdown/controls/SAFE-K8S-0201-006.md) | Node system and kube reserved resource allocations | Foundational | baseline |
 | [SAFE-K8S-0201-007](markdown/controls/SAFE-K8S-0201-007.md) | Node eviction threshold tuning for workload pressure | Foundational | baseline |
 | [SAFE-K8S-0201-008](markdown/controls/SAFE-K8S-0201-008.md) | Kubelet configuration and credential file ownership and permissions | Foundational | baseline |
 | [SAFE-K8S-0201-009](markdown/controls/SAFE-K8S-0201-009.md) | Kubelet systemd unit hardening | Foundational | baseline |
-| [SAFE-K8S-0201-010](markdown/controls/SAFE-K8S-0201-010.md) | Node-level kubelet audit verification | Foundational | baseline |
 | [SAFE-K8S-0201-011](markdown/controls/SAFE-K8S-0201-011.md) | Kubelet webhook authentication and authorization enforcement | Foundational | baseline |
 | [SAFE-K8S-0201-012](markdown/controls/SAFE-K8S-0201-012.md) | Kubelet anonymous access and read-only port lockdown | Foundational | baseline |
 | [SAFE-K8S-0201-013](markdown/controls/SAFE-K8S-0201-013.md) | Kubelet client certificate rotation via TLS bootstrap | Foundational | baseline |
@@ -291,22 +255,19 @@ This knowledge area focuses on: Kubelet authentication, authorization, and anony
 
 - Domain: D02 - Node, Runtime, and OS Security
 - Maturity: Foundational
-- Controls: 11
+- Controls: 8
 
 ### Description
 
-This knowledge area focuses on: Container runtime configuration baselines and socket protection, RuntimeClass configuration for workload-appropriate isolation, Container runtime patching and version management, Runtime socket mount prevention, and Container escape prevention through kernel security profiles. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: RuntimeClass configuration for workload-appropriate isolation, Container runtime patching and version management, Runtime socket mount prevention, Container runtime user namespace isolation, and Container runtime socket root-only protection. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0202-001](markdown/controls/SAFE-K8S-0202-001.md) | Container runtime configuration baselines and socket protection | Foundational | baseline |
 | [SAFE-K8S-0202-002](markdown/controls/SAFE-K8S-0202-002.md) | RuntimeClass configuration for workload-appropriate isolation | Foundational | ai-specific |
 | [SAFE-K8S-0202-003](markdown/controls/SAFE-K8S-0202-003.md) | Container runtime patching and version management | Foundational | baseline |
 | [SAFE-K8S-0202-004](markdown/controls/SAFE-K8S-0202-004.md) | Runtime socket mount prevention | Foundational | baseline |
-| [SAFE-K8S-0202-005](markdown/controls/SAFE-K8S-0202-005.md) | Container escape prevention through kernel security profiles | Foundational | baseline |
-| [SAFE-K8S-0202-006](markdown/controls/SAFE-K8S-0202-006.md) | Node seccomp defaults and mandatory access control activation | Foundational | baseline |
 | [SAFE-K8S-0202-007](markdown/controls/SAFE-K8S-0202-007.md) | Container runtime user namespace isolation | Foundational | baseline |
 | [SAFE-K8S-0202-008](markdown/controls/SAFE-K8S-0202-008.md) | Container runtime socket root-only protection | Foundational | baseline |
 | [SAFE-K8S-0202-009](markdown/controls/SAFE-K8S-0202-009.md) | Container runtime secure baseline settings and debug endpoint disablement | Foundational | baseline |
@@ -318,23 +279,18 @@ This knowledge area focuses on: Container runtime configuration baselines and so
 
 - Domain: D02 - Node, Runtime, and OS Security
 - Maturity: Foundational
-- Controls: 15
+- Controls: 10
 
 ### Description
 
-This knowledge area focuses on: Minimal and immutable host OS configuration, Kernel parameter hardening via sysctl, Cloud metadata service protection and IMDSv2 enforcement, Secure boot and verified boot chain enforcement, and Kernel module restriction and lockdown mode. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Kernel parameter hardening via sysctl, Secure boot and verified boot chain enforcement, Pod metadata endpoint network path blocking, Workload identity replacement for cloud API access, and Minimal purpose-built node OS baseline. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0203-001](markdown/controls/SAFE-K8S-0203-001.md) | Minimal and immutable host OS configuration | Foundational | baseline |
 | [SAFE-K8S-0203-002](markdown/controls/SAFE-K8S-0203-002.md) | Kernel parameter hardening via sysctl | Foundational | baseline |
-| [SAFE-K8S-0203-003](markdown/controls/SAFE-K8S-0203-003.md) | Cloud metadata service protection and IMDSv2 enforcement | Foundational | baseline |
 | [SAFE-K8S-0203-004](markdown/controls/SAFE-K8S-0203-004.md) | Secure boot and verified boot chain enforcement | Foundational | baseline |
-| [SAFE-K8S-0203-005](markdown/controls/SAFE-K8S-0203-005.md) | Kernel module restriction and lockdown mode | Foundational | baseline |
-| [SAFE-K8S-0203-006](markdown/controls/SAFE-K8S-0203-006.md) | Cloud instance metadata service hardening and IMDSv2 configuration | Foundational | baseline |
-| [SAFE-K8S-0203-007](markdown/controls/SAFE-K8S-0203-007.md) | Pod metadata endpoint blocking and workload identity replacement | Foundational | baseline |
 | [SAFE-K8S-0203-008](markdown/controls/SAFE-K8S-0203-008.md) | Pod metadata endpoint network path blocking | Foundational | baseline |
 | [SAFE-K8S-0203-009](markdown/controls/SAFE-K8S-0203-009.md) | Workload identity replacement for cloud API access | Foundational | baseline |
 | [SAFE-K8S-0203-010](markdown/controls/SAFE-K8S-0203-010.md) | Minimal purpose-built node OS baseline | Foundational | baseline |
@@ -369,22 +325,19 @@ This knowledge area focuses on: Runtime security tool deployment for syscall and
 
 - Domain: D02 - Node, Runtime, and OS Security
 - Maturity: Practitioner
-- Controls: 11
+- Controls: 8
 
 ### Description
 
-This knowledge area focuses on: kube-proxy mode selection and security hardening, NodePort and HostPort restriction policies, Node-level firewall and Kubernetes network policy integration, eBPF-based kernel-level network policy enforcement, and eBPF program integrity verification and loading monitoring. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: NodePort and HostPort restriction policies, eBPF-based kernel-level network policy enforcement, eBPF program integrity verification and loading monitoring, Node firewall compatibility validation with CNI and network policy, and kube-proxy or service proxy mode selection governance. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0205-001](markdown/controls/SAFE-K8S-0205-001.md) | kube-proxy mode selection and security hardening | Practitioner | baseline |
 | [SAFE-K8S-0205-002](markdown/controls/SAFE-K8S-0205-002.md) | NodePort and HostPort restriction policies | Practitioner | baseline |
-| [SAFE-K8S-0205-003](markdown/controls/SAFE-K8S-0205-003.md) | Node-level firewall and Kubernetes network policy integration | Practitioner | baseline |
 | [SAFE-K8S-0205-004](markdown/controls/SAFE-K8S-0205-004.md) | eBPF-based kernel-level network policy enforcement | Practitioner | baseline |
 | [SAFE-K8S-0205-005](markdown/controls/SAFE-K8S-0205-005.md) | eBPF program integrity verification and loading monitoring | Practitioner | baseline |
-| [SAFE-K8S-0205-006](markdown/controls/SAFE-K8S-0205-006.md) | Node-level firewall rule restriction and audit | Practitioner | baseline |
 | [SAFE-K8S-0205-007](markdown/controls/SAFE-K8S-0205-007.md) | Node firewall compatibility validation with CNI and network policy | Practitioner | baseline |
 | [SAFE-K8S-0205-008](markdown/controls/SAFE-K8S-0205-008.md) | kube-proxy or service proxy mode selection governance | Practitioner | baseline |
 | [SAFE-K8S-0205-009](markdown/controls/SAFE-K8S-0205-009.md) | Service proxy path hardening for kube-proxy or replacements | Practitioner | baseline |
@@ -396,11 +349,11 @@ This knowledge area focuses on: kube-proxy mode selection and security hardening
 
 - Domain: D03 - Workload and Pod Security
 - Maturity: Foundational
-- Controls: 6
+- Controls: 5
 
 ### Description
 
-This knowledge area focuses on: Pod Security Standards level assignment, Pod Security Admission configuration and version pinning, PodSecurityPolicy to PSA migration, PSA exemption management for privileged system and GPU workloads, and PSA exemption register and justification tracking. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Pod Security Standards level assignment, Pod Security Admission configuration and version pinning, PodSecurityPolicy to PSA migration, PSA exemption register and justification tracking, and Scoped PSA exception enforcement and compensating controls.
 
 ### Controls
 
@@ -409,7 +362,6 @@ This knowledge area focuses on: Pod Security Standards level assignment, Pod Sec
 | [SAFE-K8S-0301-001](markdown/controls/SAFE-K8S-0301-001.md) | Pod Security Standards level assignment | Foundational | baseline |
 | [SAFE-K8S-0301-002](markdown/controls/SAFE-K8S-0301-002.md) | Pod Security Admission configuration and version pinning | Foundational | baseline |
 | [SAFE-K8S-0301-003](markdown/controls/SAFE-K8S-0301-003.md) | PodSecurityPolicy to PSA migration | Foundational | baseline |
-| [SAFE-K8S-0301-004](markdown/controls/SAFE-K8S-0301-004.md) | PSA exemption management for privileged system and GPU workloads | Foundational | ai-specific |
 | [SAFE-K8S-0301-005](markdown/controls/SAFE-K8S-0301-005.md) | PSA exemption register and justification tracking | Foundational | ai-specific |
 | [SAFE-K8S-0301-006](markdown/controls/SAFE-K8S-0301-006.md) | Scoped PSA exception enforcement and compensating controls | Foundational | ai-specific |
 
@@ -418,11 +370,11 @@ This knowledge area focuses on: Pod Security Standards level assignment, Pod Sec
 
 - Domain: D03 - Workload and Pod Security
 - Maturity: Foundational
-- Controls: 7
+- Controls: 6
 
 ### Description
 
-This knowledge area focuses on: Pod and container security context enforcement, Linux capability drop-all and least-privilege add-back, Privilege escalation prevention controls, Host namespace isolation enforcement, and AI workload security context hardening profiles. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Pod and container security context enforcement, Linux capability drop-all and least-privilege add-back, Host namespace isolation enforcement, AI workload security context hardening profiles, and No-new-privileges execution enforcement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -430,7 +382,6 @@ This knowledge area focuses on: Pod and container security context enforcement, 
 | --- | --- | --- | --- |
 | [SAFE-K8S-0302-001](markdown/controls/SAFE-K8S-0302-001.md) | Pod and container security context enforcement | Foundational | baseline |
 | [SAFE-K8S-0302-002](markdown/controls/SAFE-K8S-0302-002.md) | Linux capability drop-all and least-privilege add-back | Foundational | ai-specific |
-| [SAFE-K8S-0302-003](markdown/controls/SAFE-K8S-0302-003.md) | Privilege escalation prevention controls | Foundational | baseline |
 | [SAFE-K8S-0302-004](markdown/controls/SAFE-K8S-0302-004.md) | Host namespace isolation enforcement | Foundational | baseline |
 | [SAFE-K8S-0302-005](markdown/controls/SAFE-K8S-0302-005.md) | AI workload security context hardening profiles | Foundational | ai-specific |
 | [SAFE-K8S-0302-006](markdown/controls/SAFE-K8S-0302-006.md) | No-new-privileges execution enforcement | Foundational | baseline |
@@ -441,18 +392,17 @@ This knowledge area focuses on: Pod and container security context enforcement, 
 
 - Domain: D03 - Workload and Pod Security
 - Maturity: Practitioner
-- Controls: 8
+- Controls: 7
 
 ### Description
 
-This knowledge area focuses on: Seccomp profile enforcement, AppArmor profile management and enforcement, SELinux context assignment and multi-tenancy isolation, MAC profile generation from runtime behavior, and MAC profile pre-enforcement audit-mode validation. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Seccomp profile enforcement, SELinux context assignment and multi-tenancy isolation, MAC profile generation from runtime behavior, MAC profile pre-enforcement audit-mode validation, and MAC profile iterative refinement cycle. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0303-001](markdown/controls/SAFE-K8S-0303-001.md) | Seccomp profile enforcement | Practitioner | baseline |
-| [SAFE-K8S-0303-002](markdown/controls/SAFE-K8S-0303-002.md) | AppArmor profile management and enforcement | Practitioner | baseline |
 | [SAFE-K8S-0303-003](markdown/controls/SAFE-K8S-0303-003.md) | SELinux context assignment and multi-tenancy isolation | Practitioner | baseline |
 | [SAFE-K8S-0303-004](markdown/controls/SAFE-K8S-0303-004.md) | MAC profile generation from runtime behavior | Practitioner | baseline |
 | [SAFE-K8S-0303-005](markdown/controls/SAFE-K8S-0303-005.md) | MAC profile pre-enforcement audit-mode validation | Practitioner | baseline |
@@ -465,24 +415,21 @@ This knowledge area focuses on: Seccomp profile enforcement, AppArmor profile ma
 
 - Domain: D03 - Workload and Pod Security
 - Maturity: Foundational
-- Controls: 13
+- Controls: 10
 
 ### Description
 
-This knowledge area focuses on: Cloud Native 8 secure defaults enforcement, CPU, memory, and ephemeral storage resource limits, QoS class assignment for workload stability, Ephemeral container security context enforcement, and Training job ephemeral storage and scratch space security. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Cloud Native 8 secure defaults enforcement, QoS class assignment for workload stability, Ephemeral container security context enforcement, Host volume mount restriction, and Service account token automount opt-out. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0304-001](markdown/controls/SAFE-K8S-0304-001.md) | Cloud Native 8 secure defaults enforcement | Foundational | baseline |
-| [SAFE-K8S-0304-002](markdown/controls/SAFE-K8S-0304-002.md) | CPU, memory, and ephemeral storage resource limits | Foundational | baseline |
 | [SAFE-K8S-0304-003](markdown/controls/SAFE-K8S-0304-003.md) | QoS class assignment for workload stability | Foundational | baseline |
 | [SAFE-K8S-0304-004](markdown/controls/SAFE-K8S-0304-004.md) | Ephemeral container security context enforcement | Foundational | baseline |
-| [SAFE-K8S-0304-005](markdown/controls/SAFE-K8S-0304-005.md) | Training job ephemeral storage and scratch space security | Foundational | ai-specific |
 | [SAFE-K8S-0304-006](markdown/controls/SAFE-K8S-0304-006.md) | Host volume mount restriction | Foundational | baseline |
 | [SAFE-K8S-0304-007](markdown/controls/SAFE-K8S-0304-007.md) | Service account token automount opt-out | Foundational | baseline |
-| [SAFE-K8S-0304-008](markdown/controls/SAFE-K8S-0304-008.md) | Training scratch volume limits and tmpfs handling | Foundational | ai-specific |
 | [SAFE-K8S-0304-009](markdown/controls/SAFE-K8S-0304-009.md) | Temporary checkpoint storage encryption, integrity, and access control | Foundational | ai-specific |
 | [SAFE-K8S-0304-010](markdown/controls/SAFE-K8S-0304-010.md) | Pod resource requests and limits specification | Foundational | baseline |
 | [SAFE-K8S-0304-011](markdown/controls/SAFE-K8S-0304-011.md) | Namespace LimitRange and ResourceQuota enforcement | Foundational | baseline |
@@ -494,11 +441,11 @@ This knowledge area focuses on: Cloud Native 8 secure defaults enforcement, CPU,
 
 - Domain: D04 - Identity, Access, and Secrets Management
 - Maturity: Foundational
-- Controls: 7
+- Controls: 6
 
 ### Description
 
-This knowledge area focuses on: RBAC least-privilege design, RBAC permission audit and analysis, Aggregated ClusterRole governance, RBAC for AI operator custom resources, and Separation of duties for ML, platform, and security roles. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: RBAC least-privilege design, RBAC permission audit and analysis, Aggregated ClusterRole governance, RBAC for AI operator custom resources, and Organizational role separation for ML, platform, and security functions. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -508,7 +455,6 @@ This knowledge area focuses on: RBAC least-privilege design, RBAC permission aud
 | [SAFE-K8S-0401-002](markdown/controls/SAFE-K8S-0401-002.md) | RBAC permission audit and analysis | Foundational | baseline |
 | [SAFE-K8S-0401-003](markdown/controls/SAFE-K8S-0401-003.md) | Aggregated ClusterRole governance | Foundational | baseline |
 | [SAFE-K8S-0401-004](markdown/controls/SAFE-K8S-0401-004.md) | RBAC for AI operator custom resources | Foundational | ai-specific |
-| [SAFE-K8S-0401-005](markdown/controls/SAFE-K8S-0401-005.md) | Separation of duties for ML, platform, and security roles | Foundational | ai-specific |
 | [SAFE-K8S-0401-006](markdown/controls/SAFE-K8S-0401-006.md) | Organizational role separation for ML, platform, and security functions | Foundational | ai-specific |
 | [SAFE-K8S-0401-007](markdown/controls/SAFE-K8S-0401-007.md) | GPU resource governance permission boundaries | Foundational | ai-specific |
 
@@ -517,33 +463,28 @@ This knowledge area focuses on: RBAC least-privilege design, RBAC permission aud
 
 - Domain: D04 - Identity, Access, and Secrets Management
 - Maturity: Practitioner
-- Controls: 23
+- Controls: 18
 
 ### Description
 
-This knowledge area focuses on: Default service account restriction, Inactive service account and stale credential remediation, Service account identifier exposure prevention, Workload identity attribute integrity, and Projected service account token configuration. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Inactive service account and stale credential remediation, Service account identifier exposure prevention, Workload identity attribute integrity, Cloud workload identity federation for AI services, and OIDC authentication integration. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0402-001](markdown/controls/SAFE-K8S-0402-001.md) | Default service account restriction | Foundational | baseline |
 | [SAFE-K8S-0402-002](markdown/controls/SAFE-K8S-0402-002.md) | Inactive service account and stale credential remediation | Practitioner | baseline |
 | [SAFE-K8S-0402-003](markdown/controls/SAFE-K8S-0402-003.md) | Service account identifier exposure prevention | Practitioner | baseline |
 | [SAFE-K8S-0402-004](markdown/controls/SAFE-K8S-0402-004.md) | Workload identity attribute integrity | Practitioner | baseline |
-| [SAFE-K8S-0402-005](markdown/controls/SAFE-K8S-0402-005.md) | Projected service account token configuration | Foundational | baseline |
 | [SAFE-K8S-0402-006](markdown/controls/SAFE-K8S-0402-006.md) | Cloud workload identity federation for AI services | Practitioner | ai-specific |
 | [SAFE-K8S-0402-007](markdown/controls/SAFE-K8S-0402-007.md) | OIDC authentication integration | Practitioner | baseline |
 | [SAFE-K8S-0402-008](markdown/controls/SAFE-K8S-0402-008.md) | Distinct identity assignment for AI workload types | Practitioner | ai-specific |
-| [SAFE-K8S-0402-009](markdown/controls/SAFE-K8S-0402-009.md) | Ephemeral training job credential lifecycle management | Practitioner | ai-specific |
 | [SAFE-K8S-0402-010](markdown/controls/SAFE-K8S-0402-010.md) | Cross-cluster and cross-cloud cryptographic identity federation | Advanced | ai-specific |
 | [SAFE-K8S-0402-011](markdown/controls/SAFE-K8S-0402-011.md) | Cross-environment static credential prohibition | Advanced | ai-specific |
 | [SAFE-K8S-0402-012](markdown/controls/SAFE-K8S-0402-012.md) | Ephemeral training job credential expiration | Practitioner | ai-specific |
 | [SAFE-K8S-0402-013](markdown/controls/SAFE-K8S-0402-013.md) | Ephemeral training job credential rotation | Practitioner | ai-specific |
 | [SAFE-K8S-0402-014](markdown/controls/SAFE-K8S-0402-014.md) | Ephemeral training job credential revocation on completion | Practitioner | ai-specific |
 | [SAFE-K8S-0402-015](markdown/controls/SAFE-K8S-0402-015.md) | Legacy service account token secret removal | Foundational | baseline |
-| [SAFE-K8S-0402-016](markdown/controls/SAFE-K8S-0402-016.md) | Projected service account token audience and TokenRequest enforcement | Foundational | baseline |
-| [SAFE-K8S-0402-017](markdown/controls/SAFE-K8S-0402-017.md) | Projected token lifetime bounds and long-lived token exception governance | Foundational | baseline |
 | [SAFE-K8S-0402-018](markdown/controls/SAFE-K8S-0402-018.md) | Default service account disablement and token automount hardening | Foundational | baseline |
 | [SAFE-K8S-0402-019](markdown/controls/SAFE-K8S-0402-019.md) | Dedicated workload service accounts and least-privilege assignment | Foundational | baseline |
 | [SAFE-K8S-0402-020](markdown/controls/SAFE-K8S-0402-020.md) | Projected service account token issuance path enforcement | Foundational | baseline |
@@ -556,32 +497,22 @@ This knowledge area focuses on: Default service account restriction, Inactive se
 
 - Domain: D04 - Identity, Access, and Secrets Management
 - Maturity: Foundational
-- Controls: 30
+- Controls: 20
 
 ### Description
 
-This knowledge area focuses on: Kubernetes Secrets external KMS integration and key lifecycle, External secrets management integration, Approved secret injection pattern standards, Secret rotation and expiration enforcement, and AI pipeline secret leakage prevention. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: External secrets management integration, Approved secret injection pattern standards, Secret rotation and expiration enforcement, AI pipeline secret leakage prevention, and Per-workload credential scoping for AI jobs. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0403-001](markdown/controls/SAFE-K8S-0403-001.md) | Kubernetes Secrets external KMS integration and key lifecycle | Foundational | baseline |
 | [SAFE-K8S-0403-002](markdown/controls/SAFE-K8S-0403-002.md) | External secrets management integration | Foundational | baseline |
 | [SAFE-K8S-0403-003](markdown/controls/SAFE-K8S-0403-003.md) | Approved secret injection pattern standards | Foundational | baseline |
 | [SAFE-K8S-0403-004](markdown/controls/SAFE-K8S-0403-004.md) | Secret rotation and expiration enforcement | Foundational | baseline |
 | [SAFE-K8S-0403-005](markdown/controls/SAFE-K8S-0403-005.md) | AI pipeline secret leakage prevention | Foundational | ai-specific |
 | [SAFE-K8S-0403-006](markdown/controls/SAFE-K8S-0403-006.md) | Per-workload credential scoping for AI jobs | Practitioner | ai-specific |
-| [SAFE-K8S-0403-007](markdown/controls/SAFE-K8S-0403-007.md) | AI platform key hierarchy and KMS architecture | Advanced | ai-specific |
-| [SAFE-K8S-0403-008](markdown/controls/SAFE-K8S-0403-008.md) | Credential inventory and sprawl governance at scale | Practitioner | ai-specific |
-| [SAFE-K8S-0403-009](markdown/controls/SAFE-K8S-0403-009.md) | Automated secret leak detection and response | Practitioner | baseline |
-| [SAFE-K8S-0403-010](markdown/controls/SAFE-K8S-0403-010.md) | Kubernetes Secrets external KMS integration and least-privilege key policy | Foundational | baseline |
 | [SAFE-K8S-0403-011](markdown/controls/SAFE-K8S-0403-011.md) | Secrets KMS key rotation and re-encryption verification | Foundational | baseline |
-| [SAFE-K8S-0403-012](markdown/controls/SAFE-K8S-0403-012.md) | Automated credential inventory and orphaned credential reconciliation | Practitioner | ai-specific |
-| [SAFE-K8S-0403-013](markdown/controls/SAFE-K8S-0403-013.md) | Credential scope drift monitoring and lifecycle metrics governance | Practitioner | ai-specific |
-| [SAFE-K8S-0403-014](markdown/controls/SAFE-K8S-0403-014.md) | Automated secret leak detection coverage and enforcement | Practitioner | baseline |
-| [SAFE-K8S-0403-015](markdown/controls/SAFE-K8S-0403-015.md) | Secret leak incident response and credential revocation | Practitioner | baseline |
-| [SAFE-K8S-0403-016](markdown/controls/SAFE-K8S-0403-016.md) | Environment variable secret injection prohibition and exception governance | Foundational | baseline |
 | [SAFE-K8S-0403-017](markdown/controls/SAFE-K8S-0403-017.md) | AI platform key-domain hierarchy and envelope encryption architecture | Foundational | baseline |
 | [SAFE-K8S-0403-018](markdown/controls/SAFE-K8S-0403-018.md) | AI platform cryptographic key access domain separation | Foundational | baseline |
 | [SAFE-K8S-0403-019](markdown/controls/SAFE-K8S-0403-019.md) | Kubernetes Secrets external KMS provider integration | Foundational | baseline |
@@ -602,11 +533,11 @@ This knowledge area focuses on: Kubernetes Secrets external KMS integration and 
 
 - Domain: D04 - Identity, Access, and Secrets Management
 - Maturity: Practitioner
-- Controls: 10
+- Controls: 7
 
 ### Description
 
-This knowledge area focuses on: cert-manager deployment and Issuer configuration, TLS provisioning for webhooks, API aggregation, and internal services, mTLS for service-to-service authentication, Certificate rotation, expiry monitoring, and compromise response, and Certificate rotation execution and expiry monitoring. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: cert-manager deployment and Issuer configuration, TLS provisioning for webhooks, API aggregation, and internal services, mTLS for service-to-service authentication, Automated certificate rotation before expiry, and Certificate expiry monitoring and alerting. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -615,9 +546,6 @@ This knowledge area focuses on: cert-manager deployment and Issuer configuration
 | [SAFE-K8S-0404-001](markdown/controls/SAFE-K8S-0404-001.md) | cert-manager deployment and Issuer configuration | Practitioner | baseline |
 | [SAFE-K8S-0404-002](markdown/controls/SAFE-K8S-0404-002.md) | TLS provisioning for webhooks, API aggregation, and internal services | Practitioner | baseline |
 | [SAFE-K8S-0404-003](markdown/controls/SAFE-K8S-0404-003.md) | mTLS for service-to-service authentication | Practitioner | baseline |
-| [SAFE-K8S-0404-004](markdown/controls/SAFE-K8S-0404-004.md) | Certificate rotation, expiry monitoring, and compromise response | Practitioner | baseline |
-| [SAFE-K8S-0404-005](markdown/controls/SAFE-K8S-0404-005.md) | Certificate rotation execution and expiry monitoring | Practitioner | baseline |
-| [SAFE-K8S-0404-006](markdown/controls/SAFE-K8S-0404-006.md) | Certificate compromise revocation and re-issuance response | Practitioner | baseline |
 | [SAFE-K8S-0404-007](markdown/controls/SAFE-K8S-0404-007.md) | Automated certificate rotation before expiry | Practitioner | baseline |
 | [SAFE-K8S-0404-008](markdown/controls/SAFE-K8S-0404-008.md) | Certificate expiry monitoring and alerting | Practitioner | baseline |
 | [SAFE-K8S-0404-009](markdown/controls/SAFE-K8S-0404-009.md) | Compromised certificate revocation and re-issuance execution | Practitioner | baseline |
@@ -628,32 +556,24 @@ This knowledge area focuses on: cert-manager deployment and Issuer configuration
 
 - Domain: D04 - Identity, Access, and Secrets Management
 - Maturity: Practitioner
-- Controls: 24
+- Controls: 16
 
 ### Description
 
-This knowledge area focuses on: API impersonation restriction and auditing, Privilege escalation detection and monitoring, Kubeconfig security and hygiene, Security awareness for Kubernetes and GPU administrators, and Credential management and multi-factor authentication. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Privilege escalation detection and monitoring, Kubeconfig security and hygiene, Security awareness for Kubernetes and GPU administrators, Attribute-based access control for AI artifacts, and Authentication endpoint availability and DoS protection. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0405-001](markdown/controls/SAFE-K8S-0405-001.md) | API impersonation restriction and auditing | Practitioner | baseline |
 | [SAFE-K8S-0405-002](markdown/controls/SAFE-K8S-0405-002.md) | Privilege escalation detection and monitoring | Practitioner | baseline |
 | [SAFE-K8S-0405-003](markdown/controls/SAFE-K8S-0405-003.md) | Kubeconfig security and hygiene | Practitioner | baseline |
 | [SAFE-K8S-0405-004](markdown/controls/SAFE-K8S-0405-004.md) | Security awareness for Kubernetes and GPU administrators | Practitioner | baseline |
-| [SAFE-K8S-0405-005](markdown/controls/SAFE-K8S-0405-005.md) | Credential management and multi-factor authentication | Practitioner | baseline |
 | [SAFE-K8S-0405-006](markdown/controls/SAFE-K8S-0405-006.md) | Attribute-based access control for AI artifacts | Advanced | ai-specific |
 | [SAFE-K8S-0405-007](markdown/controls/SAFE-K8S-0405-007.md) | Authentication endpoint availability and DoS protection | Practitioner | baseline |
-| [SAFE-K8S-0405-008](markdown/controls/SAFE-K8S-0405-008.md) | Break-glass emergency access procedures | Practitioner | baseline |
 | [SAFE-K8S-0405-009](markdown/controls/SAFE-K8S-0405-009.md) | API impersonation RBAC restriction | Practitioner | baseline |
 | [SAFE-K8S-0405-010](markdown/controls/SAFE-K8S-0405-010.md) | API impersonation audit logging and alerting | Practitioner | baseline |
-| [SAFE-K8S-0405-011](markdown/controls/SAFE-K8S-0405-011.md) | Credential policy and secure storage governance | Practitioner | baseline |
 | [SAFE-K8S-0405-012](markdown/controls/SAFE-K8S-0405-012.md) | Privileged MFA enforcement for cluster administration | Practitioner | baseline |
-| [SAFE-K8S-0405-013](markdown/controls/SAFE-K8S-0405-013.md) | Break-glass recovery procedure definition and testing | Practitioner | baseline |
-| [SAFE-K8S-0405-014](markdown/controls/SAFE-K8S-0405-014.md) | Break-glass access auditing, dual-authorization, and automatic expiration | Practitioner | baseline |
-| [SAFE-K8S-0405-015](markdown/controls/SAFE-K8S-0405-015.md) | Break-glass dual-authorization and tenant-scoped activation guardrails | Practitioner | baseline |
-| [SAFE-K8S-0405-016](markdown/controls/SAFE-K8S-0405-016.md) | Break-glass access audit logging and automatic expiration | Practitioner | baseline |
 | [SAFE-K8S-0405-017](markdown/controls/SAFE-K8S-0405-017.md) | Credential policy baseline requirements | Practitioner | baseline |
 | [SAFE-K8S-0405-018](markdown/controls/SAFE-K8S-0405-018.md) | Secure credential storage and lifecycle governance | Practitioner | baseline |
 | [SAFE-K8S-0405-019](markdown/controls/SAFE-K8S-0405-019.md) | Break-glass recovery procedure definition | Practitioner | baseline |
@@ -668,11 +588,11 @@ This knowledge area focuses on: API impersonation restriction and auditing, Priv
 
 - Domain: D05 - Network Security and Communication
 - Maturity: Foundational
-- Controls: 9
+- Controls: 8
 
 ### Description
 
-This knowledge area focuses on: Default deny ingress and egress network policies, Namespace network isolation patterns, Workload egress controls, CNI-specific network policy extensions, and AI workload network segmentation. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Default deny ingress and egress network policies, Namespace network isolation patterns, Workload egress controls, CNI-specific network policy extensions, and Multi-cluster network segmentation for federated AI workloads. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -682,7 +602,6 @@ This knowledge area focuses on: Default deny ingress and egress network policies
 | [SAFE-K8S-0501-002](markdown/controls/SAFE-K8S-0501-002.md) | Namespace network isolation patterns | Foundational | baseline |
 | [SAFE-K8S-0501-003](markdown/controls/SAFE-K8S-0501-003.md) | Workload egress controls | Foundational | baseline |
 | [SAFE-K8S-0501-004](markdown/controls/SAFE-K8S-0501-004.md) | CNI-specific network policy extensions | Practitioner | baseline |
-| [SAFE-K8S-0501-005](markdown/controls/SAFE-K8S-0501-005.md) | AI workload network segmentation | Foundational | ai-specific |
 | [SAFE-K8S-0501-006](markdown/controls/SAFE-K8S-0501-006.md) | Multi-cluster network segmentation for federated AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-0501-007](markdown/controls/SAFE-K8S-0501-007.md) | East-west AI workload traffic monitoring | Practitioner | ai-specific |
 | [SAFE-K8S-0501-008](markdown/controls/SAFE-K8S-0501-008.md) | AI workload type network microsegmentation | Foundational | ai-specific |
@@ -693,11 +612,11 @@ This knowledge area focuses on: Default deny ingress and egress network policies
 
 - Domain: D05 - Network Security and Communication
 - Maturity: Practitioner
-- Controls: 10
+- Controls: 8
 
 ### Description
 
-This knowledge area focuses on: CNI plugin security selection criteria, Pod-to-pod traffic encryption, IPAM security and IP spoofing protection, CNI plugin hardening and lifecycle management, and AI workload data path encryption in transit. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: CNI plugin security selection criteria, Pod-to-pod traffic encryption, CNI plugin hardening and lifecycle management, AI workload data path encryption in transit, and Kubernetes pod IP anti-spoofing enforcement and validation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -705,10 +624,8 @@ This knowledge area focuses on: CNI plugin security selection criteria, Pod-to-p
 | --- | --- | --- | --- |
 | [SAFE-K8S-0502-001](markdown/controls/SAFE-K8S-0502-001.md) | CNI plugin security selection criteria | Practitioner | baseline |
 | [SAFE-K8S-0502-002](markdown/controls/SAFE-K8S-0502-002.md) | Pod-to-pod traffic encryption | Practitioner | baseline |
-| [SAFE-K8S-0502-003](markdown/controls/SAFE-K8S-0502-003.md) | IPAM security and IP spoofing protection | Practitioner | baseline |
 | [SAFE-K8S-0502-004](markdown/controls/SAFE-K8S-0502-004.md) | CNI plugin hardening and lifecycle management | Practitioner | baseline |
 | [SAFE-K8S-0502-005](markdown/controls/SAFE-K8S-0502-005.md) | AI workload data path encryption in transit | Practitioner | ai-specific |
-| [SAFE-K8S-0502-006](markdown/controls/SAFE-K8S-0502-006.md) | Kubernetes CNI IPAM capacity sizing and exhaustion monitoring | Practitioner | baseline |
 | [SAFE-K8S-0502-007](markdown/controls/SAFE-K8S-0502-007.md) | Kubernetes pod IP anti-spoofing enforcement and validation | Practitioner | baseline |
 | [SAFE-K8S-0502-008](markdown/controls/SAFE-K8S-0502-008.md) | Network policy design for AI-specific traffic patterns | Practitioner | ai-specific |
 | [SAFE-K8S-0502-009](markdown/controls/SAFE-K8S-0502-009.md) | Kubernetes CNI IPAM capacity sizing | Practitioner | baseline |
@@ -719,26 +636,21 @@ This knowledge area focuses on: CNI plugin security selection criteria, Pod-to-p
 
 - Domain: D05 - Network Security and Communication
 - Maturity: Practitioner
-- Controls: 16
+- Controls: 11
 
 ### Description
 
-This knowledge area focuses on: Ingress controller hardening, DNS infrastructure hardening, External traffic policy and source IP preservation, Internal load balancer annotation enforcement, and DNS exfiltration detection. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Internal load balancer annotation enforcement, DNS exfiltration detection, Cloud load balancer security group configuration, Ingress TLS termination and boundary configuration hardening, and CoreDNS and upstream resolver hardening. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0503-001](markdown/controls/SAFE-K8S-0503-001.md) | Ingress controller hardening | Practitioner | baseline |
-| [SAFE-K8S-0503-002](markdown/controls/SAFE-K8S-0503-002.md) | DNS infrastructure hardening | Practitioner | baseline |
-| [SAFE-K8S-0503-003](markdown/controls/SAFE-K8S-0503-003.md) | External traffic policy and source IP preservation | Practitioner | baseline |
 | [SAFE-K8S-0503-004](markdown/controls/SAFE-K8S-0503-004.md) | Internal load balancer annotation enforcement | Practitioner | baseline |
 | [SAFE-K8S-0503-005](markdown/controls/SAFE-K8S-0503-005.md) | DNS exfiltration detection | Practitioner | baseline |
 | [SAFE-K8S-0503-006](markdown/controls/SAFE-K8S-0503-006.md) | Cloud load balancer security group configuration | Practitioner | baseline |
 | [SAFE-K8S-0503-007](markdown/controls/SAFE-K8S-0503-007.md) | Ingress TLS termination and boundary configuration hardening | Practitioner | baseline |
-| [SAFE-K8S-0503-008](markdown/controls/SAFE-K8S-0503-008.md) | Ingress WAF integration and rate limiting | Practitioner | baseline |
 | [SAFE-K8S-0503-009](markdown/controls/SAFE-K8S-0503-009.md) | CoreDNS and upstream resolver hardening | Practitioner | baseline |
-| [SAFE-K8S-0503-010](markdown/controls/SAFE-K8S-0503-010.md) | DNS resolution path enforcement and namespace-scoped service discovery | Practitioner | baseline |
 | [SAFE-K8S-0503-011](markdown/controls/SAFE-K8S-0503-011.md) | External traffic policy mode selection and tradeoff governance | Practitioner | baseline |
 | [SAFE-K8S-0503-012](markdown/controls/SAFE-K8S-0503-012.md) | Client source IP preservation for external services | Practitioner | baseline |
 | [SAFE-K8S-0503-013](markdown/controls/SAFE-K8S-0503-013.md) | Ingress web application firewall integration and request filtering | Practitioner | baseline |
@@ -751,11 +663,11 @@ This knowledge area focuses on: Ingress controller hardening, DNS infrastructure
 
 - Domain: D05 - Network Security and Communication
 - Maturity: Practitioner
-- Controls: 9
+- Controls: 7
 
 ### Description
 
-This knowledge area focuses on: Zero trust networking principles for Kubernetes, Service mesh mTLS and authorization policies, SPIFFE/SPIRE workload identity management, L7 microsegmentation and API-aware policies, and Service mesh tuning for AI workloads. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Zero trust networking principles for Kubernetes, Service mesh mTLS and authorization policies, Service mesh tuning for AI workloads, SPIFFE/SPIRE workload identity issuance and lifecycle management, and SPIFFE trust domain scoping and cross-cluster federation governance. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -763,8 +675,6 @@ This knowledge area focuses on: Zero trust networking principles for Kubernetes,
 | --- | --- | --- | --- |
 | [SAFE-K8S-0504-001](markdown/controls/SAFE-K8S-0504-001.md) | Zero trust networking principles for Kubernetes | Practitioner | baseline |
 | [SAFE-K8S-0504-002](markdown/controls/SAFE-K8S-0504-002.md) | Service mesh mTLS and authorization policies | Practitioner | baseline |
-| [SAFE-K8S-0504-003](markdown/controls/SAFE-K8S-0504-003.md) | SPIFFE/SPIRE workload identity management | Advanced | baseline |
-| [SAFE-K8S-0504-004](markdown/controls/SAFE-K8S-0504-004.md) | L7 microsegmentation and API-aware policies | Practitioner | baseline |
 | [SAFE-K8S-0504-005](markdown/controls/SAFE-K8S-0504-005.md) | Service mesh tuning for AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-0504-006](markdown/controls/SAFE-K8S-0504-006.md) | SPIFFE/SPIRE workload identity issuance and lifecycle management | Advanced | baseline |
 | [SAFE-K8S-0504-007](markdown/controls/SAFE-K8S-0504-007.md) | SPIFFE trust domain scoping and cross-cluster federation governance | Advanced | baseline |
@@ -776,17 +686,16 @@ This knowledge area focuses on: Zero trust networking principles for Kubernetes,
 
 - Domain: D05 - Network Security and Communication
 - Maturity: Practitioner
-- Controls: 7
+- Controls: 6
 
 ### Description
 
-This knowledge area focuses on: API server network access restriction, LoadBalancer, NodePort, and ExternalIP restriction policies, Internal service endpoint protection, API server audit log analysis for network-based attack detection, and Identity-based internal service access control. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: LoadBalancer, NodePort, and ExternalIP restriction policies, Internal service endpoint protection, API server audit log analysis for network-based attack detection, Identity-based internal service access control, and API server private endpoint and authorized network enforcement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0505-001](markdown/controls/SAFE-K8S-0505-001.md) | API server network access restriction | Practitioner | baseline |
 | [SAFE-K8S-0505-002](markdown/controls/SAFE-K8S-0505-002.md) | LoadBalancer, NodePort, and ExternalIP restriction policies | Practitioner | baseline |
 | [SAFE-K8S-0505-003](markdown/controls/SAFE-K8S-0505-003.md) | Internal service endpoint protection | Practitioner | baseline |
 | [SAFE-K8S-0505-004](markdown/controls/SAFE-K8S-0505-004.md) | API server audit log analysis for network-based attack detection | Practitioner | baseline |
@@ -799,29 +708,20 @@ This knowledge area focuses on: API server network access restriction, LoadBalan
 
 - Domain: D06 - Supply Chain, Images, and Admission Control
 - Maturity: Practitioner
-- Controls: 23
+- Controls: 14
 
 ### Description
 
-This knowledge area focuses on: Base image selection and hardening, Container image vulnerability scanning, Registry access controls, Image hardening practices, and Container image and artifact retention policy. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: AI GPU and ML framework base image validation, CI/CD build-time container image vulnerability scanning, Artifact retention period and lifecycle enforcement, Integrity metadata co-retention with software artifacts, and Container image runtime hardening with non-root and read-only filesystem. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0601-001](markdown/controls/SAFE-K8S-0601-001.md) | Base image selection and hardening | Practitioner | ai-specific |
-| [SAFE-K8S-0601-002](markdown/controls/SAFE-K8S-0601-002.md) | Container image vulnerability scanning | Practitioner | ai-specific |
-| [SAFE-K8S-0601-003](markdown/controls/SAFE-K8S-0601-003.md) | Registry access controls | Practitioner | baseline |
-| [SAFE-K8S-0601-004](markdown/controls/SAFE-K8S-0601-004.md) | Image hardening practices | Practitioner | ai-specific |
-| [SAFE-K8S-0601-005](markdown/controls/SAFE-K8S-0601-005.md) | Container image and artifact retention policy | Practitioner | baseline |
-| [SAFE-K8S-0601-006](markdown/controls/SAFE-K8S-0601-006.md) | Approved minimal base images and multi-stage build hardening | Practitioner | ai-specific |
 | [SAFE-K8S-0601-007](markdown/controls/SAFE-K8S-0601-007.md) | AI GPU and ML framework base image validation | Practitioner | ai-specific |
 | [SAFE-K8S-0601-008](markdown/controls/SAFE-K8S-0601-008.md) | CI/CD build-time container image vulnerability scanning | Practitioner | ai-specific |
-| [SAFE-K8S-0601-009](markdown/controls/SAFE-K8S-0601-009.md) | Registry and runtime container vulnerability monitoring | Practitioner | ai-specific |
 | [SAFE-K8S-0601-010](markdown/controls/SAFE-K8S-0601-010.md) | Artifact retention period and lifecycle enforcement | Practitioner | baseline |
 | [SAFE-K8S-0601-011](markdown/controls/SAFE-K8S-0601-011.md) | Integrity metadata co-retention with software artifacts | Practitioner | baseline |
-| [SAFE-K8S-0601-012](markdown/controls/SAFE-K8S-0601-012.md) | Container registry authentication, authorization, and network restriction | Practitioner | baseline |
-| [SAFE-K8S-0601-013](markdown/controls/SAFE-K8S-0601-013.md) | Kubernetes image pull secret management and rotation | Practitioner | baseline |
 | [SAFE-K8S-0601-014](markdown/controls/SAFE-K8S-0601-014.md) | Container image runtime hardening with non-root and read-only filesystem | Practitioner | ai-specific |
 | [SAFE-K8S-0601-015](markdown/controls/SAFE-K8S-0601-015.md) | Inference image minimal composition with GPU runtime-only dependencies | Practitioner | ai-specific |
 | [SAFE-K8S-0601-016](markdown/controls/SAFE-K8S-0601-016.md) | Approved minimal base image catalog enforcement | Practitioner | ai-specific |
@@ -838,19 +738,17 @@ This knowledge area focuses on: Base image selection and hardening, Container im
 
 - Domain: D06 - Supply Chain, Images, and Admission Control
 - Maturity: Advanced
-- Controls: 7
+- Controls: 5
 
 ### Description
 
-This knowledge area focuses on: Sigstore/cosign keyless signing and Rekor transparency logging, Notary v2 (notation) trust policy and signature verification, Admission enforcement of image signatures, Notary v2 trust policy and signing identity governance, and Notary v2 OCI signature artifact registry integration. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Sigstore/cosign keyless signing and Rekor transparency logging, Notary v2 trust policy and signing identity governance, Notary v2 OCI signature artifact registry integration, Fail-closed admission enforcement of image signature verification, and Admission signature bypass and emergency break-glass governance.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0602-001](markdown/controls/SAFE-K8S-0602-001.md) | Sigstore/cosign keyless signing and Rekor transparency logging | Practitioner | baseline |
-| [SAFE-K8S-0602-002](markdown/controls/SAFE-K8S-0602-002.md) | Notary v2 (notation) trust policy and signature verification | Practitioner | baseline |
-| [SAFE-K8S-0602-003](markdown/controls/SAFE-K8S-0602-003.md) | Admission enforcement of image signatures | Practitioner | baseline |
 | [SAFE-K8S-0602-004](markdown/controls/SAFE-K8S-0602-004.md) | Notary v2 trust policy and signing identity governance | Practitioner | baseline |
 | [SAFE-K8S-0602-005](markdown/controls/SAFE-K8S-0602-005.md) | Notary v2 OCI signature artifact registry integration | Practitioner | baseline |
 | [SAFE-K8S-0602-006](markdown/controls/SAFE-K8S-0602-006.md) | Fail-closed admission enforcement of image signature verification | Practitioner | baseline |
@@ -861,19 +759,16 @@ This knowledge area focuses on: Sigstore/cosign keyless signing and Rekor transp
 
 - Domain: D06 - Supply Chain, Images, and Admission Control
 - Maturity: Advanced
-- Controls: 14
+- Controls: 10
 
 ### Description
 
-This knowledge area focuses on: Artifact attestation with in-toto and SLSA provenance, Build attestation taxonomy per NIST SP 800-204D, Attestation policy evaluation and lifecycle compliance, Cryptographic agility and post-quantum readiness, and FIPS 140 cryptographic module validation. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Cryptographic agility and post-quantum readiness, FIPS 140 cryptographic module validation, TUF-based secure software update systems, Build environment and process attestations per NIST SP 800-204D, and Build materials and artifact attestations per NIST SP 800-204D. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0603-001](markdown/controls/SAFE-K8S-0603-001.md) | Artifact attestation with in-toto and SLSA provenance | Advanced | baseline |
-| [SAFE-K8S-0603-002](markdown/controls/SAFE-K8S-0603-002.md) | Build attestation taxonomy per NIST SP 800-204D | Advanced | baseline |
-| [SAFE-K8S-0603-003](markdown/controls/SAFE-K8S-0603-003.md) | Attestation policy evaluation and lifecycle compliance | Advanced | baseline |
 | [SAFE-K8S-0603-004](markdown/controls/SAFE-K8S-0603-004.md) | Cryptographic agility and post-quantum readiness | Advanced | ai-specific |
 | [SAFE-K8S-0603-005](markdown/controls/SAFE-K8S-0603-005.md) | FIPS 140 cryptographic module validation | Practitioner | baseline |
 | [SAFE-K8S-0603-006](markdown/controls/SAFE-K8S-0603-006.md) | TUF-based secure software update systems | Advanced | baseline |
@@ -882,7 +777,6 @@ This knowledge area focuses on: Artifact attestation with in-toto and SLSA prove
 | [SAFE-K8S-0603-009](markdown/controls/SAFE-K8S-0603-009.md) | In-toto and SLSA provenance attestation generation | Advanced | baseline |
 | [SAFE-K8S-0603-010](markdown/controls/SAFE-K8S-0603-010.md) | SBOM attestation binding to image digests | Advanced | baseline |
 | [SAFE-K8S-0603-011](markdown/controls/SAFE-K8S-0603-011.md) | Attestation policy definition, signing, and change governance | Advanced | baseline |
-| [SAFE-K8S-0603-012](markdown/controls/SAFE-K8S-0603-012.md) | Lifecycle attestation verification and admission enforcement | Advanced | baseline |
 | [SAFE-K8S-0603-013](markdown/controls/SAFE-K8S-0603-013.md) | Lifecycle attestation chain verification across build, promote, and deploy | Advanced | baseline |
 | [SAFE-K8S-0603-014](markdown/controls/SAFE-K8S-0603-014.md) | Fail-closed admission enforcement for attestation requirements | Advanced | baseline |
 
@@ -891,11 +785,11 @@ This knowledge area focuses on: Artifact attestation with in-toto and SLSA prove
 
 - Domain: D06 - Supply Chain, Images, and Admission Control
 - Maturity: Practitioner
-- Controls: 14
+- Controls: 11
 
 ### Description
 
-This knowledge area focuses on: SBOM generation for container and AI artifacts, ML-BOM (ML Bill of Materials) generation, SBOM storage and distribution as OCI artifacts, VEX (Vulnerability Exploitability eXchange) publication, and Dependency tracking and SLSA build provenance. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: SBOM generation for container and AI artifacts, ML-BOM (ML Bill of Materials) generation, SBOM storage and distribution as OCI artifacts, VEX (Vulnerability Exploitability eXchange) publication, and Third-party component security requirements documentation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -905,14 +799,11 @@ This knowledge area focuses on: SBOM generation for container and AI artifacts, 
 | [SAFE-K8S-0604-002](markdown/controls/SAFE-K8S-0604-002.md) | ML-BOM (ML Bill of Materials) generation | Practitioner | ai-specific |
 | [SAFE-K8S-0604-003](markdown/controls/SAFE-K8S-0604-003.md) | SBOM storage and distribution as OCI artifacts | Practitioner | baseline |
 | [SAFE-K8S-0604-004](markdown/controls/SAFE-K8S-0604-004.md) | VEX (Vulnerability Exploitability eXchange) publication | Practitioner | baseline |
-| [SAFE-K8S-0604-005](markdown/controls/SAFE-K8S-0604-005.md) | Dependency tracking and SLSA build provenance | Practitioner | baseline |
-| [SAFE-K8S-0604-006](markdown/controls/SAFE-K8S-0604-006.md) | Vulnerability prioritization for AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-0604-007](markdown/controls/SAFE-K8S-0604-007.md) | Third-party component security requirements documentation | Practitioner | baseline |
 | [SAFE-K8S-0604-008](markdown/controls/SAFE-K8S-0604-008.md) | AI workload vulnerability exposure classification | Practitioner | ai-specific |
 | [SAFE-K8S-0604-009](markdown/controls/SAFE-K8S-0604-009.md) | AI workload vulnerability prioritization and remediation SLAs | Practitioner | ai-specific |
 | [SAFE-K8S-0604-010](markdown/controls/SAFE-K8S-0604-010.md) | Automated AI workload rebuild and redeployment patch pipelines | Practitioner | ai-specific |
 | [SAFE-K8S-0604-011](markdown/controls/SAFE-K8S-0604-011.md) | SLSA provenance generation and target-level governance | Practitioner | baseline |
-| [SAFE-K8S-0604-012](markdown/controls/SAFE-K8S-0604-012.md) | Hermetic build dependency control and source-to-artifact integrity | Practitioner | baseline |
 | [SAFE-K8S-0604-013](markdown/controls/SAFE-K8S-0604-013.md) | Hermetic build execution and pinned dependency input control | Practitioner | baseline |
 | [SAFE-K8S-0604-014](markdown/controls/SAFE-K8S-0604-014.md) | Source-to-artifact integrity linkage for built images | Practitioner | baseline |
 
@@ -921,11 +812,11 @@ This knowledge area focuses on: SBOM generation for container and AI artifacts, 
 
 - Domain: D06 - Supply Chain, Images, and Admission Control
 - Maturity: Practitioner
-- Controls: 10
+- Controls: 8
 
 ### Description
 
-This knowledge area focuses on: OPA/Gatekeeper policies for Kubernetes and AI workloads, Kyverno admission policies, Kubewarden WebAssembly-based admission policies, Admission webhook security and availability, and CRD validation and webhook hardening for AI custom resources. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: OPA/Gatekeeper policies for Kubernetes and AI workloads, Kyverno admission policies, Kubewarden WebAssembly-based admission policies, Pod Security Admission enforcement for AI workload namespaces, and Admission webhook fail-closed enforcement and timeout bounds. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -934,8 +825,6 @@ This knowledge area focuses on: OPA/Gatekeeper policies for Kubernetes and AI wo
 | [SAFE-K8S-0605-001](markdown/controls/SAFE-K8S-0605-001.md) | OPA/Gatekeeper policies for Kubernetes and AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-0605-002](markdown/controls/SAFE-K8S-0605-002.md) | Kyverno admission policies | Practitioner | baseline |
 | [SAFE-K8S-0605-003](markdown/controls/SAFE-K8S-0605-003.md) | Kubewarden WebAssembly-based admission policies | Practitioner | baseline |
-| [SAFE-K8S-0605-004](markdown/controls/SAFE-K8S-0605-004.md) | Admission webhook security and availability | Practitioner | baseline |
-| [SAFE-K8S-0605-005](markdown/controls/SAFE-K8S-0605-005.md) | CRD validation and webhook hardening for AI custom resources | Practitioner | ai-specific |
 | [SAFE-K8S-0605-006](markdown/controls/SAFE-K8S-0605-006.md) | Pod Security Admission enforcement for AI workload namespaces | Practitioner | baseline |
 | [SAFE-K8S-0605-007](markdown/controls/SAFE-K8S-0605-007.md) | Admission webhook fail-closed enforcement and timeout bounds | Practitioner | baseline |
 | [SAFE-K8S-0605-008](markdown/controls/SAFE-K8S-0605-008.md) | Admission webhook TLS rotation and high-availability resilience | Practitioner | baseline |
@@ -947,32 +836,20 @@ This knowledge area focuses on: OPA/Gatekeeper policies for Kubernetes and AI wo
 
 - Domain: D06 - Supply Chain, Images, and Admission Control
 - Maturity: Practitioner
-- Controls: 34
+- Controls: 22
 
 ### Description
 
-This knowledge area focuses on: CNCF lifecycle security and zero-trust CI/CD pipelines, CI/CD build environment hardening, CI pipeline security gates, GitOps repository security, and Helm chart security and provenance. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: CI/CD build environment hardening, CI/CD build activity monitoring, SSDF v1.1 alignment for secure development practices, CI build-time security gate enforcement, and CNCF lifecycle phase security coverage. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0606-001](markdown/controls/SAFE-K8S-0606-001.md) | CNCF lifecycle security and zero-trust CI/CD pipelines | Practitioner | baseline |
 | [SAFE-K8S-0606-002](markdown/controls/SAFE-K8S-0606-002.md) | CI/CD build environment hardening | Practitioner | baseline |
-| [SAFE-K8S-0606-003](markdown/controls/SAFE-K8S-0606-003.md) | CI pipeline security gates | Practitioner | baseline |
-| [SAFE-K8S-0606-004](markdown/controls/SAFE-K8S-0606-004.md) | GitOps repository security | Practitioner | baseline |
-| [SAFE-K8S-0606-005](markdown/controls/SAFE-K8S-0606-005.md) | Helm chart security and provenance | Practitioner | baseline |
-| [SAFE-K8S-0606-006](markdown/controls/SAFE-K8S-0606-006.md) | Kubernetes manifest signing and verification | Advanced | baseline |
 | [SAFE-K8S-0606-007](markdown/controls/SAFE-K8S-0606-007.md) | CI/CD build activity monitoring | Practitioner | baseline |
-| [SAFE-K8S-0606-008](markdown/controls/SAFE-K8S-0606-008.md) | GitOps reconciliation integrity and drift detection | Practitioner | baseline |
 | [SAFE-K8S-0606-009](markdown/controls/SAFE-K8S-0606-009.md) | SSDF v1.1 alignment for secure development practices | Practitioner | baseline |
-| [SAFE-K8S-0606-010](markdown/controls/SAFE-K8S-0606-010.md) | Infrastructure as Code security and policy-as-code integrity | Practitioner | baseline |
 | [SAFE-K8S-0606-011](markdown/controls/SAFE-K8S-0606-011.md) | CI build-time security gate enforcement | Practitioner | baseline |
-| [SAFE-K8S-0606-012](markdown/controls/SAFE-K8S-0606-012.md) | Artifact freshness and SCM security posture enforcement | Practitioner | baseline |
-| [SAFE-K8S-0606-013](markdown/controls/SAFE-K8S-0606-013.md) | GitOps repository access, commit signing, and branch protection | Practitioner | baseline |
-| [SAFE-K8S-0606-014](markdown/controls/SAFE-K8S-0606-014.md) | GitOps release metadata preservation and deployment traceability | Practitioner | baseline |
-| [SAFE-K8S-0606-015](markdown/controls/SAFE-K8S-0606-015.md) | GitOps reconciliation monitoring, drift detection, and automated resync | Practitioner | baseline |
-| [SAFE-K8S-0606-016](markdown/controls/SAFE-K8S-0606-016.md) | Git-only production deployment path and direct-change prohibition | Practitioner | baseline |
 | [SAFE-K8S-0606-017](markdown/controls/SAFE-K8S-0606-017.md) | CNCF lifecycle phase security coverage | Practitioner | baseline |
 | [SAFE-K8S-0606-018](markdown/controls/SAFE-K8S-0606-018.md) | Zero-trust CI/CD handoff verification and independent evidence generation | Practitioner | baseline |
 | [SAFE-K8S-0606-019](markdown/controls/SAFE-K8S-0606-019.md) | Helm chart provenance and signature verification | Practitioner | baseline |
@@ -997,11 +874,11 @@ This knowledge area focuses on: CNCF lifecycle security and zero-trust CI/CD pip
 
 - Domain: D07 - Storage, Multi-tenancy, and Resource Governance
 - Maturity: Practitioner
-- Controls: 9
+- Controls: 8
 
 ### Description
 
-This knowledge area focuses on: PersistentVolume and PersistentVolumeClaim access mode enforcement, CSI driver security and privilege restriction, Encryption at rest for persistent volumes, PV reclaim policy enforcement for AI data volumes, and Data versioning and immutability for training data and model artifacts. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: PersistentVolume and PersistentVolumeClaim access mode enforcement, CSI driver security and privilege restriction, Encryption at rest for persistent volumes, PV reclaim policy enforcement for AI data volumes, and Dual authorization for retained AI data volume destruction. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1011,7 +888,6 @@ This knowledge area focuses on: PersistentVolume and PersistentVolumeClaim acces
 | [SAFE-K8S-0701-002](markdown/controls/SAFE-K8S-0701-002.md) | CSI driver security and privilege restriction | Practitioner | baseline |
 | [SAFE-K8S-0701-003](markdown/controls/SAFE-K8S-0701-003.md) | Encryption at rest for persistent volumes | Foundational | baseline |
 | [SAFE-K8S-0701-004](markdown/controls/SAFE-K8S-0701-004.md) | PV reclaim policy enforcement for AI data volumes | Practitioner | ai-specific |
-| [SAFE-K8S-0701-005](markdown/controls/SAFE-K8S-0701-005.md) | Data versioning and immutability for training data and model artifacts | Advanced | ai-specific |
 | [SAFE-K8S-0701-006](markdown/controls/SAFE-K8S-0701-006.md) | Dual authorization for retained AI data volume destruction | Advanced | ai-specific |
 | [SAFE-K8S-0701-007](markdown/controls/SAFE-K8S-0701-007.md) | High-performance AI storage backend hardening | Advanced | ai-specific |
 | [SAFE-K8S-0701-008](markdown/controls/SAFE-K8S-0701-008.md) | Training data and model artifact version tracking for reproducibility | Advanced | ai-specific |
@@ -1022,33 +898,22 @@ This knowledge area focuses on: PersistentVolume and PersistentVolumeClaim acces
 
 - Domain: D07 - Storage, Multi-tenancy, and Resource Governance
 - Maturity: Practitioner
-- Controls: 31
+- Controls: 20
 
 ### Description
 
-This knowledge area focuses on: Namespace isolation model for multi-tenant AI clusters, Resource quotas per namespace for GPU and AI workloads, LimitRange enforcement for containers and pods, Virtual cluster isolation for multi-tenant environments, and Label and annotation schema definition for AI workload classification. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: LimitRange enforcement for containers and pods, Label and annotation schema definition for AI workload classification, Admission control enforcement of workload classification label requirements, Virtual cluster deployment for high-isolation multi-tenant Kubernetes environments, and Tenant default-deny inter-namespace network isolation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0702-001](markdown/controls/SAFE-K8S-0702-001.md) | Namespace isolation model for multi-tenant AI clusters | Practitioner | baseline |
-| [SAFE-K8S-0702-002](markdown/controls/SAFE-K8S-0702-002.md) | Resource quotas per namespace for GPU and AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-0702-003](markdown/controls/SAFE-K8S-0702-003.md) | LimitRange enforcement for containers and pods | Foundational | baseline |
-| [SAFE-K8S-0702-004](markdown/controls/SAFE-K8S-0702-004.md) | Virtual cluster isolation for multi-tenant environments | Advanced | baseline |
 | [SAFE-K8S-0702-005](markdown/controls/SAFE-K8S-0702-005.md) | Label and annotation schema definition for AI workload classification | Practitioner | ai-specific |
-| [SAFE-K8S-0702-006](markdown/controls/SAFE-K8S-0702-006.md) | Data type classification labels for pipeline data flows | Practitioner | ai-specific |
-| [SAFE-K8S-0702-007](markdown/controls/SAFE-K8S-0702-007.md) | Classification attribute preservation across model lifecycle stages | Practitioner | ai-specific |
-| [SAFE-K8S-0702-008](markdown/controls/SAFE-K8S-0702-008.md) | Tenant boundary enforcement through admission control, network policy, and RBAC | Practitioner | baseline |
 | [SAFE-K8S-0702-009](markdown/controls/SAFE-K8S-0702-009.md) | Admission control enforcement of workload classification label requirements | Practitioner | ai-specific |
 | [SAFE-K8S-0702-010](markdown/controls/SAFE-K8S-0702-010.md) | Virtual cluster deployment for high-isolation multi-tenant Kubernetes environments | Advanced | baseline |
-| [SAFE-K8S-0702-011](markdown/controls/SAFE-K8S-0702-011.md) | Isolation guarantee validation and residual risk documentation for virtual clusters | Advanced | baseline |
-| [SAFE-K8S-0702-012](markdown/controls/SAFE-K8S-0702-012.md) | Tenant namespace RBAC and admission boundary enforcement | Practitioner | baseline |
 | [SAFE-K8S-0702-013](markdown/controls/SAFE-K8S-0702-013.md) | Tenant default-deny inter-namespace network isolation | Practitioner | baseline |
-| [SAFE-K8S-0702-014](markdown/controls/SAFE-K8S-0702-014.md) | Pipeline data classification taxonomy and label propagation | Practitioner | ai-specific |
-| [SAFE-K8S-0702-015](markdown/controls/SAFE-K8S-0702-015.md) | Classification-driven admission, storage, and network policy enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-0702-016](markdown/controls/SAFE-K8S-0702-016.md) | Classification metadata preservation across model lifecycle stages | Practitioner | ai-specific |
-| [SAFE-K8S-0702-017](markdown/controls/SAFE-K8S-0702-017.md) | Promotion-time reclassification and production gate enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-0702-018](markdown/controls/SAFE-K8S-0702-018.md) | Namespace tenant boundary model and isolation limitation documentation | Practitioner | baseline |
 | [SAFE-K8S-0702-019](markdown/controls/SAFE-K8S-0702-019.md) | Supplementary namespace isolation control enforcement for multi-tenant AI clusters | Practitioner | baseline |
 | [SAFE-K8S-0702-020](markdown/controls/SAFE-K8S-0702-020.md) | Namespace ResourceQuota enforcement for GPU and AI workloads | Practitioner | ai-specific |
@@ -1069,27 +934,22 @@ This knowledge area focuses on: Namespace isolation model for multi-tenant AI cl
 
 - Domain: D07 - Storage, Multi-tenancy, and Resource Governance
 - Maturity: Practitioner
-- Controls: 23
+- Controls: 17
 
 ### Description
 
-This knowledge area focuses on: Priority classes and preemption policies for AI workloads, Pod Disruption Budgets for workload availability, GPU cost attribution and chargeback mechanisms, GPU resource abuse detection and prevention, and AI workload resource exhaustion guardrails. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Pod Disruption Budgets for workload availability, AI workload resource exhaustion guardrails, Fair-share GPU queue management for multi-tenant clusters, Idle GPU detection and resource reclamation, and GPU spending limits and budget enforcement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0703-001](markdown/controls/SAFE-K8S-0703-001.md) | Priority classes and preemption policies for AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-0703-002](markdown/controls/SAFE-K8S-0703-002.md) | Pod Disruption Budgets for workload availability | Foundational | baseline |
-| [SAFE-K8S-0703-003](markdown/controls/SAFE-K8S-0703-003.md) | GPU cost attribution and chargeback mechanisms | Practitioner | ai-specific |
-| [SAFE-K8S-0703-004](markdown/controls/SAFE-K8S-0703-004.md) | GPU resource abuse detection and prevention | Practitioner | ai-specific |
 | [SAFE-K8S-0703-005](markdown/controls/SAFE-K8S-0703-005.md) | AI workload resource exhaustion guardrails | Practitioner | ai-specific |
-| [SAFE-K8S-0703-006](markdown/controls/SAFE-K8S-0703-006.md) | Node affinity, taints, and topology-aware scheduling for AI workload isolation | Practitioner | ai-specific |
 | [SAFE-K8S-0703-007](markdown/controls/SAFE-K8S-0703-007.md) | Fair-share GPU queue management for multi-tenant clusters | Practitioner | ai-specific |
 | [SAFE-K8S-0703-008](markdown/controls/SAFE-K8S-0703-008.md) | Idle GPU detection and resource reclamation | Practitioner | ai-specific |
 | [SAFE-K8S-0703-009](markdown/controls/SAFE-K8S-0703-009.md) | GPU spending limits and budget enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-0703-010](markdown/controls/SAFE-K8S-0703-010.md) | Host-level resource isolation for AI workload nodes | Practitioner | ai-specific |
-| [SAFE-K8S-0703-011](markdown/controls/SAFE-K8S-0703-011.md) | EDoS prevention and chaos engineering for AI resources | Advanced | ai-specific |
 | [SAFE-K8S-0703-012](markdown/controls/SAFE-K8S-0703-012.md) | Node affinity rules, taints, and tolerations for AI workload isolation | Practitioner | ai-specific |
 | [SAFE-K8S-0703-013](markdown/controls/SAFE-K8S-0703-013.md) | Topology-aware scheduling for GPU locality with blast-radius containment | Practitioner | ai-specific |
 | [SAFE-K8S-0703-014](markdown/controls/SAFE-K8S-0703-014.md) | EDoS spending guardrails and autoscaling limits for AI resources | Advanced | ai-specific |
@@ -1098,7 +958,6 @@ This knowledge area focuses on: Priority classes and preemption policies for AI 
 | [SAFE-K8S-0703-017](markdown/controls/SAFE-K8S-0703-017.md) | PriorityClass assignment restriction and admission enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-0703-018](markdown/controls/SAFE-K8S-0703-018.md) | GPU cost attribution metering and billing correlation | Practitioner | ai-specific |
 | [SAFE-K8S-0703-019](markdown/controls/SAFE-K8S-0703-019.md) | GPU chargeback and showback reporting accountability | Practitioner | ai-specific |
-| [SAFE-K8S-0703-020](markdown/controls/SAFE-K8S-0703-020.md) | GPU workload abuse detection and response | Practitioner | ai-specific |
 | [SAFE-K8S-0703-021](markdown/controls/SAFE-K8S-0703-021.md) | GPU admission enforcement against unauthorized access and quota bypass | Practitioner | ai-specific |
 | [SAFE-K8S-0703-022](markdown/controls/SAFE-K8S-0703-022.md) | GPU abuse pattern monitoring and detection for Kubernetes AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-0703-023](markdown/controls/SAFE-K8S-0703-023.md) | Investigation and termination of confirmed unauthorized GPU workloads | Practitioner | ai-specific |
@@ -1108,28 +967,22 @@ This knowledge area focuses on: Priority classes and preemption policies for AI 
 
 - Domain: D07 - Storage, Multi-tenancy, and Resource Governance
 - Maturity: Practitioner
-- Controls: 20
+- Controls: 14
 
 ### Description
 
-This knowledge area focuses on: Cloud IAM to Kubernetes RBAC mapping, VPC and security group integration with Kubernetes network policies, Cloud audit log correlation with Kubernetes audit events, IMDSv2 enforcement on Kubernetes nodes, and Restricted use policies for non-organizationally owned systems and external AI services. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: VPC and security group integration with Kubernetes network policies, IMDSv2 enforcement on Kubernetes nodes, Restricted use policies for non-organizationally owned systems and external AI services, Cloud provider contingency plans for managed Kubernetes services, and Cloud-to-Kubernetes event correlation for incident investigation. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0704-001](markdown/controls/SAFE-K8S-0704-001.md) | Cloud IAM to Kubernetes RBAC mapping | Practitioner | baseline |
 | [SAFE-K8S-0704-002](markdown/controls/SAFE-K8S-0704-002.md) | VPC and security group integration with Kubernetes network policies | Practitioner | baseline |
-| [SAFE-K8S-0704-003](markdown/controls/SAFE-K8S-0704-003.md) | Cloud audit log correlation with Kubernetes audit events | Practitioner | baseline |
 | [SAFE-K8S-0704-004](markdown/controls/SAFE-K8S-0704-004.md) | IMDSv2 enforcement on Kubernetes nodes | Foundational | baseline |
 | [SAFE-K8S-0704-005](markdown/controls/SAFE-K8S-0704-005.md) | Restricted use policies for non-organizationally owned systems and external AI services | Practitioner | ai-specific |
 | [SAFE-K8S-0704-006](markdown/controls/SAFE-K8S-0704-006.md) | Cloud provider contingency plans for managed Kubernetes services | Practitioner | ai-specific |
-| [SAFE-K8S-0704-007](markdown/controls/SAFE-K8S-0704-007.md) | Unified cloud and Kubernetes audit log ingestion | Practitioner | baseline |
 | [SAFE-K8S-0704-008](markdown/controls/SAFE-K8S-0704-008.md) | Cloud-to-Kubernetes event correlation for incident investigation | Practitioner | baseline |
-| [SAFE-K8S-0704-009](markdown/controls/SAFE-K8S-0704-009.md) | Cloud IAM to Kubernetes RBAC entitlement mapping governance | Practitioner | baseline |
-| [SAFE-K8S-0704-010](markdown/controls/SAFE-K8S-0704-010.md) | Privileged cloud-to-cluster access boundary enforcement and break-glass control | Practitioner | baseline |
 | [SAFE-K8S-0704-011](markdown/controls/SAFE-K8S-0704-011.md) | Network-level blocking of cloud metadata endpoint access for pods | Foundational | baseline |
-| [SAFE-K8S-0704-012](markdown/controls/SAFE-K8S-0704-012.md) | Pod identity mechanisms replacing node-level instance profiles | Foundational | baseline |
 | [SAFE-K8S-0704-013](markdown/controls/SAFE-K8S-0704-013.md) | Unified cloud and Kubernetes audit source onboarding | Practitioner | baseline |
 | [SAFE-K8S-0704-014](markdown/controls/SAFE-K8S-0704-014.md) | Managed Kubernetes audit log retention enforcement | Practitioner | baseline |
 | [SAFE-K8S-0704-015](markdown/controls/SAFE-K8S-0704-015.md) | Cloud IAM to Kubernetes RBAC entitlement mapping definition | Practitioner | baseline |
@@ -1144,11 +997,11 @@ This knowledge area focuses on: Cloud IAM to Kubernetes RBAC mapping, VPC and se
 
 - Domain: D08 - GPU, Accelerator, and Confidential Computing
 - Maturity: Advanced
-- Controls: 14
+- Controls: 10
 
 ### Description
 
-This knowledge area focuses on: GPU device plugin security configuration and hardening, MIG partitioning for hardware-enforced GPU isolation, MPS and time-slicing isolation and memory safety controls, vGPU virtualization security controls, and GPU topology metadata protection and admission control. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: GPU device plugin security configuration and hardening, MIG partitioning for hardware-enforced GPU isolation, vGPU virtualization security controls, GPU memory clearing between workload transitions, and GPU topology metadata protection and node label visibility restriction. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1156,12 +1009,8 @@ This knowledge area focuses on: GPU device plugin security configuration and har
 | --- | --- | --- | --- |
 | [SAFE-K8S-0801-001](markdown/controls/SAFE-K8S-0801-001.md) | GPU device plugin security configuration and hardening | Practitioner | ai-specific |
 | [SAFE-K8S-0801-002](markdown/controls/SAFE-K8S-0801-002.md) | MIG partitioning for hardware-enforced GPU isolation | Advanced | ai-specific |
-| [SAFE-K8S-0801-003](markdown/controls/SAFE-K8S-0801-003.md) | MPS and time-slicing isolation and memory safety controls | Advanced | ai-specific |
 | [SAFE-K8S-0801-004](markdown/controls/SAFE-K8S-0801-004.md) | vGPU virtualization security controls | Practitioner | ai-specific |
-| [SAFE-K8S-0801-005](markdown/controls/SAFE-K8S-0801-005.md) | GPU topology metadata protection and admission control | Practitioner | ai-specific |
 | [SAFE-K8S-0801-006](markdown/controls/SAFE-K8S-0801-006.md) | GPU memory clearing between workload transitions | Advanced | ai-specific |
-| [SAFE-K8S-0801-007](markdown/controls/SAFE-K8S-0801-007.md) | MPS and time-slicing residual-risk acceptance and workload eligibility controls | Advanced | ai-specific |
-| [SAFE-K8S-0801-008](markdown/controls/SAFE-K8S-0801-008.md) | MPS and time-slicing memory isolation verification and side-channel assessment | Advanced | ai-specific |
 | [SAFE-K8S-0801-009](markdown/controls/SAFE-K8S-0801-009.md) | GPU topology metadata protection and node label visibility restriction | Practitioner | ai-specific |
 | [SAFE-K8S-0801-010](markdown/controls/SAFE-K8S-0801-010.md) | Admission validation of authorized GPU resource requests | Practitioner | ai-specific |
 | [SAFE-K8S-0801-011](markdown/controls/SAFE-K8S-0801-011.md) | MPS and time-slicing residual-risk acceptance and compensating control approval | Advanced | ai-specific |
@@ -1174,11 +1023,11 @@ This knowledge area focuses on: GPU device plugin security configuration and har
 
 - Domain: D08 - GPU, Accelerator, and Confidential Computing
 - Maturity: Advanced
-- Controls: 9
+- Controls: 7
 
 ### Description
 
-This knowledge area focuses on: GPU driver lifecycle and vulnerability management, CUDA library and container toolkit security, Device plugin socket and kubelet communication security, GPU firmware integrity monitoring, and GPU kernel module and driver binary integrity enforcement. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: GPU driver lifecycle and vulnerability management, CUDA library and container toolkit security, GPU firmware integrity monitoring, Device plugin socket directory access restriction and unauthorized socket access monitoring, and Device plugin registration authentication monitoring and rogue plugin detection. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1186,9 +1035,7 @@ This knowledge area focuses on: GPU driver lifecycle and vulnerability managemen
 | --- | --- | --- | --- |
 | [SAFE-K8S-0802-001](markdown/controls/SAFE-K8S-0802-001.md) | GPU driver lifecycle and vulnerability management | Practitioner | ai-specific |
 | [SAFE-K8S-0802-002](markdown/controls/SAFE-K8S-0802-002.md) | CUDA library and container toolkit security | Advanced | ai-specific |
-| [SAFE-K8S-0802-003](markdown/controls/SAFE-K8S-0802-003.md) | Device plugin socket and kubelet communication security | Practitioner | ai-specific |
 | [SAFE-K8S-0802-004](markdown/controls/SAFE-K8S-0802-004.md) | GPU firmware integrity monitoring | Advanced | ai-specific |
-| [SAFE-K8S-0802-005](markdown/controls/SAFE-K8S-0802-005.md) | GPU kernel module and driver binary integrity enforcement | Advanced | ai-specific |
 | [SAFE-K8S-0802-006](markdown/controls/SAFE-K8S-0802-006.md) | Device plugin socket directory access restriction and unauthorized socket access monitoring | Practitioner | ai-specific |
 | [SAFE-K8S-0802-007](markdown/controls/SAFE-K8S-0802-007.md) | Device plugin registration authentication monitoring and rogue plugin detection | Practitioner | ai-specific |
 | [SAFE-K8S-0802-008](markdown/controls/SAFE-K8S-0802-008.md) | GPU kernel module signing and Secure Boot enforcement | Advanced | ai-specific |
@@ -1199,11 +1046,11 @@ This knowledge area focuses on: GPU driver lifecycle and vulnerability managemen
 
 - Domain: D08 - GPU, Accelerator, and Confidential Computing
 - Maturity: Advanced
-- Controls: 6
+- Controls: 5
 
 ### Description
 
-This knowledge area focuses on: NVLink and NVSwitch traffic isolation for multi-GPU training, InfiniBand and RoCE fabric security controls, RDMA memory region and queue pair isolation, DPU and SmartNIC firmware integrity and trust boundaries, and DPU and SmartNIC firmware cryptographic verification and Secure Boot integrity. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: NVLink and NVSwitch traffic isolation for multi-GPU training, InfiniBand and RoCE fabric security controls, RDMA memory region and queue pair isolation, DPU and SmartNIC firmware cryptographic verification and Secure Boot integrity, and DPU and SmartNIC host trust boundary definition and policy engine administrative restriction.
 
 ### Controls
 
@@ -1212,7 +1059,6 @@ This knowledge area focuses on: NVLink and NVSwitch traffic isolation for multi-
 | [SAFE-K8S-0803-001](markdown/controls/SAFE-K8S-0803-001.md) | NVLink and NVSwitch traffic isolation for multi-GPU training | Advanced | ai-specific |
 | [SAFE-K8S-0803-002](markdown/controls/SAFE-K8S-0803-002.md) | InfiniBand and RoCE fabric security controls | Advanced | ai-specific |
 | [SAFE-K8S-0803-003](markdown/controls/SAFE-K8S-0803-003.md) | RDMA memory region and queue pair isolation | Advanced | ai-specific |
-| [SAFE-K8S-0803-004](markdown/controls/SAFE-K8S-0803-004.md) | DPU and SmartNIC firmware integrity and trust boundaries | Advanced | ai-specific |
 | [SAFE-K8S-0803-005](markdown/controls/SAFE-K8S-0803-005.md) | DPU and SmartNIC firmware cryptographic verification and Secure Boot integrity | Advanced | ai-specific |
 | [SAFE-K8S-0803-006](markdown/controls/SAFE-K8S-0803-006.md) | DPU and SmartNIC host trust boundary definition and policy engine administrative restriction | Advanced | ai-specific |
 
@@ -1221,11 +1067,11 @@ This knowledge area focuses on: NVLink and NVSwitch traffic isolation for multi-
 
 - Domain: D08 - GPU, Accelerator, and Confidential Computing
 - Maturity: Advanced
-- Controls: 6
+- Controls: 5
 
 ### Description
 
-This knowledge area focuses on: TEE-based model and data protection for AI workloads, Remote attestation for TEE integrity verification, Key management and sealed storage for confidential AI enclaves, Confidential AI workload operational constraints and risk assessment, and Attestation-conditioned enclave key release. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: TEE-based model and data protection for AI workloads, Remote attestation for TEE integrity verification, Confidential AI workload operational constraints and risk assessment, Attestation-conditioned enclave key release, and Sealed storage binding of encrypted AI artifacts to enclave measurements.
 
 ### Controls
 
@@ -1233,7 +1079,6 @@ This knowledge area focuses on: TEE-based model and data protection for AI workl
 | --- | --- | --- | --- |
 | [SAFE-K8S-0804-001](markdown/controls/SAFE-K8S-0804-001.md) | TEE-based model and data protection for AI workloads | Advanced | ai-specific |
 | [SAFE-K8S-0804-002](markdown/controls/SAFE-K8S-0804-002.md) | Remote attestation for TEE integrity verification | Advanced | ai-specific |
-| [SAFE-K8S-0804-003](markdown/controls/SAFE-K8S-0804-003.md) | Key management and sealed storage for confidential AI enclaves | Advanced | ai-specific |
 | [SAFE-K8S-0804-004](markdown/controls/SAFE-K8S-0804-004.md) | Confidential AI workload operational constraints and risk assessment | Advanced | ai-specific |
 | [SAFE-K8S-0804-005](markdown/controls/SAFE-K8S-0804-005.md) | Attestation-conditioned enclave key release | Advanced | ai-specific |
 | [SAFE-K8S-0804-006](markdown/controls/SAFE-K8S-0804-006.md) | Sealed storage binding of encrypted AI artifacts to enclave measurements | Advanced | ai-specific |
@@ -1263,17 +1108,16 @@ This knowledge area focuses on: GPU telemetry collection and anomaly detection, 
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Practitioner
-- Controls: 10
+- Controls: 9
 
 ### Description
 
-This knowledge area focuses on: Multi-node training worker authentication and encrypted communication, Parameter server and all-reduce security, Checkpoint security, Training fault tolerance and security, and Federated learning security on Kubernetes. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Parameter server and all-reduce security, Checkpoint security, Training fault tolerance and security, Federated learning security on Kubernetes, and Gang scheduling security (Volcano, Kueue). Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0901-001](markdown/controls/SAFE-K8S-0901-001.md) | Multi-node training worker authentication and encrypted communication | Practitioner | ai-specific |
 | [SAFE-K8S-0901-002](markdown/controls/SAFE-K8S-0901-002.md) | Parameter server and all-reduce security | Advanced | ai-specific |
 | [SAFE-K8S-0901-003](markdown/controls/SAFE-K8S-0901-003.md) | Checkpoint security | Practitioner | ai-specific |
 | [SAFE-K8S-0901-004](markdown/controls/SAFE-K8S-0901-004.md) | Training fault tolerance and security | Practitioner | ai-specific |
@@ -1289,7 +1133,7 @@ This knowledge area focuses on: Multi-node training worker authentication and en
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Practitioner
-- Controls: 11
+- Controls: 10
 
 ### Description
 
@@ -1305,7 +1149,6 @@ This knowledge area focuses on: Inference server hardening, Model loading integr
 | [SAFE-K8S-0902-004](markdown/controls/SAFE-K8S-0902-004.md) | Multi-model serving isolation and encryption | Practitioner | ai-specific |
 | [SAFE-K8S-0902-005](markdown/controls/SAFE-K8S-0902-005.md) | Multi-cluster inference routing and failover security | Practitioner | ai-specific |
 | [SAFE-K8S-0902-006](markdown/controls/SAFE-K8S-0902-006.md) | LLM serving configuration security | Practitioner | ai-specific |
-| [SAFE-K8S-0902-007](markdown/controls/SAFE-K8S-0902-007.md) | Infrastructure-layer prompt injection defense and token output filtering | Practitioner | ai-specific |
 | [SAFE-K8S-0902-008](markdown/controls/SAFE-K8S-0902-008.md) | Inference endpoint authentication and authorization | Practitioner | ai-specific |
 | [SAFE-K8S-0902-009](markdown/controls/SAFE-K8S-0902-009.md) | Inference response filtering and output controls | Practitioner | ai-specific |
 | [SAFE-K8S-0902-010](markdown/controls/SAFE-K8S-0902-010.md) | Infrastructure-layer prompt injection classification and instruction boundary enforcement | Practitioner | ai-specific |
@@ -1316,21 +1159,19 @@ This knowledge area focuses on: Inference server hardening, Model loading integr
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Practitioner
-- Controls: 8
+- Controls: 6
 
 ### Description
 
-This knowledge area focuses on: Adversarial example defenses at the serving layer, Autoscaling safety and queue security, Inference-time resource controls, LLM context window and token resource controls, and GPU inference autoscaling safety bounds and budget guardrails. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Adversarial example defenses at the serving layer, Inference-time resource controls, LLM context window and token resource controls, Inference request queue priority, timeout, and depth controls, and GPU inference autoscaling replica bounds and stabilization enforcement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0903-001](markdown/controls/SAFE-K8S-0903-001.md) | Adversarial example defenses at the serving layer | Practitioner | ai-specific |
-| [SAFE-K8S-0903-002](markdown/controls/SAFE-K8S-0903-002.md) | Autoscaling safety and queue security | Practitioner | ai-specific |
 | [SAFE-K8S-0903-003](markdown/controls/SAFE-K8S-0903-003.md) | Inference-time resource controls | Practitioner | ai-specific |
 | [SAFE-K8S-0903-004](markdown/controls/SAFE-K8S-0903-004.md) | LLM context window and token resource controls | Practitioner | ai-specific |
-| [SAFE-K8S-0903-005](markdown/controls/SAFE-K8S-0903-005.md) | GPU inference autoscaling safety bounds and budget guardrails | Practitioner | ai-specific |
 | [SAFE-K8S-0903-006](markdown/controls/SAFE-K8S-0903-006.md) | Inference request queue priority, timeout, and depth controls | Practitioner | ai-specific |
 | [SAFE-K8S-0903-007](markdown/controls/SAFE-K8S-0903-007.md) | GPU inference autoscaling replica bounds and stabilization enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-0903-008](markdown/controls/SAFE-K8S-0903-008.md) | Budget-aware inference autoscaling suppression and degraded-service fallback | Practitioner | ai-specific |
@@ -1340,26 +1181,20 @@ This knowledge area focuses on: Adversarial example defenses at the serving laye
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Practitioner
-- Controls: 18
+- Controls: 12
 
 ### Description
 
-This knowledge area focuses on: Pipeline orchestrator hardening, Pipeline artifact encryption and access controls, Notebook and experimentation environment security, Experiment tracking security and pipeline integrity, and Scheduled job security and feature freshness monitoring. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Pipeline orchestrator hardening, Notebook and experimentation environment security, Scheduled feature computation job hardening, Feature freshness and integrity monitoring, and Pipeline stage isolation between sensitivity levels. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0904-001](markdown/controls/SAFE-K8S-0904-001.md) | Pipeline orchestrator hardening | Practitioner | ai-specific |
-| [SAFE-K8S-0904-002](markdown/controls/SAFE-K8S-0904-002.md) | Pipeline artifact encryption and access controls | Practitioner | ai-specific |
 | [SAFE-K8S-0904-003](markdown/controls/SAFE-K8S-0904-003.md) | Notebook and experimentation environment security | Practitioner | ai-specific |
-| [SAFE-K8S-0904-004](markdown/controls/SAFE-K8S-0904-004.md) | Experiment tracking security and pipeline integrity | Practitioner | ai-specific |
-| [SAFE-K8S-0904-005](markdown/controls/SAFE-K8S-0904-005.md) | Scheduled job security and feature freshness monitoring | Practitioner | ai-specific |
-| [SAFE-K8S-0904-006](markdown/controls/SAFE-K8S-0904-006.md) | Pipeline stage isolation and cross-classification authorization | Practitioner | ai-specific |
 | [SAFE-K8S-0904-007](markdown/controls/SAFE-K8S-0904-007.md) | Scheduled feature computation job hardening | Practitioner | ai-specific |
 | [SAFE-K8S-0904-008](markdown/controls/SAFE-K8S-0904-008.md) | Feature freshness and integrity monitoring | Practitioner | ai-specific |
-| [SAFE-K8S-0904-009](markdown/controls/SAFE-K8S-0904-009.md) | Experiment tracking metadata access control and audit logging | Practitioner | ai-specific |
-| [SAFE-K8S-0904-010](markdown/controls/SAFE-K8S-0904-010.md) | Pipeline definition signing, immutability, and rollback integrity | Practitioner | ai-specific |
 | [SAFE-K8S-0904-011](markdown/controls/SAFE-K8S-0904-011.md) | Pipeline stage isolation between sensitivity levels | Practitioner | ai-specific |
 | [SAFE-K8S-0904-012](markdown/controls/SAFE-K8S-0904-012.md) | Cross-classification pipeline data transfer authorization gates | Practitioner | ai-specific |
 | [SAFE-K8S-0904-013](markdown/controls/SAFE-K8S-0904-013.md) | Pipeline artifact storage encryption and object-store access policy enforcement | Practitioner | ai-specific |
@@ -1374,47 +1209,25 @@ This knowledge area focuses on: Pipeline orchestrator hardening, Pipeline artifa
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Advanced
-- Controls: 59
+- Controls: 37
 
 ### Description
 
-This knowledge area focuses on: AI system lifecycle classification, ML artifact signing and attestation generation, Model registry hardening, ML dependency vulnerability management and ML-BOM, and Automated model promotion gates. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: AI system lifecycle classification, Automated model promotion gates, Model artifact lifecycle management, Model provenance verification at deployment, and Development-to-production environment separation for AI workloads. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-0905-001](markdown/controls/SAFE-K8S-0905-001.md) | AI system lifecycle classification | Practitioner | ai-specific |
-| [SAFE-K8S-0905-002](markdown/controls/SAFE-K8S-0905-002.md) | ML artifact signing and attestation generation | Advanced | ai-specific |
-| [SAFE-K8S-0905-003](markdown/controls/SAFE-K8S-0905-003.md) | Model registry hardening | Practitioner | ai-specific |
-| [SAFE-K8S-0905-004](markdown/controls/SAFE-K8S-0905-004.md) | ML dependency vulnerability management and ML-BOM | Advanced | ai-specific |
 | [SAFE-K8S-0905-005](markdown/controls/SAFE-K8S-0905-005.md) | Automated model promotion gates | Advanced | ai-specific |
 | [SAFE-K8S-0905-006](markdown/controls/SAFE-K8S-0905-006.md) | Model artifact lifecycle management | Advanced | ai-specific |
-| [SAFE-K8S-0905-007](markdown/controls/SAFE-K8S-0905-007.md) | Model format security and deserialization controls | Practitioner | ai-specific |
-| [SAFE-K8S-0905-008](markdown/controls/SAFE-K8S-0905-008.md) | Public model quarantine and vetting workflow | Advanced | ai-specific |
 | [SAFE-K8S-0905-009](markdown/controls/SAFE-K8S-0905-009.md) | Model provenance verification at deployment | Advanced | ai-specific |
-| [SAFE-K8S-0905-010](markdown/controls/SAFE-K8S-0905-010.md) | Model promotion approval and reviewer identity validation | Advanced | ai-specific |
-| [SAFE-K8S-0905-011](markdown/controls/SAFE-K8S-0905-011.md) | Canary and A/B deployment isolation and rollback safety | Advanced | ai-specific |
 | [SAFE-K8S-0905-012](markdown/controls/SAFE-K8S-0905-012.md) | Development-to-production environment separation for AI workloads | Advanced | ai-specific |
-| [SAFE-K8S-0905-013](markdown/controls/SAFE-K8S-0905-013.md) | Approved external model source allowlist enforcement | Advanced | ai-specific |
-| [SAFE-K8S-0905-014](markdown/controls/SAFE-K8S-0905-014.md) | AI workload circuit-breaker and emergency halt mechanisms | Advanced | ai-specific |
 | [SAFE-K8S-0905-015](markdown/controls/SAFE-K8S-0905-015.md) | AI system control profile enforcement | Practitioner | ai-specific |
-| [SAFE-K8S-0905-016](markdown/controls/SAFE-K8S-0905-016.md) | Model registry RBAC, service account scoping, and access review | Practitioner | ai-specific |
-| [SAFE-K8S-0905-017](markdown/controls/SAFE-K8S-0905-017.md) | Model registry operation audit logging and forwarding | Practitioner | ai-specific |
-| [SAFE-K8S-0905-018](markdown/controls/SAFE-K8S-0905-018.md) | ML framework and CUDA dependency vulnerability management | Advanced | ai-specific |
-| [SAFE-K8S-0905-019](markdown/controls/SAFE-K8S-0905-019.md) | ML-BOM generation and model lineage metadata capture | Advanced | ai-specific |
-| [SAFE-K8S-0905-020](markdown/controls/SAFE-K8S-0905-020.md) | Public model quarantine scanning and sandbox vetting | Advanced | ai-specific |
-| [SAFE-K8S-0905-021](markdown/controls/SAFE-K8S-0905-021.md) | External model provenance verification and internal re-registration | Advanced | ai-specific |
-| [SAFE-K8S-0905-022](markdown/controls/SAFE-K8S-0905-022.md) | ML artifact signing and training attestation generation | Advanced | ai-specific |
-| [SAFE-K8S-0905-023](markdown/controls/SAFE-K8S-0905-023.md) | OCI model artifact digest pinning and tag immutability | Advanced | ai-specific |
-| [SAFE-K8S-0905-024](markdown/controls/SAFE-K8S-0905-024.md) | Authenticated reviewer identity validation and approval audit binding | Advanced | ai-specific |
 | [SAFE-K8S-0905-025](markdown/controls/SAFE-K8S-0905-025.md) | Separation of duties enforcement for model promotion approvals | Advanced | ai-specific |
-| [SAFE-K8S-0905-026](markdown/controls/SAFE-K8S-0905-026.md) | Approved external model source allowlist governance and review | Advanced | ai-specific |
-| [SAFE-K8S-0905-027](markdown/controls/SAFE-K8S-0905-027.md) | External model source enforcement through network policy and admission control | Advanced | ai-specific |
 | [SAFE-K8S-0905-028](markdown/controls/SAFE-K8S-0905-028.md) | ML framework and Python dependency vulnerability management | Advanced | ai-specific |
 | [SAFE-K8S-0905-029](markdown/controls/SAFE-K8S-0905-029.md) | CUDA and GPU accelerator dependency vulnerability management | Advanced | ai-specific |
-| [SAFE-K8S-0905-030](markdown/controls/SAFE-K8S-0905-030.md) | External model provenance verification and trust-signal review | Advanced | ai-specific |
-| [SAFE-K8S-0905-031](markdown/controls/SAFE-K8S-0905-031.md) | Internal re-signing, external-origin annotation, and registry admission for external models | Advanced | ai-specific |
 | [SAFE-K8S-0905-032](markdown/controls/SAFE-K8S-0905-032.md) | Safe model format allowlist and unsafe deserialization blocking | Practitioner | ai-specific |
 | [SAFE-K8S-0905-033](markdown/controls/SAFE-K8S-0905-033.md) | Pre-load model file structure and metadata validation | Practitioner | ai-specific |
 | [SAFE-K8S-0905-034](markdown/controls/SAFE-K8S-0905-034.md) | Canary and A/B candidate version isolation and traffic-splitting integrity | Advanced | ai-specific |
@@ -1449,19 +1262,17 @@ This knowledge area focuses on: AI system lifecycle classification, ML artifact 
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Practitioner
-- Controls: 7
+- Controls: 5
 
 ### Description
 
-This knowledge area focuses on: Training data provenance and pipeline integrity, Large-scale data integrity verification, Data poisoning and label attack detection, Statistical drift, outlier, and input validation for training data poisoning detection, and Annotation pipeline integrity and targeted label attack detection. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Large-scale data integrity verification, Statistical drift, outlier, and input validation for training data poisoning detection, Annotation pipeline integrity and targeted label attack detection, Training data provenance tracking from ingestion through model training, and Integrity verification at each training data transformation stage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0906-001](markdown/controls/SAFE-K8S-0906-001.md) | Training data provenance and pipeline integrity | Practitioner | ai-specific |
 | [SAFE-K8S-0906-002](markdown/controls/SAFE-K8S-0906-002.md) | Large-scale data integrity verification | Practitioner | ai-specific |
-| [SAFE-K8S-0906-003](markdown/controls/SAFE-K8S-0906-003.md) | Data poisoning and label attack detection | Practitioner | ai-specific |
 | [SAFE-K8S-0906-004](markdown/controls/SAFE-K8S-0906-004.md) | Statistical drift, outlier, and input validation for training data poisoning detection | Practitioner | ai-specific |
 | [SAFE-K8S-0906-005](markdown/controls/SAFE-K8S-0906-005.md) | Annotation pipeline integrity and targeted label attack detection | Practitioner | ai-specific |
 | [SAFE-K8S-0906-006](markdown/controls/SAFE-K8S-0906-006.md) | Training data provenance tracking from ingestion through model training | Practitioner | ai-specific |
@@ -1472,19 +1283,17 @@ This knowledge area focuses on: Training data provenance and pipeline integrity,
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Practitioner
-- Controls: 7
+- Controls: 5
 
 ### Description
 
-This knowledge area focuses on: Feature store security and leakage prevention, Training data privacy controls, Training dataset and model deployment access controls, Feature store access boundary enforcement and serving authentication, and Feature engineering privacy controls and leakage validation. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Training data privacy controls, Feature store access boundary enforcement and serving authentication, Feature engineering privacy controls and leakage validation, Training dataset access restriction across storage backends, and Model deployment authorization and namespace-scoped release control.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0907-001](markdown/controls/SAFE-K8S-0907-001.md) | Feature store security and leakage prevention | Practitioner | ai-specific |
 | [SAFE-K8S-0907-002](markdown/controls/SAFE-K8S-0907-002.md) | Training data privacy controls | Practitioner | ai-specific |
-| [SAFE-K8S-0907-003](markdown/controls/SAFE-K8S-0907-003.md) | Training dataset and model deployment access controls | Practitioner | ai-specific |
 | [SAFE-K8S-0907-004](markdown/controls/SAFE-K8S-0907-004.md) | Feature store access boundary enforcement and serving authentication | Practitioner | ai-specific |
 | [SAFE-K8S-0907-005](markdown/controls/SAFE-K8S-0907-005.md) | Feature engineering privacy controls and leakage validation | Practitioner | ai-specific |
 | [SAFE-K8S-0907-006](markdown/controls/SAFE-K8S-0907-006.md) | Training dataset access restriction across storage backends | Practitioner | ai-specific |
@@ -1495,11 +1304,11 @@ This knowledge area focuses on: Feature store security and leakage prevention, T
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Advanced
-- Controls: 10
+- Controls: 8
 
 ### Description
 
-This knowledge area focuses on: Oracle attack prevention, Inference API information exposure controls, Model watermarking and fingerprinting, Differential privacy and output perturbation, and Model abuse logging and alerting. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Oracle attack prevention, Inference API information exposure controls, Model watermarking and fingerprinting, Model abuse logging and alerting, and Secure aggregation for privacy-preserving model outputs. Additional controls in the table below extend this coverage.
 
 ### Controls
 
@@ -1508,10 +1317,8 @@ This knowledge area focuses on: Oracle attack prevention, Inference API informat
 | [SAFE-K8S-0908-001](markdown/controls/SAFE-K8S-0908-001.md) | Oracle attack prevention | Advanced | ai-specific |
 | [SAFE-K8S-0908-002](markdown/controls/SAFE-K8S-0908-002.md) | Inference API information exposure controls | Advanced | ai-specific |
 | [SAFE-K8S-0908-003](markdown/controls/SAFE-K8S-0908-003.md) | Model watermarking and fingerprinting | Advanced | ai-specific |
-| [SAFE-K8S-0908-004](markdown/controls/SAFE-K8S-0908-004.md) | Differential privacy and output perturbation | Advanced | ai-specific |
 | [SAFE-K8S-0908-005](markdown/controls/SAFE-K8S-0908-005.md) | Model abuse logging and alerting | Advanced | ai-specific |
 | [SAFE-K8S-0908-006](markdown/controls/SAFE-K8S-0908-006.md) | Secure aggregation for privacy-preserving model outputs | Advanced | ai-specific |
-| [SAFE-K8S-0908-007](markdown/controls/SAFE-K8S-0908-007.md) | Differential privacy parameter governance and budget tracking for inference | Advanced | ai-specific |
 | [SAFE-K8S-0908-008](markdown/controls/SAFE-K8S-0908-008.md) | Inference output perturbation and privacy-preserving response shaping | Advanced | ai-specific |
 | [SAFE-K8S-0908-009](markdown/controls/SAFE-K8S-0908-009.md) | Differential privacy parameter governance for inference endpoints | Advanced | ai-specific |
 | [SAFE-K8S-0908-010](markdown/controls/SAFE-K8S-0908-010.md) | Inference privacy budget tracking and threshold enforcement | Advanced | ai-specific |
@@ -1521,23 +1328,19 @@ This knowledge area focuses on: Oracle attack prevention, Inference API informat
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Practitioner
-- Controls: 14
+- Controls: 10
 
 ### Description
 
-This knowledge area focuses on: Vector database access controls and encryption, Embedding pipeline integrity, Document ingestion and chunking security, Retrieval integrity and context poisoning defense, and RAG prompt injection defense. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Embedding pipeline integrity, RAG prompt injection defense, Vector index lifecycle management, Classification-aware chunking and vector collection segregation, and Vector database authentication and collection-level access control. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0909-001](markdown/controls/SAFE-K8S-0909-001.md) | Vector database access controls and encryption | Practitioner | ai-specific |
 | [SAFE-K8S-0909-002](markdown/controls/SAFE-K8S-0909-002.md) | Embedding pipeline integrity | Practitioner | ai-specific |
-| [SAFE-K8S-0909-003](markdown/controls/SAFE-K8S-0909-003.md) | Document ingestion and chunking security | Practitioner | ai-specific |
-| [SAFE-K8S-0909-004](markdown/controls/SAFE-K8S-0909-004.md) | Retrieval integrity and context poisoning defense | Practitioner | ai-specific |
 | [SAFE-K8S-0909-005](markdown/controls/SAFE-K8S-0909-005.md) | RAG prompt injection defense | Practitioner | ai-specific |
 | [SAFE-K8S-0909-006](markdown/controls/SAFE-K8S-0909-006.md) | Vector index lifecycle management | Practitioner | ai-specific |
-| [SAFE-K8S-0909-007](markdown/controls/SAFE-K8S-0909-007.md) | Document source access control and provenance validation for RAG ingestion | Practitioner | ai-specific |
 | [SAFE-K8S-0909-008](markdown/controls/SAFE-K8S-0909-008.md) | Classification-aware chunking and vector collection segregation | Practitioner | ai-specific |
 | [SAFE-K8S-0909-009](markdown/controls/SAFE-K8S-0909-009.md) | Vector database authentication and collection-level access control | Practitioner | ai-specific |
 | [SAFE-K8S-0909-010](markdown/controls/SAFE-K8S-0909-010.md) | Vector database encryption in transit and at rest | Practitioner | ai-specific |
@@ -1551,30 +1354,17 @@ This knowledge area focuses on: Vector database access controls and encryption, 
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Maturity: Advanced
-- Controls: 33
+- Controls: 19
 
 ### Description
 
-This knowledge area focuses on: Multi-cluster AI workload orchestration security, Cross-cluster model registry federation and replication security, Multi-cluster network security for distributed AI workloads, Federated learning cross-cluster coordination security, and Multi-cluster AI governance and compliance consistency. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Federated learning cross-cluster coordination security, Destination-side signature and digest re-verification for replicated model artifacts, Cross-cluster orchestration identity federation and authorization, Centralized audit logging for cross-cluster orchestration actions, and Security-aware target-cluster posture verification before multi-cluster placement. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0910-001](markdown/controls/SAFE-K8S-0910-001.md) | Multi-cluster AI workload orchestration security | Advanced | ai-specific |
-| [SAFE-K8S-0910-002](markdown/controls/SAFE-K8S-0910-002.md) | Cross-cluster model registry federation and replication security | Advanced | ai-specific |
-| [SAFE-K8S-0910-003](markdown/controls/SAFE-K8S-0910-003.md) | Multi-cluster network security for distributed AI workloads | Advanced | ai-specific |
 | [SAFE-K8S-0910-004](markdown/controls/SAFE-K8S-0910-004.md) | Federated learning cross-cluster coordination security | Advanced | ai-specific |
-| [SAFE-K8S-0910-005](markdown/controls/SAFE-K8S-0910-005.md) | Multi-cluster AI governance and compliance consistency | Advanced | ai-specific |
-| [SAFE-K8S-0910-006](markdown/controls/SAFE-K8S-0910-006.md) | Cross-cluster orchestration identity and audit security | Advanced | ai-specific |
-| [SAFE-K8S-0910-007](markdown/controls/SAFE-K8S-0910-007.md) | Security-aware multi-cluster placement and federation isolation | Advanced | ai-specific |
-| [SAFE-K8S-0910-008](markdown/controls/SAFE-K8S-0910-008.md) | Cross-cluster transport encryption and workload authentication | Advanced | ai-specific |
-| [SAFE-K8S-0910-009](markdown/controls/SAFE-K8S-0910-009.md) | Cross-cluster communication authorization and anomaly monitoring | Advanced | ai-specific |
-| [SAFE-K8S-0910-010](markdown/controls/SAFE-K8S-0910-010.md) | Cross-cluster registry replication channel authentication and signature re-verification | Advanced | ai-specific |
-| [SAFE-K8S-0910-011](markdown/controls/SAFE-K8S-0910-011.md) | Cross-cluster model provenance preservation and federation endpoint governance | Advanced | ai-specific |
-| [SAFE-K8S-0910-012](markdown/controls/SAFE-K8S-0910-012.md) | Multi-cluster security policy federation and drift remediation | Advanced | ai-specific |
-| [SAFE-K8S-0910-013](markdown/controls/SAFE-K8S-0910-013.md) | Unified multi-cluster compliance reporting and governance coordination | Advanced | ai-specific |
-| [SAFE-K8S-0910-014](markdown/controls/SAFE-K8S-0910-014.md) | Cross-cluster registry replication channel authentication and endpoint enrollment | Advanced | ai-specific |
 | [SAFE-K8S-0910-015](markdown/controls/SAFE-K8S-0910-015.md) | Destination-side signature and digest re-verification for replicated model artifacts | Advanced | ai-specific |
 | [SAFE-K8S-0910-016](markdown/controls/SAFE-K8S-0910-016.md) | Cross-cluster orchestration identity federation and authorization | Advanced | ai-specific |
 | [SAFE-K8S-0910-017](markdown/controls/SAFE-K8S-0910-017.md) | Centralized audit logging for cross-cluster orchestration actions | Advanced | ai-specific |
@@ -1583,7 +1373,6 @@ This knowledge area focuses on: Multi-cluster AI workload orchestration security
 | [SAFE-K8S-0910-020](markdown/controls/SAFE-K8S-0910-020.md) | Cross-cluster transport encryption for distributed AI traffic | Advanced | ai-specific |
 | [SAFE-K8S-0910-021](markdown/controls/SAFE-K8S-0910-021.md) | Cross-cluster endpoint and workload authentication for AI communication | Advanced | ai-specific |
 | [SAFE-K8S-0910-022](markdown/controls/SAFE-K8S-0910-022.md) | Cross-cluster communication authorization policy enforcement | Advanced | ai-specific |
-| [SAFE-K8S-0910-023](markdown/controls/SAFE-K8S-0910-023.md) | Cross-cluster traffic anomaly monitoring and investigation | Advanced | ai-specific |
 | [SAFE-K8S-0910-024](markdown/controls/SAFE-K8S-0910-024.md) | Cross-cluster model provenance chain-of-custody preservation | Advanced | ai-specific |
 | [SAFE-K8S-0910-025](markdown/controls/SAFE-K8S-0910-025.md) | Cross-cluster registry federation endpoint authorization and reconciliation governance | Advanced | ai-specific |
 | [SAFE-K8S-0910-026](markdown/controls/SAFE-K8S-0910-026.md) | Multi-cluster security policy baseline federation | Advanced | ai-specific |
@@ -1600,38 +1389,25 @@ This knowledge area focuses on: Multi-cluster AI workload orchestration security
 
 - Domain: D10 - Observability, Incident Response, and Governance
 - Maturity: Practitioner
-- Controls: 39
+- Controls: 25
 
 ### Description
 
-This knowledge area focuses on: Kubernetes audit policy coverage for AI-relevant API events, Cluster-level logging architecture, Centralized logging for AI workloads, Audit volume management for AI workloads, and Audit log protection and dual authorization for modification. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Audit volume management for AI workloads, Supplemental application-level telemetry for AI workload events, Permitted responses to audit findings, Kubernetes audit level and stage filtering for AI workloads, and SIEM correlation rules for AI-specific attack patterns. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-1001-001](markdown/controls/SAFE-K8S-1001-001.md) | Kubernetes audit policy coverage for AI-relevant API events | Practitioner | ai-specific |
-| [SAFE-K8S-1001-002](markdown/controls/SAFE-K8S-1001-002.md) | Cluster-level logging architecture | Practitioner | baseline |
-| [SAFE-K8S-1001-003](markdown/controls/SAFE-K8S-1001-003.md) | Centralized logging for AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-1001-004](markdown/controls/SAFE-K8S-1001-004.md) | Audit volume management for AI workloads | Practitioner | ai-specific |
-| [SAFE-K8S-1001-005](markdown/controls/SAFE-K8S-1001-005.md) | Audit log protection and dual authorization for modification | Practitioner | baseline |
-| [SAFE-K8S-1001-006](markdown/controls/SAFE-K8S-1001-006.md) | SIEM ingestion for Kubernetes AI security events | Practitioner | ai-specific |
 | [SAFE-K8S-1001-007](markdown/controls/SAFE-K8S-1001-007.md) | Supplemental application-level telemetry for AI workload events | Practitioner | ai-specific |
 | [SAFE-K8S-1001-008](markdown/controls/SAFE-K8S-1001-008.md) | Permitted responses to audit findings | Practitioner | baseline |
-| [SAFE-K8S-1001-009](markdown/controls/SAFE-K8S-1001-009.md) | Regulatory log and artifact retention policy enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-1001-010](markdown/controls/SAFE-K8S-1001-010.md) | Kubernetes audit level and stage filtering for AI workloads | Practitioner | ai-specific |
-| [SAFE-K8S-1001-011](markdown/controls/SAFE-K8S-1001-011.md) | Durable and tamper-resistant audit backend delivery | Practitioner | ai-specific |
 | [SAFE-K8S-1001-012](markdown/controls/SAFE-K8S-1001-012.md) | SIEM correlation rules for AI-specific attack patterns | Practitioner | ai-specific |
-| [SAFE-K8S-1001-013](markdown/controls/SAFE-K8S-1001-013.md) | SIEM event forwarding and ingestion health for Kubernetes AI workloads | Practitioner | ai-specific |
-| [SAFE-K8S-1001-014](markdown/controls/SAFE-K8S-1001-014.md) | Centralized collection and segregation of AI workload logs | Practitioner | ai-specific |
 | [SAFE-K8S-1001-015](markdown/controls/SAFE-K8S-1001-015.md) | PII redaction and sensitive payload minimization for inference logs | Practitioner | ai-specific |
 | [SAFE-K8S-1001-016](markdown/controls/SAFE-K8S-1001-016.md) | Audit policy coverage for AI-specific resource and workflow events | Practitioner | ai-specific |
 | [SAFE-K8S-1001-017](markdown/controls/SAFE-K8S-1001-017.md) | Audit capture of admission, authorization, and privileged API decisions for AI workloads | Practitioner | ai-specific |
-| [SAFE-K8S-1001-018](markdown/controls/SAFE-K8S-1001-018.md) | Regulatory audit log retention period and durable retrieval enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-1001-019](markdown/controls/SAFE-K8S-1001-019.md) | Regulatory AI artifact and provenance record retention enforcement | Practitioner | ai-specific |
-| [SAFE-K8S-1001-020](markdown/controls/SAFE-K8S-1001-020.md) | Cluster-wide AI workload log collection and centralized aggregation | Practitioner | baseline |
-| [SAFE-K8S-1001-021](markdown/controls/SAFE-K8S-1001-021.md) | Centralized log integrity protection and retention enforcement for AI workloads | Practitioner | baseline |
-| [SAFE-K8S-1001-022](markdown/controls/SAFE-K8S-1001-022.md) | Regulatory audit log retention period enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-1001-023](markdown/controls/SAFE-K8S-1001-023.md) | Regulatory audit log durable retrieval enforcement | Practitioner | ai-specific |
 | [SAFE-K8S-1001-024](markdown/controls/SAFE-K8S-1001-024.md) | Audit log append-only storage and tamper protection | Practitioner | baseline |
 | [SAFE-K8S-1001-025](markdown/controls/SAFE-K8S-1001-025.md) | Dual authorization for audit log deletion or modification | Practitioner | baseline |
@@ -1644,7 +1420,6 @@ This knowledge area focuses on: Kubernetes audit policy coverage for AI-relevant
 | [SAFE-K8S-1001-032](markdown/controls/SAFE-K8S-1001-032.md) | Cluster-wide Kubernetes and AI log source coverage | Practitioner | baseline |
 | [SAFE-K8S-1001-033](markdown/controls/SAFE-K8S-1001-033.md) | Centralized aggregation onboarding and export for cluster-wide AI logs | Practitioner | baseline |
 | [SAFE-K8S-1001-034](markdown/controls/SAFE-K8S-1001-034.md) | Centralized AI log backend immutability and integrity verification | Practitioner | baseline |
-| [SAFE-K8S-1001-035](markdown/controls/SAFE-K8S-1001-035.md) | Centralized AI log retention lifecycle enforcement and durable retrieval | Practitioner | baseline |
 | [SAFE-K8S-1001-036](markdown/controls/SAFE-K8S-1001-036.md) | Regulatory audit log retention period configuration and compliance verification | Practitioner | ai-specific |
 | [SAFE-K8S-1001-037](markdown/controls/SAFE-K8S-1001-037.md) | Regulatory audit log immutability and deletion prevention before retention expiry | Practitioner | ai-specific |
 | [SAFE-K8S-1001-038](markdown/controls/SAFE-K8S-1001-038.md) | Centralized AI log retention lifecycle enforcement | Practitioner | baseline |
@@ -1677,11 +1452,11 @@ This knowledge area focuses on: Metric endpoint authentication, Distributed trac
 
 - Domain: D10 - Observability, Incident Response, and Governance
 - Maturity: Advanced
-- Controls: 5
+- Controls: 4
 
 ### Description
 
-This knowledge area focuses on: STRIDE threat modeling for Kubernetes AI systems, OCTAVE risk-based threat assessment for Kubernetes AI environments, MITRE ATT&CK for Containers threat mapping, MITRE ATT&CK for Containers coverage mapping and gap analysis, and Technique-aligned detection engineering for Kubernetes AI attack scenarios.
+This knowledge area focuses on: STRIDE threat modeling for Kubernetes AI systems, OCTAVE risk-based threat assessment for Kubernetes AI environments, MITRE ATT&CK for Containers coverage mapping and gap analysis, and Technique-aligned detection engineering for Kubernetes AI attack scenarios.
 
 ### Controls
 
@@ -1689,7 +1464,6 @@ This knowledge area focuses on: STRIDE threat modeling for Kubernetes AI systems
 | --- | --- | --- | --- |
 | [SAFE-K8S-1003-001](markdown/controls/SAFE-K8S-1003-001.md) | STRIDE threat modeling for Kubernetes AI systems | Practitioner | ai-specific |
 | [SAFE-K8S-1003-002](markdown/controls/SAFE-K8S-1003-002.md) | OCTAVE risk-based threat assessment for Kubernetes AI environments | Advanced | ai-specific |
-| [SAFE-K8S-1003-003](markdown/controls/SAFE-K8S-1003-003.md) | MITRE ATT&CK for Containers threat mapping | Advanced | ai-specific |
 | [SAFE-K8S-1003-004](markdown/controls/SAFE-K8S-1003-004.md) | MITRE ATT&CK for Containers coverage mapping and gap analysis | Advanced | ai-specific |
 | [SAFE-K8S-1003-005](markdown/controls/SAFE-K8S-1003-005.md) | Technique-aligned detection engineering for Kubernetes AI attack scenarios | Advanced | ai-specific |
 
@@ -1698,11 +1472,11 @@ This knowledge area focuses on: STRIDE threat modeling for Kubernetes AI systems
 
 - Domain: D10 - Observability, Incident Response, and Governance
 - Maturity: Advanced
-- Controls: 6
+- Controls: 5
 
 ### Description
 
-This knowledge area focuses on: ML threat taxonomy per CTA-2114 mapped to Kubernetes, Software supply chain threat model per NIST SP 800-204D, Threat intelligence integration for Kubernetes AI environments, Kubernetes AI threat intelligence feed ingestion and detection enrichment, and Adversarial ML threat taxonomy and structured classification. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: ML threat taxonomy per CTA-2114 mapped to Kubernetes, Software supply chain threat model per NIST SP 800-204D, Kubernetes AI threat intelligence feed ingestion and detection enrichment, Adversarial ML threat taxonomy and structured classification, and Cross-source threat correlation with business context for AI incidents.
 
 ### Controls
 
@@ -1710,7 +1484,6 @@ This knowledge area focuses on: ML threat taxonomy per CTA-2114 mapped to Kubern
 | --- | --- | --- | --- |
 | [SAFE-K8S-1004-001](markdown/controls/SAFE-K8S-1004-001.md) | ML threat taxonomy per CTA-2114 mapped to Kubernetes | Advanced | ai-specific |
 | [SAFE-K8S-1004-002](markdown/controls/SAFE-K8S-1004-002.md) | Software supply chain threat model per NIST SP 800-204D | Advanced | ai-specific |
-| [SAFE-K8S-1004-003](markdown/controls/SAFE-K8S-1004-003.md) | Threat intelligence integration for Kubernetes AI environments | Advanced | ai-specific |
 | [SAFE-K8S-1004-004](markdown/controls/SAFE-K8S-1004-004.md) | Kubernetes AI threat intelligence feed ingestion and detection enrichment | Advanced | ai-specific |
 | [SAFE-K8S-1004-005](markdown/controls/SAFE-K8S-1004-005.md) | Adversarial ML threat taxonomy and structured classification | Advanced | ai-specific |
 | [SAFE-K8S-1004-006](markdown/controls/SAFE-K8S-1004-006.md) | Cross-source threat correlation with business context for AI incidents | Advanced | ai-specific |
@@ -1720,29 +1493,18 @@ This knowledge area focuses on: ML threat taxonomy per CTA-2114 mapped to Kubern
 
 - Domain: D10 - Observability, Incident Response, and Governance
 - Maturity: Practitioner
-- Controls: 30
+- Controls: 19
 
 ### Description
 
-This knowledge area focuses on: Kubernetes incident response lifecycle, Kubernetes and AI workload containment strategies, Forensic evidence collection for Kubernetes AI incidents, Ransomware and destructive attack response for Kubernetes, and Post-incident model integrity verification and recovery decisions. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Kubernetes incident response lifecycle, AI-specific incident response playbooks for Kubernetes, Ransomware recovery prioritization and post-incident preparedness improvement, Post-incident AI model integrity verification, and Documented post-incident model retraining or rollback decisions. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-1005-001](markdown/controls/SAFE-K8S-1005-001.md) | Kubernetes incident response lifecycle | Practitioner | ai-specific |
-| [SAFE-K8S-1005-002](markdown/controls/SAFE-K8S-1005-002.md) | Kubernetes and AI workload containment strategies | Practitioner | ai-specific |
-| [SAFE-K8S-1005-003](markdown/controls/SAFE-K8S-1005-003.md) | Forensic evidence collection for Kubernetes AI incidents | Practitioner | ai-specific |
-| [SAFE-K8S-1005-004](markdown/controls/SAFE-K8S-1005-004.md) | Ransomware and destructive attack response for Kubernetes | Practitioner | baseline |
-| [SAFE-K8S-1005-005](markdown/controls/SAFE-K8S-1005-005.md) | Post-incident model integrity verification and recovery decisions | Practitioner | ai-specific |
-| [SAFE-K8S-1005-006](markdown/controls/SAFE-K8S-1005-006.md) | Lateral movement prevention and component integrity verification during recovery | Practitioner | ai-specific |
-| [SAFE-K8S-1005-007](markdown/controls/SAFE-K8S-1005-007.md) | Vulnerability disclosure and coordination for Kubernetes infrastructure | Practitioner | baseline |
 | [SAFE-K8S-1005-008](markdown/controls/SAFE-K8S-1005-008.md) | AI-specific incident response playbooks for Kubernetes | Practitioner | ai-specific |
-| [SAFE-K8S-1005-009](markdown/controls/SAFE-K8S-1005-009.md) | Kubernetes containment procedures for nodes, namespaces, workloads, and credentials | Practitioner | ai-specific |
-| [SAFE-K8S-1005-010](markdown/controls/SAFE-K8S-1005-010.md) | AI-specific containment actions for GPU nodes, inference services, and pipeline execution | Practitioner | ai-specific |
-| [SAFE-K8S-1005-011](markdown/controls/SAFE-K8S-1005-011.md) | Kubernetes forensic evidence acquisition and chain-of-custody procedures | Practitioner | ai-specific |
-| [SAFE-K8S-1005-012](markdown/controls/SAFE-K8S-1005-012.md) | AI-specific forensic preservation of GPU, model access, and training provenance evidence | Practitioner | ai-specific |
-| [SAFE-K8S-1005-013](markdown/controls/SAFE-K8S-1005-013.md) | Kubernetes backup verification and etcd restoration readiness | Practitioner | baseline |
 | [SAFE-K8S-1005-014](markdown/controls/SAFE-K8S-1005-014.md) | Ransomware recovery prioritization and post-incident preparedness improvement | Practitioner | baseline |
 | [SAFE-K8S-1005-015](markdown/controls/SAFE-K8S-1005-015.md) | Post-incident AI model integrity verification | Practitioner | ai-specific |
 | [SAFE-K8S-1005-016](markdown/controls/SAFE-K8S-1005-016.md) | Documented post-incident model retraining or rollback decisions | Practitioner | ai-specific |
@@ -1766,22 +1528,19 @@ This knowledge area focuses on: Kubernetes incident response lifecycle, Kubernet
 
 - Domain: D10 - Observability, Incident Response, and Governance
 - Maturity: Advanced
-- Controls: 10
+- Controls: 7
 
 ### Description
 
-This knowledge area focuses on: Regulatory compliance mapping for Kubernetes AI platforms, SSDF v1.1 and SP 800-218A alignment for Kubernetes AI development, Policy-as-code for AI workload compliance, Automated audit readiness for Kubernetes AI platforms, and Policy-as-code enforcement for AI workload compliance. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Regulatory compliance mapping for Kubernetes AI platforms, Automated audit readiness for Kubernetes AI platforms, Policy-as-code enforcement for AI workload compliance, NIST SSDF v1.1 alignment and gap assessment for Kubernetes AI development, and NIST SP 800-218A AI/ML profile alignment for Kubernetes AI development. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
 | [SAFE-K8S-1006-001](markdown/controls/SAFE-K8S-1006-001.md) | Regulatory compliance mapping for Kubernetes AI platforms | Practitioner | ai-specific |
-| [SAFE-K8S-1006-002](markdown/controls/SAFE-K8S-1006-002.md) | SSDF v1.1 and SP 800-218A alignment for Kubernetes AI development | Advanced | ai-specific |
-| [SAFE-K8S-1006-003](markdown/controls/SAFE-K8S-1006-003.md) | Policy-as-code for AI workload compliance | Practitioner | ai-specific |
 | [SAFE-K8S-1006-004](markdown/controls/SAFE-K8S-1006-004.md) | Automated audit readiness for Kubernetes AI platforms | Advanced | ai-specific |
 | [SAFE-K8S-1006-005](markdown/controls/SAFE-K8S-1006-005.md) | Policy-as-code enforcement for AI workload compliance | Practitioner | ai-specific |
-| [SAFE-K8S-1006-006](markdown/controls/SAFE-K8S-1006-006.md) | Continuous compliance evidence generation for AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-1006-007](markdown/controls/SAFE-K8S-1006-007.md) | NIST SSDF v1.1 alignment and gap assessment for Kubernetes AI development | Advanced | ai-specific |
 | [SAFE-K8S-1006-008](markdown/controls/SAFE-K8S-1006-008.md) | NIST SP 800-218A AI/ML profile alignment for Kubernetes AI development | Advanced | ai-specific |
 | [SAFE-K8S-1006-009](markdown/controls/SAFE-K8S-1006-009.md) | Continuous policy decision evidence generation and export for AI workload compliance | Practitioner | ai-specific |
@@ -1792,25 +1551,20 @@ This knowledge area focuses on: Regulatory compliance mapping for Kubernetes AI 
 
 - Domain: D10 - Observability, Incident Response, and Governance
 - Maturity: Practitioner
-- Controls: 18
+- Controls: 13
 
 ### Description
 
-This knowledge area focuses on: Kubernetes and AI infrastructure upgrade planning, Kubernetes API deprecation and removal tracking, AI infrastructure asset inventory and classification, Continuous security posture management for AI clusters, and Change management for production AI model deployments. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: Continuous security posture management for AI clusters, Change management for production AI model deployments, Secure AI workload decommissioning, Cluster service protection from AI training resource exhaustion, and Pre-upgrade Kubernetes API compatibility testing for AI workloads. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-1007-001](markdown/controls/SAFE-K8S-1007-001.md) | Kubernetes and AI infrastructure upgrade planning | Practitioner | ai-specific |
-| [SAFE-K8S-1007-002](markdown/controls/SAFE-K8S-1007-002.md) | Kubernetes API deprecation and removal tracking | Practitioner | ai-specific |
-| [SAFE-K8S-1007-003](markdown/controls/SAFE-K8S-1007-003.md) | AI infrastructure asset inventory and classification | Practitioner | ai-specific |
 | [SAFE-K8S-1007-004](markdown/controls/SAFE-K8S-1007-004.md) | Continuous security posture management for AI clusters | Practitioner | ai-specific |
 | [SAFE-K8S-1007-005](markdown/controls/SAFE-K8S-1007-005.md) | Change management for production AI model deployments | Practitioner | ai-specific |
 | [SAFE-K8S-1007-006](markdown/controls/SAFE-K8S-1007-006.md) | Secure AI workload decommissioning | Practitioner | ai-specific |
 | [SAFE-K8S-1007-007](markdown/controls/SAFE-K8S-1007-007.md) | Cluster service protection from AI training resource exhaustion | Practitioner | ai-specific |
-| [SAFE-K8S-1007-008](markdown/controls/SAFE-K8S-1007-008.md) | GPU cluster scaling governance and node onboarding security | Advanced | ai-specific |
-| [SAFE-K8S-1007-009](markdown/controls/SAFE-K8S-1007-009.md) | Kubernetes API deprecation monitoring and usage discovery | Practitioner | ai-specific |
 | [SAFE-K8S-1007-010](markdown/controls/SAFE-K8S-1007-010.md) | Pre-upgrade Kubernetes API compatibility testing for AI workloads | Practitioner | ai-specific |
 | [SAFE-K8S-1007-011](markdown/controls/SAFE-K8S-1007-011.md) | Kubernetes cluster upgrade planning, sequencing, and rollback governance | Practitioner | ai-specific |
 | [SAFE-K8S-1007-012](markdown/controls/SAFE-K8S-1007-012.md) | AI infrastructure compatibility matrix and coordinated component upgrade governance | Practitioner | ai-specific |

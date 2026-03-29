@@ -2578,22 +2578,6 @@
   framework_code: EU-AI-ACT
   framework_name: EU AI Act
   framework_version: 2024/1689
-  framework_requirement_id: Art-13:13(3)(f)
-  framework_requirement_title: Transparency and Provision of Information to Deployers
-  framework_mapping_notes: 'Where relevant, the instructions shall describe a description of the mechanisms included within the AI system that allows deployers to properly collect, store and interpret the logs.
-
-
-    SAFE-K8S logging architecture (D10 KA 10.1), centralized logging (SAFE-K8S-1001-003), and SIEM integration (SAFE-K8S-1001-006) provide the infrastructure mechanisms for log collection, storage, and interpretation. However, the requirement is to describe these mechanisms in instructions for deployers, which is an organizational documentation obligation.'
-  control_id: SAFE-K8S-1001-003
-  relation_type: partial
-  strength_level: moderate
-  applicability: required
-  applicability_condition: null
-  strength_reason_code: null
-- mapping_set_name: SAFE-K8S to EU AI Act 2024/1689
-  framework_code: EU-AI-ACT
-  framework_name: EU AI Act
-  framework_version: 2024/1689
   framework_requirement_id: Art-14:14(1)
   framework_requirement_title: Human Oversight
   framework_mapping_notes: 'High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use.
