@@ -4297,6 +4297,19 @@
   framework_code: NIST-AI-RMF
   framework_name: NIST AI Risk Management Framework
   framework_version: '1.0'
+  framework_requirement_id: GOVERN 3.2
+  framework_requirement_title: Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations and oversight of AI systems.
+  framework_mapping_notes: AI system classification assigns control profiles based on risk tier, implicitly defining human oversight requirements. Model promotion gates enforce approval workflows requiring human review before deployment.
+  control_id: SAFE-K8S-0905-015
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
   framework_requirement_id: GOVERN 4.1
   framework_requirement_title: Organizational policies and practices are in place to foster a critical thinking and safety-first mindset in the design, development, deployment, and uses of AI systems to minimize potential negative impacts.
   framework_mapping_notes: AI system classification enforces risk-proportionate controls. Model promotion gates require validation before deployment, embedding a safety-first workflow in the AI lifecycle.
@@ -4319,6 +4332,19 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: framework-language-interpretation
+- mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: GOVERN 4.1
+  framework_requirement_title: Organizational policies and practices are in place to foster a critical thinking and safety-first mindset in the design, development, deployment, and uses of AI systems to minimize potential negative impacts.
+  framework_mapping_notes: AI system classification enforces risk-proportionate controls. Model promotion gates require validation before deployment, embedding a safety-first workflow in the AI lifecycle.
+  control_id: SAFE-K8S-0905-015
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
   framework_code: NIST-AI-RMF
   framework_name: NIST AI Risk Management Framework
@@ -4358,6 +4384,19 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: framework-language-interpretation
+- mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: GOVERN 4.3
+  framework_requirement_title: Organizational practices are in place to enable AI testing, identification of incidents, and information sharing.
+  framework_mapping_notes: IR lifecycle playbooks establish incident identification and response. Forensic evidence collection supports post-incident analysis and information sharing. SIEM integration enables detection of AI-specific attack patterns.
+  control_id: SAFE-K8S-0203-016
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
   framework_code: NIST-AI-RMF
   framework_name: NIST AI Risk Management Framework
@@ -4436,6 +4475,19 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: partial-coverage
+- mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 1.1
+  framework_requirement_title: A determination is made as to whether the AI system achieves its intended purposes and stated objectives and whether its development or deployment should proceed.
+  framework_mapping_notes: AI system classification defines expected control profiles. Model promotion gates enforce go/no-go decisions before production deployment based on validation criteria.
+  control_id: SAFE-K8S-0905-015
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
   framework_code: NIST-AI-RMF
   framework_name: NIST AI Risk Management Framework
@@ -4602,6 +4654,19 @@
   control_id: SAFE-K8S-0201-005
   relation_type: supports
   strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 4.1
+  framework_requirement_title: Post-deployment AI system monitoring plans are implemented, including mechanisms for capturing and evaluating input from users and other relevant AI actors, appeal and override, decommissioning, incident response, recovery, and change management.
+  framework_mapping_notes: 'SAFE-K8S provides comprehensive post-deployment infrastructure: audit policies for AI workload monitoring, metrics and tracing for performance evaluation, IR playbooks for incident response, ransomware response for recovery, and change management for controlled lifecycle transitions.'
+  control_id: SAFE-K8S-0203-016
+  relation_type: supports
+  strength_level: moderate
   applicability: required
   applicability_condition: null
   strength_reason_code: null
@@ -4804,6 +4869,19 @@
   framework_code: NIST-AI-RMF
   framework_name: NIST AI Risk Management Framework
   framework_version: '1.0'
+  framework_requirement_id: MAP 2.1
+  framework_requirement_title: The specific tasks and methods used to implement the tasks that the AI system will support are defined (e.g., classifiers, generative models, recommenders).
+  framework_mapping_notes: AI system classification requires documenting system type (training, serving, pipeline) and assigning appropriate control profiles. Label standards classify workloads by type.
+  control_id: SAFE-K8S-0905-015
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
   framework_requirement_id: MAP 2.2
   framework_requirement_title: Information about the AI system's knowledge limits and how system output may be utilized and overseen by humans is documented. Documentation also includes a description of the capabilities the system can and cannot support, its intended scope of operation, and conditions under which it would not be advisable to deploy the system.
   framework_mapping_notes: Inference request validation and response filtering enforce operational boundaries. Adversarial example defenses help define system reliability limits.
@@ -4982,6 +5060,19 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: exact-text-match
+- mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MAP 4.1
+  framework_requirement_title: Approaches for mapping AI technology and legal risks of its components - including the use of third-party data or software - are in place, followed, and documented, as are risks of infringement of a third-party's intellectual property or other rights.
+  framework_mapping_notes: SBOM and ML-BOM generation documents all software and model dependencies. ML dependency vulnerability management tracks known vulnerabilities in third-party components.
+  control_id: SAFE-K8S-0905-042
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST AI RMF 1.0
   framework_code: NIST-AI-RMF
   framework_name: NIST AI Risk Management Framework
@@ -7940,6 +8031,54 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AC-2
+  framework_requirement_title: Account Management
+  framework_mapping_notes: 'Agent/service account lifecycle management
+
+
+    4.2 - Secure service accounts and workload identity (account management and lifecycle)'
+  control_id: SAFE-K8S-0905-039
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-2
+  framework_requirement_title: Account Management
+  framework_mapping_notes: 'Agent/service account lifecycle management
+
+
+    4.2 - Secure service accounts and workload identity (account management and lifecycle)'
+  control_id: SAFE-K8S-0910-025
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-2
+  framework_requirement_title: Account Management
+  framework_mapping_notes: 'Agent/service account lifecycle management
+
+
+    4.2 - Secure service accounts and workload identity (account management and lifecycle)'
+  control_id: SAFE-K8S-0910-031
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AC-2(1)
   framework_requirement_title: Automated System Account Management
   framework_mapping_notes: 'Automated agent identity provisioning at scale
@@ -9556,6 +9695,38 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AC-20(3)
+  framework_requirement_title: Non-organizationally Owned Systems -- Restricted Use
+  framework_mapping_notes: 'Agents interacting with third-party systems
+
+
+    7.4 - Restricted use policies for non-organizationally owned systems and external AI services; 9.5 - Registry federation security'
+  control_id: SAFE-K8S-0905-052
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-20(3)
+  framework_requirement_title: Non-organizationally Owned Systems -- Restricted Use
+  framework_mapping_notes: 'Agents interacting with third-party systems
+
+
+    7.4 - Restricted use policies for non-organizationally owned systems and external AI services; 9.5 - Registry federation security'
+  control_id: SAFE-K8S-0905-054
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AC-21
   framework_requirement_title: Information Sharing
   framework_mapping_notes: 'Controlling how agents share information across boundaries
@@ -9756,6 +9927,38 @@
     6.5 - Admission controllers make automated policy decisions on API requests; 9.5 - Model promotion gates automate security scan pass/fail decisions before production deployment'
   control_id: SAFE-K8S-0905-012
   relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-21(1)
+  framework_requirement_title: Automated Decision Support
+  framework_mapping_notes: 'Automated controls for agent information sharing decisions
+
+
+    6.5 - Admission controllers make automated policy decisions on API requests; 9.5 - Model promotion gates automate security scan pass/fail decisions before production deployment'
+  control_id: SAFE-K8S-0905-055
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-21(1)
+  framework_requirement_title: Automated Decision Support
+  framework_mapping_notes: 'Automated controls for agent information sharing decisions
+
+
+    6.5 - Admission controllers make automated policy decisions on API requests; 9.5 - Model promotion gates automate security scan pass/fail decisions before production deployment'
+  control_id: SAFE-K8S-0910-031
+  relation_type: direct
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -10676,6 +10879,38 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AC-25
+  framework_requirement_title: Reference Monitor
+  framework_mapping_notes: 'Foundational -- tamperproof policy enforcement for agent actions
+
+
+    6.5 - Admission controllers (reference monitor for all API requests); 3.3 - Mandatory access controls (seccomp, AppArmor as enforcement)'
+  control_id: SAFE-K8S-0905-055
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-25
+  framework_requirement_title: Reference Monitor
+  framework_mapping_notes: 'Foundational -- tamperproof policy enforcement for agent actions
+
+
+    6.5 - Admission controllers (reference monitor for all API requests); 3.3 - Mandatory access controls (seccomp, AppArmor as enforcement)'
+  control_id: SAFE-K8S-0910-031
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AC-3
   framework_requirement_title: Access Enforcement
   framework_mapping_notes: 'Core to agent authorization -- enforcing what agents can do
@@ -11434,6 +11669,54 @@
 
 
     9.5 - Model promotion gates (approval workflows for production deployment); 10.7 - Change management approval workflows for model deployments'
+  control_id: SAFE-K8S-0905-025
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-3(2)
+  framework_requirement_title: Dual Authorization
+  framework_mapping_notes: 'Requiring human+agent or multi-agent approval for critical actions
+
+
+    9.5 - Model promotion gates (approval workflows for production deployment); 10.7 - Change management approval workflows for model deployments'
+  control_id: SAFE-K8S-0905-050
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-3(2)
+  framework_requirement_title: Dual Authorization
+  framework_mapping_notes: 'Requiring human+agent or multi-agent approval for critical actions
+
+
+    9.5 - Model promotion gates (approval workflows for production deployment); 10.7 - Change management approval workflows for model deployments'
+  control_id: SAFE-K8S-0910-019
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-3(2)
+  framework_requirement_title: Dual Authorization
+  framework_mapping_notes: 'Requiring human+agent or multi-agent approval for critical actions
+
+
+    9.5 - Model promotion gates (approval workflows for production deployment); 10.7 - Change management approval workflows for model deployments'
   control_id: SAFE-K8S-1007-004
   relation_type: supports
   strength_level: strong
@@ -11716,6 +11999,70 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AC-3(7)
+  framework_requirement_title: Role-based Access Control
+  framework_mapping_notes: 'RBAC for agent roles and permissions
+
+
+    4.1 - Design and enforce RBAC (RBAC primitives: Roles, ClusterRoles, RoleBindings, ClusterRoleBindings)'
+  control_id: SAFE-K8S-0905-038
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-3(7)
+  framework_requirement_title: Role-based Access Control
+  framework_mapping_notes: 'RBAC for agent roles and permissions
+
+
+    4.1 - Design and enforce RBAC (RBAC primitives: Roles, ClusterRoles, RoleBindings, ClusterRoleBindings)'
+  control_id: SAFE-K8S-0910-016
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-3(7)
+  framework_requirement_title: Role-based Access Control
+  framework_mapping_notes: 'RBAC for agent roles and permissions
+
+
+    4.1 - Design and enforce RBAC (RBAC primitives: Roles, ClusterRoles, RoleBindings, ClusterRoleBindings)'
+  control_id: SAFE-K8S-0910-022
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-3(7)
+  framework_requirement_title: Role-based Access Control
+  framework_mapping_notes: 'RBAC for agent roles and permissions
+
+
+    4.1 - Design and enforce RBAC (RBAC primitives: Roles, ClusterRoles, RoleBindings, ClusterRoleBindings)'
+  control_id: SAFE-K8S-0910-025
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AC-3(8)
   framework_requirement_title: Revocation of Access Authorizations
   framework_mapping_notes: 'Revoking agent permissions in real-time
@@ -11932,6 +12279,38 @@
     5.1 - Implement network policies (default deny, namespace isolation, egress controls for information flow enforcement)'
   control_id: SAFE-K8S-0501-008
   relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-4
+  framework_requirement_title: Information Flow Enforcement
+  framework_mapping_notes: 'Core to agent data flow control between trust boundaries
+
+
+    5.1 - Implement network policies (default deny, namespace isolation, egress controls for information flow enforcement)'
+  control_id: SAFE-K8S-0905-034
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-4
+  framework_requirement_title: Information Flow Enforcement
+  framework_mapping_notes: 'Core to agent data flow control between trust boundaries
+
+
+    5.1 - Implement network policies (default deny, namespace isolation, egress controls for information flow enforcement)'
+  control_id: SAFE-K8S-0910-022
+  relation_type: direct
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -13248,6 +13627,22 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: exact-text-match
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-4(21)
+  framework_requirement_title: Physical or Logical Separation of Information Flows
+  framework_mapping_notes: 'Logical separation of agent data channels
+
+
+    5.1 - AI workload network segmentation (isolation between training, inference, pipeline, notebook workloads); 7.2 - Namespace isolation'
+  control_id: SAFE-K8S-0905-034
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST SP 800-53r5
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
@@ -15412,6 +15807,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AC-5
+  framework_requirement_title: Separation of Duties
+  framework_mapping_notes: 'Separating agent roles (executor vs. approver)
+
+
+    4.1 - Design and enforce RBAC (separation of duties between ML engineers, platform engineers, security teams)'
+  control_id: SAFE-K8S-0905-025
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AC-6
   framework_requirement_title: Least Privilege
   framework_mapping_notes: 'Foundational -- agents must operate with minimum necessary permissions
@@ -15600,6 +16011,70 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: exact-text-match
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-6
+  framework_requirement_title: Least Privilege
+  framework_mapping_notes: 'Foundational -- agents must operate with minimum necessary permissions
+
+
+    4.1 - Design and enforce RBAC (least-privilege access design); 4.2 - Default SA restrictions, disabling auto-mount of tokens; 1.4 - Control plane configuration file permissions (least-privilege file ownership and modes)'
+  control_id: SAFE-K8S-0905-038
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-6
+  framework_requirement_title: Least Privilege
+  framework_mapping_notes: 'Foundational -- agents must operate with minimum necessary permissions
+
+
+    4.1 - Design and enforce RBAC (least-privilege access design); 4.2 - Default SA restrictions, disabling auto-mount of tokens; 1.4 - Control plane configuration file permissions (least-privilege file ownership and modes)'
+  control_id: SAFE-K8S-0910-016
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-6
+  framework_requirement_title: Least Privilege
+  framework_mapping_notes: 'Foundational -- agents must operate with minimum necessary permissions
+
+
+    4.1 - Design and enforce RBAC (least-privilege access design); 4.2 - Default SA restrictions, disabling auto-mount of tokens; 1.4 - Control plane configuration file permissions (least-privilege file ownership and modes)'
+  control_id: SAFE-K8S-0910-022
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AC-6
+  framework_requirement_title: Least Privilege
+  framework_mapping_notes: 'Foundational -- agents must operate with minimum necessary permissions
+
+
+    4.1 - Design and enforce RBAC (least-privilege access design); 4.2 - Default SA restrictions, disabling auto-mount of tokens; 1.4 - Control plane configuration file permissions (least-privilege file ownership and modes)'
+  control_id: SAFE-K8S-0910-025
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST SP 800-53r5
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
@@ -18068,6 +18543,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AU-10
+  framework_requirement_title: Non-repudiation
+  framework_mapping_notes: 'Non-repudiation for agent actions
+
+
+    6.2 - Image signing (Sigstore/cosign for non-repudiation); 9.4 - Model signing and provenance'
+  control_id: SAFE-K8S-0905-046
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AU-10(1)
   framework_requirement_title: Association of Identities
   framework_mapping_notes: 'Binding agent identity to audit records
@@ -18132,6 +18623,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AU-10(1)
+  framework_requirement_title: Association of Identities
+  framework_mapping_notes: 'Binding agent identity to audit records
+
+
+    8.5 - Audit and monitor GPU workloads (tracking pod-to-GPU allocation with workload identity)'
+  control_id: SAFE-K8S-0905-051
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AU-10(2)
   framework_requirement_title: Validate Binding of Information Producer Identity
   framework_mapping_notes: 'Verifying which agent produced data
@@ -18154,6 +18661,22 @@
 
 
     6.2 - Image signing verification (validating producer identity binding); 9.5 - Model origin verification'
+  control_id: SAFE-K8S-0606-021
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-10(2)
+  framework_requirement_title: Validate Binding of Information Producer Identity
+  framework_mapping_notes: 'Verifying which agent produced data
+
+
+    6.2 - Image signing verification (validating producer identity binding); 9.5 - Model origin verification'
   control_id: SAFE-K8S-0905-001
   relation_type: supports
   strength_level: strong
@@ -18228,6 +18751,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: AU-10(2)
+  framework_requirement_title: Validate Binding of Information Producer Identity
+  framework_mapping_notes: 'Verifying which agent produced data
+
+
+    6.2 - Image signing verification (validating producer identity binding); 9.5 - Model origin verification'
+  control_id: SAFE-K8S-0905-046
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: AU-10(3)
   framework_requirement_title: Chain of Custody
   framework_mapping_notes: 'Chain of custody for agent-processed data
@@ -18301,6 +18840,22 @@
   control_id: SAFE-K8S-0905-012
   relation_type: supports
   strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-10(3)
+  framework_requirement_title: Chain of Custody
+  framework_mapping_notes: 'Chain of custody for agent-processed data
+
+
+    10.5 - Forensic evidence collection (chain-of-custody procedures); 9.5 - Model provenance chain-of-custody'
+  control_id: SAFE-K8S-0905-047
+  relation_type: supports
+  strength_level: moderate
   applicability: required
   applicability_condition: null
   strength_reason_code: null
@@ -18396,6 +18951,38 @@
     9.5 - Reviewer identity validation in promotion approval workflows explicitly binds reviewer identity to approval decisions'
   control_id: SAFE-K8S-0905-012
   relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-10(4)
+  framework_requirement_title: Validate Binding of Information Reviewer Identity
+  framework_mapping_notes: 'Verifying who/what reviewed agent outputs
+
+
+    9.5 - Reviewer identity validation in promotion approval workflows explicitly binds reviewer identity to approval decisions'
+  control_id: SAFE-K8S-0905-050
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-10(4)
+  framework_requirement_title: Validate Binding of Information Reviewer Identity
+  framework_mapping_notes: 'Verifying who/what reviewed agent outputs
+
+
+    9.5 - Reviewer identity validation in promotion approval workflows explicitly binds reviewer identity to approval decisions'
+  control_id: SAFE-K8S-0905-051
+  relation_type: direct
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -18570,6 +19157,38 @@
 
 
     10.1 - K8s audit policy configuration (audit record generation at all stages)'
+  control_id: SAFE-K8S-0905-040
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-12
+  framework_requirement_title: Audit Record Generation
+  framework_mapping_notes: 'Generating audit records for agent actions
+
+
+    10.1 - K8s audit policy configuration (audit record generation at all stages)'
+  control_id: SAFE-K8S-0910-017
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-12
+  framework_requirement_title: Audit Record Generation
+  framework_mapping_notes: 'Generating audit records for agent actions
+
+
+    10.1 - K8s audit policy configuration (audit record generation at all stages)'
   control_id: SAFE-K8S-1001-004
   relation_type: direct
   strength_level: strong
@@ -18603,6 +19222,38 @@
 
     10.1 - K8s audit policy configuration (audit record generation at all stages)'
   control_id: SAFE-K8S-1001-008
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-12(1)
+  framework_requirement_title: System-wide and Time-correlated Audit Trail
+  framework_mapping_notes: 'Correlated audit trail across agent ecosystem
+
+
+    10.2 - Distributed tracing for ML pipelines (system-wide, time-correlated audit trail)'
+  control_id: SAFE-K8S-0905-040
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-12(1)
+  framework_requirement_title: System-wide and Time-correlated Audit Trail
+  framework_mapping_notes: 'Correlated audit trail across agent ecosystem
+
+
+    10.2 - Distributed tracing for ML pipelines (system-wide, time-correlated audit trail)'
+  control_id: SAFE-K8S-0910-017
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -20522,6 +21173,102 @@
 
 
     10.1 - SIEM integration (audit record review, analysis, correlation rule development)'
+  control_id: SAFE-K8S-0905-039
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-6
+  framework_requirement_title: Audit Record Review, Analysis, and Reporting
+  framework_mapping_notes: 'Reviewing agent audit trails
+
+
+    10.1 - SIEM integration (audit record review, analysis, correlation rule development)'
+  control_id: SAFE-K8S-0905-041
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-6
+  framework_requirement_title: Audit Record Review, Analysis, and Reporting
+  framework_mapping_notes: 'Reviewing agent audit trails
+
+
+    10.1 - SIEM integration (audit record review, analysis, correlation rule development)'
+  control_id: SAFE-K8S-0905-053
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-6
+  framework_requirement_title: Audit Record Review, Analysis, and Reporting
+  framework_mapping_notes: 'Reviewing agent audit trails
+
+
+    10.1 - SIEM integration (audit record review, analysis, correlation rule development)'
+  control_id: SAFE-K8S-0910-017
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-6
+  framework_requirement_title: Audit Record Review, Analysis, and Reporting
+  framework_mapping_notes: 'Reviewing agent audit trails
+
+
+    10.1 - SIEM integration (audit record review, analysis, correlation rule development)'
+  control_id: SAFE-K8S-0910-025
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-6
+  framework_requirement_title: Audit Record Review, Analysis, and Reporting
+  framework_mapping_notes: 'Reviewing agent audit trails
+
+
+    10.1 - SIEM integration (audit record review, analysis, correlation rule development)'
+  control_id: SAFE-K8S-0910-033
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-6
+  framework_requirement_title: Audit Record Review, Analysis, and Reporting
+  framework_mapping_notes: 'Reviewing agent audit trails
+
+
+    10.1 - SIEM integration (audit record review, analysis, correlation rule development)'
   control_id: SAFE-K8S-1001-004
   relation_type: direct
   strength_level: strong
@@ -21113,7 +21860,39 @@
   framework_mapping_notes: 'Accurate timestamps for agent action correlation
 
 
-    10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
+    2.3 - Host OS and Kernel Hardening (node time synchronization with authoritative time sources, drift monitoring, and timestamp integrity); 10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
+  control_id: SAFE-K8S-0203-016
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-8
+  framework_requirement_title: Time Stamps
+  framework_mapping_notes: 'Accurate timestamps for agent action correlation
+
+
+    2.3 - Host OS and Kernel Hardening (node time synchronization with authoritative time sources, drift monitoring, and timestamp integrity); 10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
+  control_id: SAFE-K8S-0905-051
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-8
+  framework_requirement_title: Time Stamps
+  framework_mapping_notes: 'Accurate timestamps for agent action correlation
+
+
+    2.3 - Host OS and Kernel Hardening (node time synchronization with authoritative time sources, drift monitoring, and timestamp integrity); 10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
   control_id: SAFE-K8S-1001-004
   relation_type: supports
   strength_level: strong
@@ -21129,7 +21908,7 @@
   framework_mapping_notes: 'Accurate timestamps for agent action correlation
 
 
-    10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
+    2.3 - Host OS and Kernel Hardening (node time synchronization with authoritative time sources, drift monitoring, and timestamp integrity); 10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
   control_id: SAFE-K8S-1001-007
   relation_type: supports
   strength_level: strong
@@ -21145,8 +21924,24 @@
   framework_mapping_notes: 'Accurate timestamps for agent action correlation
 
 
-    10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
+    2.3 - Host OS and Kernel Hardening (node time synchronization with authoritative time sources, drift monitoring, and timestamp integrity); 10.1 - Audit logging (timestamps in audit records for forensic accuracy and event correlation)'
   control_id: SAFE-K8S-1001-008
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: AU-9
+  framework_requirement_title: Protection of Audit Information
+  framework_mapping_notes: 'Protecting agent audit logs from tampering
+
+
+    10.1 - Log integrity (protecting audit logs from tampering or unauthorized access)'
+  control_id: SAFE-K8S-0905-037
   relation_type: supports
   strength_level: strong
   applicability: required
@@ -22074,6 +22869,54 @@
 
 
     10.6 - Continuous compliance evidence collection; 10.7 - Security posture management (continuous assessment)'
+  control_id: SAFE-K8S-0910-018
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CA-7
+  framework_requirement_title: Continuous Monitoring
+  framework_mapping_notes: 'Continuous monitoring of agent security posture
+
+
+    10.6 - Continuous compliance evidence collection; 10.7 - Security posture management (continuous assessment)'
+  control_id: SAFE-K8S-0910-027
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CA-7
+  framework_requirement_title: Continuous Monitoring
+  framework_mapping_notes: 'Continuous monitoring of agent security posture
+
+
+    10.6 - Continuous compliance evidence collection; 10.7 - Security posture management (continuous assessment)'
+  control_id: SAFE-K8S-0910-028
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CA-7
+  framework_requirement_title: Continuous Monitoring
+  framework_mapping_notes: 'Continuous monitoring of agent security posture
+
+
+    10.6 - Continuous compliance evidence collection; 10.7 - Security posture management (continuous assessment)'
   control_id: SAFE-K8S-1006-001
   relation_type: direct
   strength_level: strong
@@ -22252,6 +23095,22 @@
     10.2 - AI workload telemetry (trend analysis for training divergence, inference accuracy degradation)'
   control_id: SAFE-K8S-1002-004
   relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CA-7(4)
+  framework_requirement_title: Risk Monitoring
+  framework_mapping_notes: 'Ongoing risk monitoring for agent systems
+
+
+    10.7 - Security posture management (continuous risk monitoring for cluster drift and vulnerability exposure)'
+  control_id: SAFE-K8S-0910-027
+  relation_type: direct
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -22948,6 +23807,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: CM-10(1)
+  framework_requirement_title: Open-source Software
+  framework_mapping_notes: 'Managing open-source in agent systems
+
+
+    9.5 - ML dependency vulnerability management (PyTorch, TensorFlow, JAX open-source dependency governance)'
+  control_id: SAFE-K8S-0905-028
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: CM-11
   framework_requirement_title: User-installed Software
   framework_mapping_notes: 'Controlling user-installed agent plugins/tools
@@ -23498,6 +24373,22 @@
 
 
     6.2 - Image signing (Sigstore/cosign signed components); 9.4 - Model signing and provenance verification'
+  control_id: SAFE-K8S-0606-021
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-14
+  framework_requirement_title: Signed Components
+  framework_mapping_notes: 'Cryptographic signing of agent components/models
+
+
+    6.2 - Image signing (Sigstore/cosign signed components); 9.4 - Model signing and provenance verification'
   control_id: SAFE-K8S-0904-001
   relation_type: direct
   strength_level: strong
@@ -23515,6 +24406,38 @@
 
     6.2 - Image signing (Sigstore/cosign signed components); 9.4 - Model signing and provenance verification'
   control_id: SAFE-K8S-0904-003
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-14
+  framework_requirement_title: Signed Components
+  framework_mapping_notes: 'Cryptographic signing of agent components/models
+
+
+    6.2 - Image signing (Sigstore/cosign signed components); 9.4 - Model signing and provenance verification'
+  control_id: SAFE-K8S-0905-046
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-14
+  framework_requirement_title: Signed Components
+  framework_mapping_notes: 'Cryptographic signing of agent components/models
+
+
+    6.2 - Image signing (Sigstore/cosign signed components); 9.4 - Model signing and provenance verification'
+  control_id: SAFE-K8S-0905-058
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -23604,6 +24527,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: CM-2
+  framework_requirement_title: Baseline Configuration
+  framework_mapping_notes: 'Agent system baseline configs
+
+
+    1.4 - Apply CIS benchmarks (baseline configuration); 3.2 - AI workload security context patterns as baseline'
+  control_id: SAFE-K8S-0910-026
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: CM-2(2)
   framework_requirement_title: Automation Support for Accuracy and Currency
   framework_mapping_notes: 'Automated baseline verification for agent configs
@@ -23659,6 +24598,22 @@
 
     6.6 - GitOps (Git as single source of truth, automated reconciliation); 1.4 - Automated kube-bench assessment'
   control_id: SAFE-K8S-0606-009
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-2(2)
+  framework_requirement_title: Automation Support for Accuracy and Currency
+  framework_mapping_notes: 'Automated baseline verification for agent configs
+
+
+    6.6 - GitOps (Git as single source of truth, automated reconciliation); 1.4 - Automated kube-bench assessment'
+  control_id: SAFE-K8S-0910-027
   relation_type: supports
   strength_level: strong
   applicability: required
@@ -24140,6 +25095,22 @@
     6.6 - CI pipeline security gates (SAST, DAST, SCA -- testing and validation before deployment)'
   control_id: SAFE-K8S-0606-011
   relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-3(2)
+  framework_requirement_title: Testing, Validation, and Documentation of Changes
+  framework_mapping_notes: 'Validating agent config changes
+
+
+    6.6 - CI pipeline security gates (SAST, DAST, SCA -- testing and validation before deployment)'
+  control_id: SAFE-K8S-0606-023
+  relation_type: direct
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -24884,6 +25855,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: CM-5
+  framework_requirement_title: Access Restrictions for Change
+  framework_mapping_notes: 'Restricting who can change agent configs
+
+
+    6.6 - GitOps (repository access controls, branch protection for change restrictions); 1.4 - Control plane configuration file permissions; 2.1 - Kubelet hostname override governance (change control for --hostname-override)'
+  control_id: SAFE-K8S-0606-024
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: CM-5(1)
   framework_requirement_title: Automated Access Enforcement and Audit Records
   framework_mapping_notes: 'Automated enforcement of agent change access
@@ -25348,6 +26335,54 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: CM-6
+  framework_requirement_title: Configuration Settings
+  framework_mapping_notes: 'Secure config settings for agent systems
+
+
+    1.4 - CIS benchmark application (configuration settings baseline); 1.3 - Controller-manager pod GC threshold; 2.1 - Kubelet hardening flags'
+  control_id: SAFE-K8S-0606-020
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-6
+  framework_requirement_title: Configuration Settings
+  framework_mapping_notes: 'Secure config settings for agent systems
+
+
+    1.4 - CIS benchmark application (configuration settings baseline); 1.3 - Controller-manager pod GC threshold; 2.1 - Kubelet hardening flags'
+  control_id: SAFE-K8S-0910-018
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-6
+  framework_requirement_title: Configuration Settings
+  framework_mapping_notes: 'Secure config settings for agent systems
+
+
+    1.4 - CIS benchmark application (configuration settings baseline); 1.3 - Controller-manager pod GC threshold; 2.1 - Kubelet hardening flags'
+  control_id: SAFE-K8S-0910-026
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: CM-6(1)
   framework_requirement_title: Automated Management, Application, and Verification
   framework_mapping_notes: 'Automated agent config management
@@ -25403,6 +26438,54 @@
 
     6.6 - GitOps (automated configuration management and verification); 1.4 - Automated kube-bench assessment'
   control_id: SAFE-K8S-0606-009
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-6(1)
+  framework_requirement_title: Automated Management, Application, and Verification
+  framework_mapping_notes: 'Automated agent config management
+
+
+    6.6 - GitOps (automated configuration management and verification); 1.4 - Automated kube-bench assessment'
+  control_id: SAFE-K8S-0606-024
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-6(1)
+  framework_requirement_title: Automated Management, Application, and Verification
+  framework_mapping_notes: 'Automated agent config management
+
+
+    6.6 - GitOps (automated configuration management and verification); 1.4 - Automated kube-bench assessment'
+  control_id: SAFE-K8S-0910-026
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-6(1)
+  framework_requirement_title: Automated Management, Application, and Verification
+  framework_mapping_notes: 'Automated agent config management
+
+
+    6.6 - GitOps (automated configuration management and verification); 1.4 - Automated kube-bench assessment'
+  control_id: SAFE-K8S-0910-027
   relation_type: supports
   strength_level: strong
   applicability: required
@@ -25940,6 +27023,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: CM-7(5)
+  framework_requirement_title: Authorized Software -- Allow-by-exception
+  framework_mapping_notes: 'Allowlisting agent tools/plugins
+
+
+    6.5 - Admission control (allow-listing approved images); 6.1 - Approved base image registries'
+  control_id: SAFE-K8S-0905-032
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: CM-7(6)
   framework_requirement_title: Confined Environments with Limited Privileges
   framework_mapping_notes: 'Agent sandboxing with limited privileges
@@ -26219,6 +27318,22 @@
 
     6.1 - Image hardening (no shell binaries, minimal attack surface); 2.4 - Drift detection for unexpected binary execution'
   control_id: SAFE-K8S-0601-014
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CM-8
+  framework_requirement_title: System Component Inventory
+  framework_mapping_notes: 'Inventory of agent components (models, tools, plugins)
+
+
+    10.7 - AI infrastructure asset inventory (models, datasets, pipelines, inference endpoints, GPU allocations)'
+  control_id: SAFE-K8S-0905-059
   relation_type: supports
   strength_level: strong
   applicability: required
@@ -27116,6 +28231,22 @@
     9.1 - Training fault tolerance (checkpoint recovery, rollback strategies for training state)'
   control_id: SAFE-K8S-0901-008
   relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: CP-10(2)
+  framework_requirement_title: Transaction Recovery
+  framework_mapping_notes: 'Recovering agent transactions (rollback)
+
+
+    9.1 - Training fault tolerance (checkpoint recovery, rollback strategies for training state)'
+  control_id: SAFE-K8S-0905-035
+  relation_type: direct
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -32276,6 +33407,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: IA-3
+  framework_requirement_title: Device Identification and Authentication
+  framework_mapping_notes: 'Agent/device identity authentication (non-human identity)
+
+
+    2.1 - Kubelet TLS bootstrapping (node device identification); 8.4 - Remote attestation for TEE devices'
+  control_id: SAFE-K8S-0910-021
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: IA-3(1)
   framework_requirement_title: Cryptographic Bidirectional Authentication
   framework_mapping_notes: 'Mutual TLS for agent-to-agent authentication
@@ -35236,6 +36383,70 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: IA-9
+  framework_requirement_title: Service Identification and Authentication
+  framework_mapping_notes: 'Core -- agent service-to-service authentication
+
+
+    5.4 - SPIFFE/SPIRE workload identity (service-to-service identification and authentication); 4.4 - mTLS'
+  control_id: SAFE-K8S-0910-004
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IA-9
+  framework_requirement_title: Service Identification and Authentication
+  framework_mapping_notes: 'Core -- agent service-to-service authentication
+
+
+    5.4 - SPIFFE/SPIRE workload identity (service-to-service identification and authentication); 4.4 - mTLS'
+  control_id: SAFE-K8S-0910-016
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IA-9
+  framework_requirement_title: Service Identification and Authentication
+  framework_mapping_notes: 'Core -- agent service-to-service authentication
+
+
+    5.4 - SPIFFE/SPIRE workload identity (service-to-service identification and authentication); 4.4 - mTLS'
+  control_id: SAFE-K8S-0910-021
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IA-9
+  framework_requirement_title: Service Identification and Authentication
+  framework_mapping_notes: 'Core -- agent service-to-service authentication
+
+
+    5.4 - SPIFFE/SPIRE workload identity (service-to-service identification and authentication); 4.4 - mTLS'
+  control_id: SAFE-K8S-0910-030
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: IR-1
   framework_requirement_title: Policy and Procedures
   framework_mapping_notes: 'IR policy for agent systems
@@ -35722,6 +36933,70 @@
 
 
     10.5 - IR lifecycle (detection, analysis, containment, eradication, recovery for K8s AI environments)'
+  control_id: SAFE-K8S-0905-037
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IR-4
+  framework_requirement_title: Incident Handling
+  framework_mapping_notes: 'Core incident handling for agent security events
+
+
+    10.5 - IR lifecycle (detection, analysis, containment, eradication, recovery for K8s AI environments)'
+  control_id: SAFE-K8S-0910-019
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IR-4
+  framework_requirement_title: Incident Handling
+  framework_mapping_notes: 'Core incident handling for agent security events
+
+
+    10.5 - IR lifecycle (detection, analysis, containment, eradication, recovery for K8s AI environments)'
+  control_id: SAFE-K8S-0910-029
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IR-4
+  framework_requirement_title: Incident Handling
+  framework_mapping_notes: 'Core incident handling for agent security events
+
+
+    10.5 - IR lifecycle (detection, analysis, containment, eradication, recovery for K8s AI environments)'
+  control_id: SAFE-K8S-0910-033
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IR-4
+  framework_requirement_title: Incident Handling
+  framework_mapping_notes: 'Core incident handling for agent security events
+
+
+    10.5 - IR lifecycle (detection, analysis, containment, eradication, recovery for K8s AI environments)'
   control_id: SAFE-K8S-1005-001
   relation_type: direct
   strength_level: strong
@@ -36093,6 +37368,22 @@
   control_id: SAFE-K8S-1005-001
   relation_type: supports
   strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: IR-4(2)
+  framework_requirement_title: Dynamic Reconfiguration
+  framework_mapping_notes: 'Dynamically reconfiguring agents during incidents
+
+
+    10.5 - Containment (dynamic reconfiguration: isolating namespaces with network policies, revoking credentials)'
+  control_id: SAFE-K8S-0910-019
+  relation_type: direct
+  strength_level: strong
   applicability: required
   applicability_condition: null
   strength_reason_code: null
@@ -37755,6 +39046,38 @@
 
     6.6 - GitOps (Git as centralized management source of truth); 10.6 - Policy-as-code central management'
   control_id: SAFE-K8S-0606-009
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: PL-9
+  framework_requirement_title: Central Management
+  framework_mapping_notes: 'Central management of security controls is important for governing distributed agent systems
+
+
+    6.6 - GitOps (Git as centralized management source of truth); 10.6 - Policy-as-code central management'
+  control_id: SAFE-K8S-0910-028
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: PL-9
+  framework_requirement_title: Central Management
+  framework_mapping_notes: 'Central management of security controls is important for governing distributed agent systems
+
+
+    6.6 - GitOps (Git as centralized management source of truth); 10.6 - Policy-as-code central management'
+  control_id: SAFE-K8S-0910-029
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -40964,6 +42287,38 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: RA-5
+  framework_requirement_title: Vulnerability Monitoring and Scanning
+  framework_mapping_notes: 'Vulnerability scanning of agentic AI components, dependencies, and models is essential
+
+
+    6.1 - Container image vulnerability scanning (CI/CD, registry, runtime); 6.4 - Vulnerability intelligence'
+  control_id: SAFE-K8S-0905-028
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: RA-5
+  framework_requirement_title: Vulnerability Monitoring and Scanning
+  framework_mapping_notes: 'Vulnerability scanning of agentic AI components, dependencies, and models is essential
+
+
+    6.1 - Container image vulnerability scanning (CI/CD, registry, runtime); 6.4 - Vulnerability intelligence'
+  control_id: SAFE-K8S-0905-029
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: RA-5(10)
   framework_requirement_title: Correlate Scanning Information
   framework_mapping_notes: 'Correlating vulnerability scans across agent components reveals systemic weaknesses
@@ -41508,6 +42863,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SA-10
+  framework_requirement_title: Developer Configuration Management
+  framework_mapping_notes: 'Configuration management for agentic AI development tracks changes to models, code, and configs
+
+
+    6.6 - GitOps security (developer configuration management via Git source control)'
+  control_id: SAFE-K8S-0606-024
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SA-10(1)
   framework_requirement_title: Software and Firmware Integrity Verification
   framework_mapping_notes: 'Integrity verification of agent software components prevents supply chain tampering
@@ -41716,6 +43087,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SA-10(5)
+  framework_requirement_title: Mapping Integrity for Version Control
+  framework_mapping_notes: 'Version control integrity mapping tracks provenance of agent code and model artifacts
+
+
+    6.6 - GitOps (Git version control integrity, signed commits, tag immutability for version mapping)'
+  control_id: SAFE-K8S-0606-024
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SA-10(6)
   framework_requirement_title: Trusted Distribution
   framework_mapping_notes: 'Trusted distribution of agent components and model artifacts prevents tampering in transit
@@ -41867,6 +43254,22 @@
 
     6.6 - CI pipeline security gates (developer testing and evaluation: SAST, DAST, SCA)'
   control_id: SAFE-K8S-0606-011
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SA-11
+  framework_requirement_title: Developer Testing and Evaluation
+  framework_mapping_notes: 'Developer testing of agentic AI must include security, safety, and adversarial testing
+
+
+    6.6 - CI pipeline security gates (developer testing and evaluation: SAST, DAST, SCA)'
+  control_id: SAFE-K8S-0606-023
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -42244,6 +43647,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SA-11(7)
+  framework_requirement_title: Verify Scope of Testing and Evaluation
+  framework_mapping_notes: 'Testing scope verification ensures all agent components and interactions are covered
+
+
+    6.6 - CI pipeline (verifying testing scope covers AI components, models, and infrastructure)'
+  control_id: SAFE-K8S-0606-023
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SA-11(8)
   framework_requirement_title: Dynamic Code Analysis
   framework_mapping_notes: 'Dynamic analysis of running agent systems detects runtime vulnerabilities and anomalies
@@ -42308,6 +43727,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SA-11(8)
+  framework_requirement_title: Dynamic Code Analysis
+  framework_mapping_notes: 'Dynamic analysis of running agent systems detects runtime vulnerabilities and anomalies
+
+
+    6.6 - CI pipeline security gates (DAST -- dynamic application security testing integration)'
+  control_id: SAFE-K8S-0905-045
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SA-11(9)
   framework_requirement_title: Interactive Application Security Testing
   framework_mapping_notes: 'IAST combines static and dynamic analysis for comprehensive agent security testing
@@ -42412,6 +43847,22 @@
     6.6 - CNCF lifecycle security (development process standards and tool selection for K8s AI)'
   control_id: SAFE-K8S-0606-009
   relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SA-15
+  framework_requirement_title: Development Process, Standards, and Tools
+  framework_mapping_notes: 'Development standards for agentic AI must address model safety, prompt engineering, and tool security
+
+
+    6.6 - CNCF lifecycle security (development process standards and tool selection for K8s AI)'
+  control_id: SAFE-K8S-0606-017
+  relation_type: supports
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -44362,6 +45813,22 @@
 
 
     6.6 - CNCF lifecycle security (Develop-Distribute-Deploy); 10.4 - SSDF v1.1 alignment for SDLC'
+  control_id: SAFE-K8S-0606-017
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SA-3
+  framework_requirement_title: System Development Life Cycle
+  framework_mapping_notes: 'SDLC for agentic AI must integrate security at every phase including model training and deployment
+
+
+    6.6 - CNCF lifecycle security (Develop-Distribute-Deploy); 10.4 - SSDF v1.1 alignment for SDLC'
   control_id: SAFE-K8S-1004-001
   relation_type: direct
   strength_level: strong
@@ -45130,7 +46597,7 @@
 
 
     5.4 - Zero trust architecture principles; 3.4 - Cloud Native 8 secure defaults (engineering principles)'
-  control_id: SAFE-K8S-0304-001
+  control_id: SAFE-K8S-0302-001
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -46132,6 +47599,54 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SA-8(18)
+  framework_requirement_title: Trusted Communications Channels
+  framework_mapping_notes: 'Trusted channels between agents and tools prevent tampering and interception
+
+
+    5.4 - mTLS (trusted communication channels); 9.1 - Encrypted gradient communication (NCCL, MPI)'
+  control_id: SAFE-K8S-0910-020
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SA-8(18)
+  framework_requirement_title: Trusted Communications Channels
+  framework_mapping_notes: 'Trusted channels between agents and tools prevent tampering and interception
+
+
+    5.4 - mTLS (trusted communication channels); 9.1 - Encrypted gradient communication (NCCL, MPI)'
+  control_id: SAFE-K8S-0910-021
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SA-8(18)
+  framework_requirement_title: Trusted Communications Channels
+  framework_mapping_notes: 'Trusted channels between agents and tools prevent tampering and interception
+
+
+    5.4 - mTLS (trusted communication channels); 9.1 - Encrypted gradient communication (NCCL, MPI)'
+  control_id: SAFE-K8S-0910-030
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SA-8(19)
   framework_requirement_title: Continuous Protection
   framework_mapping_notes: 'Continuous protection ensures agent security controls remain active throughout execution
@@ -46602,7 +48117,7 @@
 
 
     3.4 - Cloud Native 8 secure defaults; 4.2 - Default SA restrictions (secure defaults for K8s)'
-  control_id: SAFE-K8S-0304-001
+  control_id: SAFE-K8S-0302-001
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -47579,6 +49094,22 @@
 
     6.6 - GitOps (secure modification via signed commits, branch protection, PR review workflows)'
   control_id: SAFE-K8S-0606-009
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SA-8(31)
+  framework_requirement_title: Secure System Modification
+  framework_mapping_notes: 'Agent system modifications must go through secure change management to prevent regressions
+
+
+    6.6 - GitOps (secure modification via signed commits, branch protection, PR review workflows)'
+  control_id: SAFE-K8S-0606-024
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -49060,6 +50591,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SC-12
+  framework_requirement_title: Cryptographic Key Establishment and Management
+  framework_mapping_notes: 'Key management for agent authentication, encryption, and signing is foundational
+
+
+    4.4 - cert-manager; 4.3 - KMS providers and AI platform key hierarchy (SAFE-K8S-0403-007); 6.3 - TUF key management (key establishment and management)'
+  control_id: SAFE-K8S-0910-029
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SC-12(1)
   framework_requirement_title: Availability
   framework_mapping_notes: 'Cryptographic key availability ensures agent systems can authenticate and encrypt when needed
@@ -49340,6 +50887,22 @@
     6.3 - Cryptographic agility and post-quantum readiness (overall cryptographic protection strategy)'
   control_id: SAFE-K8S-0603-006
   relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-13
+  framework_requirement_title: Cryptographic Protection
+  framework_mapping_notes: 'Cryptographic protection mechanisms secure agent data at rest, in transit, and in use
+
+
+    6.3 - Cryptographic agility and post-quantum readiness (overall cryptographic protection strategy)'
+  control_id: SAFE-K8S-0910-020
+  relation_type: supports
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -49690,6 +51253,22 @@
 
 
     6.2 - Sigstore (cryptographic binding of signatures to artifacts); 9.5 - Model signing cryptographic binding'
+  control_id: SAFE-K8S-0606-021
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-16(3)
+  framework_requirement_title: Cryptographic Binding
+  framework_mapping_notes: 'Cryptographic binding of security attributes to agent messages ensures authenticity
+
+
+    6.2 - Sigstore (cryptographic binding of signatures to artifacts); 9.5 - Model signing cryptographic binding'
   control_id: SAFE-K8S-0905-001
   relation_type: direct
   strength_level: strong
@@ -49764,6 +51343,38 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SC-16(3)
+  framework_requirement_title: Cryptographic Binding
+  framework_mapping_notes: 'Cryptographic binding of security attributes to agent messages ensures authenticity
+
+
+    6.2 - Sigstore (cryptographic binding of signatures to artifacts); 9.5 - Model signing cryptographic binding'
+  control_id: SAFE-K8S-0905-046
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-16(3)
+  framework_requirement_title: Cryptographic Binding
+  framework_mapping_notes: 'Cryptographic binding of security attributes to agent messages ensures authenticity
+
+
+    6.2 - Sigstore (cryptographic binding of signatures to artifacts); 9.5 - Model signing cryptographic binding'
+  control_id: SAFE-K8S-0905-058
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SC-17
   framework_requirement_title: Public Key Infrastructure Certificates
   framework_mapping_notes: 'PKI certificates enable agent identity verification and secure communications
@@ -49804,6 +51415,22 @@
     4.4 - cert-manager deployment and configuration (PKI certificate lifecycle management)'
   control_id: SAFE-K8S-0404-003
   relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-17
+  framework_requirement_title: Public Key Infrastructure Certificates
+  framework_mapping_notes: 'PKI certificates enable agent identity verification and secure communications
+
+
+    4.4 - cert-manager deployment and configuration (PKI certificate lifecycle management)'
+  control_id: SAFE-K8S-0910-029
+  relation_type: supports
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -50320,6 +51947,22 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: exact-text-match
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-18(4)
+  framework_requirement_title: Prevent Automatic Execution
+  framework_mapping_notes: 'Preventing automatic execution of agent extensions without validation blocks code injection
+
+
+    3.2 - Security contexts (no-new-privileges flag); 6.5 - Admission policies preventing automatic execution'
+  control_id: SAFE-K8S-0905-032
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST SP 800-53r5
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
@@ -51387,6 +53030,22 @@
 
     9.3 - Circuit breakers, graceful degradation (fail in known state); 6.5 - Webhook Fail mode'
   control_id: SAFE-K8S-0903-004
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-24
+  framework_requirement_title: Fail in Known State
+  framework_mapping_notes: 'Agents must fail to a known secure state preserving audit data and revoking permissions
+
+
+    9.3 - Circuit breakers, graceful degradation (fail in known state); 6.5 - Webhook Fail mode'
+  control_id: SAFE-K8S-0905-036
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -55988,6 +57647,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SC-43
+  framework_requirement_title: Usage Restrictions
+  framework_mapping_notes: 'Usage restrictions on agent system components enforce organizational security policy
+
+
+    9.5 - Model registry access controls (usage restrictions on AI components); 6.5 - Admission control (usage restrictions enforcement)'
+  control_id: SAFE-K8S-0905-015
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SC-44
   framework_requirement_title: Detonation Chambers
   framework_mapping_notes: 'Sandboxed detonation environments analyze suspicious agent inputs safely
@@ -56057,7 +57732,23 @@
   framework_mapping_notes: 'Time synchronization for agent systems ensures accurate audit logs and event correlation
 
 
-    10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
+    2.3 - Host OS and Kernel Hardening (node time synchronization and drift monitoring); 10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
+  control_id: SAFE-K8S-0203-016
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-45
+  framework_requirement_title: System Time Synchronization
+  framework_mapping_notes: 'Time synchronization for agent systems ensures accurate audit logs and event correlation
+
+
+    2.3 - Host OS and Kernel Hardening (node time synchronization and drift monitoring); 10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
   control_id: SAFE-K8S-1001-004
   relation_type: direct
   strength_level: strong
@@ -56073,7 +57764,7 @@
   framework_mapping_notes: 'Time synchronization for agent systems ensures accurate audit logs and event correlation
 
 
-    10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
+    2.3 - Host OS and Kernel Hardening (node time synchronization and drift monitoring); 10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
   control_id: SAFE-K8S-1001-007
   relation_type: direct
   strength_level: strong
@@ -56089,7 +57780,7 @@
   framework_mapping_notes: 'Time synchronization for agent systems ensures accurate audit logs and event correlation
 
 
-    10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
+    2.3 - Host OS and Kernel Hardening (node time synchronization and drift monitoring); 10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
   control_id: SAFE-K8S-1001-008
   relation_type: direct
   strength_level: strong
@@ -56105,7 +57796,7 @@
   framework_mapping_notes: 'Time synchronization for agent systems ensures accurate audit logs and event correlation
 
 
-    10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
+    2.3 - Host OS and Kernel Hardening (node time synchronization and drift monitoring); 10.1 - Logging and Audit (time synchronization for log correlation); 10.5 - Forensic evidence (timestamp integrity)'
   control_id: SAFE-K8S-1005-001
   relation_type: direct
   strength_level: strong
@@ -56121,7 +57812,23 @@
   framework_mapping_notes: 'Authoritative time source synchronization prevents log manipulation in agent audit trails
 
 
-    10.1 - Centralized logging (authoritative time source for log aggregation and correlation)'
+    2.3 - Host OS and Kernel Hardening (authoritative time source configuration for Kubernetes nodes); 10.1 - Centralized logging (authoritative time source for log aggregation and correlation)'
+  control_id: SAFE-K8S-0203-016
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-45(1)
+  framework_requirement_title: Synchronization with Authoritative Time Source
+  framework_mapping_notes: 'Authoritative time source synchronization prevents log manipulation in agent audit trails
+
+
+    2.3 - Host OS and Kernel Hardening (authoritative time source configuration for Kubernetes nodes); 10.1 - Centralized logging (authoritative time source for log aggregation and correlation)'
   control_id: SAFE-K8S-1001-004
   relation_type: direct
   strength_level: strong
@@ -56137,7 +57844,7 @@
   framework_mapping_notes: 'Authoritative time source synchronization prevents log manipulation in agent audit trails
 
 
-    10.1 - Centralized logging (authoritative time source for log aggregation and correlation)'
+    2.3 - Host OS and Kernel Hardening (authoritative time source configuration for Kubernetes nodes); 10.1 - Centralized logging (authoritative time source for log aggregation and correlation)'
   control_id: SAFE-K8S-1001-007
   relation_type: direct
   strength_level: strong
@@ -56153,7 +57860,7 @@
   framework_mapping_notes: 'Authoritative time source synchronization prevents log manipulation in agent audit trails
 
 
-    10.1 - Centralized logging (authoritative time source for log aggregation and correlation)'
+    2.3 - Host OS and Kernel Hardening (authoritative time source configuration for Kubernetes nodes); 10.1 - Centralized logging (authoritative time source for log aggregation and correlation)'
   control_id: SAFE-K8S-1001-008
   relation_type: direct
   strength_level: strong
@@ -56169,7 +57876,23 @@
   framework_mapping_notes: 'Redundant time sources ensure agent audit accuracy even during primary source failure
 
 
-    10.1 - Logging architecture (redundant time sources for audit reliability)'
+    2.3 - Host OS and Kernel Hardening (redundant or resilient time source configuration for Kubernetes nodes); 10.1 - Logging architecture (redundant time sources for audit reliability)'
+  control_id: SAFE-K8S-0203-016
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-45(2)
+  framework_requirement_title: Secondary Authoritative Time Source
+  framework_mapping_notes: 'Redundant time sources ensure agent audit accuracy even during primary source failure
+
+
+    2.3 - Host OS and Kernel Hardening (redundant or resilient time source configuration for Kubernetes nodes); 10.1 - Logging architecture (redundant time sources for audit reliability)'
   control_id: SAFE-K8S-1001-004
   relation_type: supports
   strength_level: strong
@@ -56185,7 +57908,7 @@
   framework_mapping_notes: 'Redundant time sources ensure agent audit accuracy even during primary source failure
 
 
-    10.1 - Logging architecture (redundant time sources for audit reliability)'
+    2.3 - Host OS and Kernel Hardening (redundant or resilient time source configuration for Kubernetes nodes); 10.1 - Logging architecture (redundant time sources for audit reliability)'
   control_id: SAFE-K8S-1001-007
   relation_type: supports
   strength_level: strong
@@ -56201,7 +57924,7 @@
   framework_mapping_notes: 'Redundant time sources ensure agent audit accuracy even during primary source failure
 
 
-    10.1 - Logging architecture (redundant time sources for audit reliability)'
+    2.3 - Host OS and Kernel Hardening (redundant or resilient time source configuration for Kubernetes nodes); 10.1 - Logging architecture (redundant time sources for audit reliability)'
   control_id: SAFE-K8S-1001-008
   relation_type: supports
   strength_level: strong
@@ -59444,6 +61167,38 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SC-7(5)
+  framework_requirement_title: Deny by Default -- Allow by Exception
+  framework_mapping_notes: 'Deny-by-default network policy for agent communications enforces least privilege
+
+
+    5.1 - Default deny ingress and egress policies as namespace security baselines (deny by default)'
+  control_id: SAFE-K8S-0905-044
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-7(5)
+  framework_requirement_title: Deny by Default -- Allow by Exception
+  framework_mapping_notes: 'Deny-by-default network policy for agent communications enforces least privilege
+
+
+    5.1 - Default deny ingress and egress policies as namespace security baselines (deny by default)'
+  control_id: SAFE-K8S-0905-054
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SC-7(8)
   framework_requirement_title: Route Traffic to Authenticated Proxy Servers
   framework_mapping_notes: 'Routing agent traffic through authenticated proxies enables inspection and control
@@ -59604,6 +61359,38 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SC-7(9)
+  framework_requirement_title: Restrict Threatening Outgoing Communications Traffic
+  framework_mapping_notes: 'Restricting outbound agent traffic prevents data exfiltration and command-and-control
+
+
+    5.1 - Egress controls (restricting threatening outbound traffic, DNS-based egress policies)'
+  control_id: SAFE-K8S-0905-044
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-7(9)
+  framework_requirement_title: Restrict Threatening Outgoing Communications Traffic
+  framework_mapping_notes: 'Restricting outbound agent traffic prevents data exfiltration and command-and-control
+
+
+    5.1 - Egress controls (restricting threatening outbound traffic, DNS-based egress policies)'
+  control_id: SAFE-K8S-0905-054
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SC-8
   framework_requirement_title: Transmission Confidentiality and Integrity
   framework_mapping_notes: 'Agent communications must be protected for confidentiality and integrity in transit
@@ -59708,6 +61495,54 @@
     5.2 - Pod-to-pod encryption; 5.4 - mTLS (transmission confidentiality and integrity)'
   control_id: SAFE-K8S-0504-005
   relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-8
+  framework_requirement_title: Transmission Confidentiality and Integrity
+  framework_mapping_notes: 'Agent communications must be protected for confidentiality and integrity in transit
+
+
+    5.2 - Pod-to-pod encryption; 5.4 - mTLS (transmission confidentiality and integrity)'
+  control_id: SAFE-K8S-0910-004
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-8
+  framework_requirement_title: Transmission Confidentiality and Integrity
+  framework_mapping_notes: 'Agent communications must be protected for confidentiality and integrity in transit
+
+
+    5.2 - Pod-to-pod encryption; 5.4 - mTLS (transmission confidentiality and integrity)'
+  control_id: SAFE-K8S-0910-020
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SC-8
+  framework_requirement_title: Transmission Confidentiality and Integrity
+  framework_mapping_notes: 'Agent communications must be protected for confidentiality and integrity in transit
+
+
+    5.2 - Pod-to-pod encryption; 5.4 - mTLS (transmission confidentiality and integrity)'
+  control_id: SAFE-K8S-0910-030
+  relation_type: supports
   strength_level: strong
   applicability: required
   applicability_condition: null
@@ -60506,6 +62341,22 @@
 
 
     9.2 - Input validation and sanitization for inference requests; 9.6 - Data poisoning detection (input validation)'
+  control_id: SAFE-K8S-0905-033
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-10
+  framework_requirement_title: Information Input Validation
+  framework_mapping_notes: 'Input validation for agent prompts, tool responses, and data is critical for preventing injection
+
+
+    9.2 - Input validation and sanitization for inference requests; 9.6 - Data poisoning detection (input validation)'
   control_id: SAFE-K8S-0906-002
   relation_type: direct
   strength_level: strong
@@ -60925,6 +62776,22 @@
   control_id: SAFE-K8S-0902-009
   relation_type: direct
   strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-10(3)
+  framework_requirement_title: Predictable Behavior
+  framework_mapping_notes: 'Predictable agent behavior on invalid input prevents exploitation of error handling paths
+
+
+    9.2 - Inference request format enforcement (predictable input processing); 6.5 - Admission control (predictable policy behavior)'
+  control_id: SAFE-K8S-0905-033
+  relation_type: supports
+  strength_level: moderate
   applicability: required
   applicability_condition: null
   strength_reason_code: null
@@ -62746,22 +64613,6 @@
 
 
     3.4 - Ephemeral storage controls (non-persistent scratch data); 9.4 - Pipeline step isolation (ephemeral intermediate data)'
-  control_id: SAFE-K8S-0304-001
-  relation_type: direct
-  strength_level: strong
-  applicability: required
-  applicability_condition: null
-  strength_reason_code: null
-- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
-  framework_code: NIST-800-53R5
-  framework_name: NIST SP 800-53 Revision 5
-  framework_version: 5.2.0
-  framework_requirement_id: SI-14(2)
-  framework_requirement_title: Non-persistent Information
-  framework_mapping_notes: 'Non-persistent agent data reduces the window for data theft and manipulation
-
-
-    3.4 - Ephemeral storage controls (non-persistent scratch data); 9.4 - Pipeline step isolation (ephemeral intermediate data)'
   control_id: SAFE-K8S-0304-003
   relation_type: direct
   strength_level: strong
@@ -62811,6 +64662,22 @@
 
     3.4 - Ephemeral storage controls (non-persistent scratch data); 9.4 - Pipeline step isolation (ephemeral intermediate data)'
   control_id: SAFE-K8S-0304-007
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-14(2)
+  framework_requirement_title: Non-persistent Information
+  framework_mapping_notes: 'Non-persistent agent data reduces the window for data theft and manipulation
+
+
+    3.4 - Ephemeral storage controls (non-persistent scratch data); 9.4 - Pipeline step isolation (ephemeral intermediate data)'
+  control_id: SAFE-K8S-0304-013
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -64644,6 +66511,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SI-19(6)
+  framework_requirement_title: Differential Privacy
+  framework_mapping_notes: 'Differential privacy techniques protect individual data in agent analytics and model training
+
+
+    9.8 - Differential privacy and output perturbation controls; 9.1 - Federated learning differential privacy for gradient updates'
+  control_id: SAFE-K8S-0910-004
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SI-19(7)
   framework_requirement_title: Validated Algorithms and Software
   framework_mapping_notes: 'Validated de-identification algorithms ensure agent privacy controls are effective
@@ -66244,6 +68127,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SI-3
+  framework_requirement_title: Malicious Code Protection
+  framework_mapping_notes: 'Malicious code protection for agent systems detects injected payloads and compromised tools
+
+
+    6.1 - Vulnerability scanning (malicious code detection in images); 2.4 - Runtime threat detection (malicious code at runtime)'
+  control_id: SAFE-K8S-0905-044
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SI-3(10)
   framework_requirement_title: Malicious Code Analysis
   framework_mapping_notes: 'Analyzing malicious code targeting agents reveals attack techniques and informs defenses
@@ -66635,6 +68534,70 @@
 
     10.1 - Logging and Audit (comprehensive system monitoring); 2.4 - Runtime security tools'
   control_id: SAFE-K8S-0204-004
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-4
+  framework_requirement_title: System Monitoring
+  framework_mapping_notes: 'System monitoring of agent behavior, resource usage, and communications detects anomalies
+
+
+    10.1 - Logging and Audit (comprehensive system monitoring); 2.4 - Runtime security tools'
+  control_id: SAFE-K8S-0905-035
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-4
+  framework_requirement_title: System Monitoring
+  framework_mapping_notes: 'System monitoring of agent behavior, resource usage, and communications detects anomalies
+
+
+    10.1 - Logging and Audit (comprehensive system monitoring); 2.4 - Runtime security tools'
+  control_id: SAFE-K8S-0905-036
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-4
+  framework_requirement_title: System Monitoring
+  framework_mapping_notes: 'System monitoring of agent behavior, resource usage, and communications detects anomalies
+
+
+    10.1 - Logging and Audit (comprehensive system monitoring); 2.4 - Runtime security tools'
+  control_id: SAFE-K8S-0910-004
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-4
+  framework_requirement_title: System Monitoring
+  framework_mapping_notes: 'System monitoring of agent behavior, resource usage, and communications detects anomalies
+
+
+    10.1 - Logging and Audit (comprehensive system monitoring); 2.4 - Runtime security tools'
+  control_id: SAFE-K8S-0910-032
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -69018,6 +70981,38 @@
 
 
     10.2 - Alert design for AI-specific failure modes (system-generated alerts); 2.4 - Runtime detection alerts'
+  control_id: SAFE-K8S-0905-041
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-4(5)
+  framework_requirement_title: System-generated Alerts
+  framework_mapping_notes: 'System-generated alerts for agent security events enable rapid incident response
+
+
+    10.2 - Alert design for AI-specific failure modes (system-generated alerts); 2.4 - Runtime detection alerts'
+  control_id: SAFE-K8S-0910-032
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-4(5)
+  framework_requirement_title: System-generated Alerts
+  framework_mapping_notes: 'System-generated alerts for agent security events enable rapid incident response
+
+
+    10.2 - Alert design for AI-specific failure modes (system-generated alerts); 2.4 - Runtime detection alerts'
   control_id: SAFE-K8S-1002-001
   relation_type: direct
   strength_level: strong
@@ -69994,6 +71989,22 @@
 
 
     10.6 - Compliance evidence collection (reporting verification results); 10.7 - Security posture management'
+  control_id: SAFE-K8S-0910-028
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-6(3)
+  framework_requirement_title: Report Verification Results
+  framework_mapping_notes: 'Reporting security verification results provides evidence of agent control effectiveness
+
+
+    10.6 - Compliance evidence collection (reporting verification results); 10.7 - Security posture management'
   control_id: SAFE-K8S-1006-001
   relation_type: direct
   strength_level: strong
@@ -70244,6 +72255,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SI-7
+  framework_requirement_title: Software, Firmware, and Information Integrity
+  framework_mapping_notes: 'Software and information integrity for agent systems prevents unauthorized modifications
+
+
+    6.2 - Image signing and verification (software integrity); 8.2 - GPU firmware integrity; 9.5 - Model signing and provenance; 1.4 - Control plane configuration file integrity verification'
+  control_id: SAFE-K8S-0905-046
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SI-7(1)
   framework_requirement_title: Integrity Checks
   framework_mapping_notes: 'Integrity checks on agent software, models, and configurations detect tampering
@@ -70340,6 +72367,22 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SI-7(1)
+  framework_requirement_title: Integrity Checks
+  framework_mapping_notes: 'Integrity checks on agent software, models, and configurations detect tampering
+
+
+    6.2 - Image signature verification (integrity checks at admission); 9.5 - Model integrity verification at deploy time'
+  control_id: SAFE-K8S-0905-049
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SI-7(12)
   framework_requirement_title: Integrity Verification
   framework_mapping_notes: 'Integrity verification of agent components validates authenticity before execution
@@ -70347,6 +72390,54 @@
 
     9.5 - Model origin verification at deploy time; 6.2 - Image signature verification; 9.6 - Data integrity at scale'
   control_id: SAFE-K8S-0602-001
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-7(12)
+  framework_requirement_title: Integrity Verification
+  framework_mapping_notes: 'Integrity verification of agent components validates authenticity before execution
+
+
+    9.5 - Model origin verification at deploy time; 6.2 - Image signature verification; 9.6 - Data integrity at scale'
+  control_id: SAFE-K8S-0606-018
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-7(12)
+  framework_requirement_title: Integrity Verification
+  framework_mapping_notes: 'Integrity verification of agent components validates authenticity before execution
+
+
+    9.5 - Model origin verification at deploy time; 6.2 - Image signature verification; 9.6 - Data integrity at scale'
+  control_id: SAFE-K8S-0606-019
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-7(12)
+  framework_requirement_title: Integrity Verification
+  framework_mapping_notes: 'Integrity verification of agent components validates authenticity before execution
+
+
+    9.5 - Model origin verification at deploy time; 6.2 - Image signature verification; 9.6 - Data integrity at scale'
+  control_id: SAFE-K8S-0606-022
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -70427,6 +72518,38 @@
 
     9.5 - Model origin verification at deploy time; 6.2 - Image signature verification; 9.6 - Data integrity at scale'
   control_id: SAFE-K8S-0905-012
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-7(12)
+  framework_requirement_title: Integrity Verification
+  framework_mapping_notes: 'Integrity verification of agent components validates authenticity before execution
+
+
+    9.5 - Model origin verification at deploy time; 6.2 - Image signature verification; 9.6 - Data integrity at scale'
+  control_id: SAFE-K8S-0905-046
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-7(12)
+  framework_requirement_title: Integrity Verification
+  framework_mapping_notes: 'Integrity verification of agent components validates authenticity before execution
+
+
+    9.5 - Model origin verification at deploy time; 6.2 - Image signature verification; 9.6 - Data integrity at scale'
+  control_id: SAFE-K8S-0905-048
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -71162,6 +73285,22 @@
 
 
     6.2 - Image signing with Sigstore/cosign (cryptographic integrity); 9.5 - Model signing; 6.3 - Cryptographic agility'
+  control_id: SAFE-K8S-0606-021
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-7(6)
+  framework_requirement_title: Cryptographic Protection
+  framework_mapping_notes: 'Cryptographic integrity protection for agent binaries and models prevents tampering
+
+
+    6.2 - Image signing with Sigstore/cosign (cryptographic integrity); 9.5 - Model signing; 6.3 - Cryptographic agility'
   control_id: SAFE-K8S-0905-001
   relation_type: direct
   strength_level: strong
@@ -71227,6 +73366,22 @@
 
     6.2 - Image signing with Sigstore/cosign (cryptographic integrity); 9.5 - Model signing; 6.3 - Cryptographic agility'
   control_id: SAFE-K8S-0905-012
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SI-7(6)
+  framework_requirement_title: Cryptographic Protection
+  framework_mapping_notes: 'Cryptographic integrity protection for agent binaries and models prevents tampering
+
+
+    6.2 - Image signing with Sigstore/cosign (cryptographic integrity); 9.5 - Model signing; 6.3 - Cryptographic agility'
+  control_id: SAFE-K8S-0905-046
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -71658,6 +73813,38 @@
 
 
     6.2 - Image signing and verification (component authenticity); 9.5 - Model signing and provenance (model authenticity)'
+  control_id: SAFE-K8S-0606-019
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-11
+  framework_requirement_title: Component Authenticity
+  framework_mapping_notes: 'Component authenticity verification ensures AI models and tools are genuine and untampered
+
+
+    6.2 - Image signing and verification (component authenticity); 9.5 - Model signing and provenance (model authenticity)'
+  control_id: SAFE-K8S-0606-022
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-11
+  framework_requirement_title: Component Authenticity
+  framework_mapping_notes: 'Component authenticity verification ensures AI models and tools are genuine and untampered
+
+
+    6.2 - Image signing and verification (component authenticity); 9.5 - Model signing and provenance (model authenticity)'
   control_id: SAFE-K8S-0905-001
   relation_type: direct
   strength_level: strong
@@ -71723,6 +73910,54 @@
 
     6.2 - Image signing and verification (component authenticity); 9.5 - Model signing and provenance (model authenticity)'
   control_id: SAFE-K8S-0905-012
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-11
+  framework_requirement_title: Component Authenticity
+  framework_mapping_notes: 'Component authenticity verification ensures AI models and tools are genuine and untampered
+
+
+    6.2 - Image signing and verification (component authenticity); 9.5 - Model signing and provenance (model authenticity)'
+  control_id: SAFE-K8S-0905-046
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-11
+  framework_requirement_title: Component Authenticity
+  framework_mapping_notes: 'Component authenticity verification ensures AI models and tools are genuine and untampered
+
+
+    6.2 - Image signing and verification (component authenticity); 9.5 - Model signing and provenance (model authenticity)'
+  control_id: SAFE-K8S-0905-048
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-11
+  framework_requirement_title: Component Authenticity
+  framework_mapping_notes: 'Component authenticity verification ensures AI models and tools are genuine and untampered
+
+
+    6.2 - Image signing and verification (component authenticity); 9.5 - Model signing and provenance (model authenticity)'
+  control_id: SAFE-K8S-0905-049
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -72906,6 +75141,22 @@
 
 
     6.3 - SLSA provenance, in-toto attestations; 9.5 - Model signing and provenance; 6.6 - Build attestation per NIST SP 800-204D'
+  control_id: SAFE-K8S-0606-018
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4
+  framework_requirement_title: Provenance
+  framework_mapping_notes: 'Provenance tracking for AI models, training data, and agent tools verifies origin and integrity
+
+
+    6.3 - SLSA provenance, in-toto attestations; 9.5 - Model signing and provenance; 6.6 - Build attestation per NIST SP 800-204D'
   control_id: SAFE-K8S-0905-001
   relation_type: direct
   strength_level: strong
@@ -72971,6 +75222,54 @@
 
     6.3 - SLSA provenance, in-toto attestations; 9.5 - Model signing and provenance; 6.6 - Build attestation per NIST SP 800-204D'
   control_id: SAFE-K8S-0905-012
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4
+  framework_requirement_title: Provenance
+  framework_mapping_notes: 'Provenance tracking for AI models, training data, and agent tools verifies origin and integrity
+
+
+    6.3 - SLSA provenance, in-toto attestations; 9.5 - Model signing and provenance; 6.6 - Build attestation per NIST SP 800-204D'
+  control_id: SAFE-K8S-0905-047
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4
+  framework_requirement_title: Provenance
+  framework_mapping_notes: 'Provenance tracking for AI models, training data, and agent tools verifies origin and integrity
+
+
+    6.3 - SLSA provenance, in-toto attestations; 9.5 - Model signing and provenance; 6.6 - Build attestation per NIST SP 800-204D'
+  control_id: SAFE-K8S-0905-056
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4
+  framework_requirement_title: Provenance
+  framework_mapping_notes: 'Provenance tracking for AI models, training data, and agent tools verifies origin and integrity
+
+
+    6.3 - SLSA provenance, in-toto attestations; 9.5 - Model signing and provenance; 6.6 - Build attestation per NIST SP 800-204D'
+  control_id: SAFE-K8S-0910-024
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -73108,6 +75407,70 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SR-4(1)
+  framework_requirement_title: Identity
+  framework_mapping_notes: 'Identity verification of AI component suppliers ensures legitimate sourcing
+
+
+    6.2 - Sigstore keyless signing with Fulcio (identity-based provenance); 4.2 - Workload identity'
+  control_id: SAFE-K8S-0905-056
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(2)
+  framework_requirement_title: Track and Trace
+  framework_mapping_notes: 'Track and trace of AI model and tool artifacts through the supply chain
+
+
+    9.6 - Training data provenance tracking (lineage from ingestion to training); 10.2 - Distributed tracing for ML pipelines'
+  control_id: SAFE-K8S-0905-042
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(2)
+  framework_requirement_title: Track and Trace
+  framework_mapping_notes: 'Track and trace of AI model and tool artifacts through the supply chain
+
+
+    9.6 - Training data provenance tracking (lineage from ingestion to training); 10.2 - Distributed tracing for ML pipelines'
+  control_id: SAFE-K8S-0905-043
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(2)
+  framework_requirement_title: Track and Trace
+  framework_mapping_notes: 'Track and trace of AI model and tool artifacts through the supply chain
+
+
+    9.6 - Training data provenance tracking (lineage from ingestion to training); 10.2 - Distributed tracing for ML pipelines'
+  control_id: SAFE-K8S-0905-059
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SR-4(2)
   framework_requirement_title: Track and Trace
   framework_mapping_notes: 'Track and trace of AI model and tool artifacts through the supply chain
@@ -73115,6 +75478,22 @@
 
     9.6 - Training data provenance tracking (lineage from ingestion to training); 10.2 - Distributed tracing for ML pipelines'
   control_id: SAFE-K8S-0906-002
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(2)
+  framework_requirement_title: Track and Trace
+  framework_mapping_notes: 'Track and trace of AI model and tool artifacts through the supply chain
+
+
+    9.6 - Training data provenance tracking (lineage from ingestion to training); 10.2 - Distributed tracing for ML pipelines'
+  control_id: SAFE-K8S-0910-024
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -73210,6 +75589,54 @@
 
 
     6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
+  control_id: SAFE-K8S-0606-019
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(3)
+  framework_requirement_title: Validate as Genuine and Not Altered
+  framework_mapping_notes: 'Validating AI components as genuine and unaltered prevents supply chain tampering
+
+
+    6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
+  control_id: SAFE-K8S-0606-020
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(3)
+  framework_requirement_title: Validate as Genuine and Not Altered
+  framework_mapping_notes: 'Validating AI components as genuine and unaltered prevents supply chain tampering
+
+
+    6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
+  control_id: SAFE-K8S-0606-022
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(3)
+  framework_requirement_title: Validate as Genuine and Not Altered
+  framework_mapping_notes: 'Validating AI components as genuine and unaltered prevents supply chain tampering
+
+
+    6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
   control_id: SAFE-K8S-0905-001
   relation_type: direct
   strength_level: strong
@@ -73275,6 +75702,54 @@
 
     6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
   control_id: SAFE-K8S-0905-012
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(3)
+  framework_requirement_title: Validate as Genuine and Not Altered
+  framework_mapping_notes: 'Validating AI components as genuine and unaltered prevents supply chain tampering
+
+
+    6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
+  control_id: SAFE-K8S-0905-046
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(3)
+  framework_requirement_title: Validate as Genuine and Not Altered
+  framework_mapping_notes: 'Validating AI components as genuine and unaltered prevents supply chain tampering
+
+
+    6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
+  control_id: SAFE-K8S-0905-048
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(3)
+  framework_requirement_title: Validate as Genuine and Not Altered
+  framework_mapping_notes: 'Validating AI components as genuine and unaltered prevents supply chain tampering
+
+
+    6.2 - Image signing verification (validate genuine and unaltered); 9.5 - Model integrity verification at deploy time'
+  control_id: SAFE-K8S-0905-049
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -73451,6 +75926,70 @@
 
     9.5 - ML-BOM (training data lineage, framework versions, training infrastructure identity); 6.4 - ML-BOM generation'
   control_id: SAFE-K8S-0905-012
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(4)
+  framework_requirement_title: Supply Chain Integrity -- Pedigree
+  framework_mapping_notes: 'Supply chain pedigree for AI models documents complete chain of custody
+
+
+    9.5 - ML-BOM (training data lineage, framework versions, training infrastructure identity); 6.4 - ML-BOM generation'
+  control_id: SAFE-K8S-0905-042
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(4)
+  framework_requirement_title: Supply Chain Integrity -- Pedigree
+  framework_mapping_notes: 'Supply chain pedigree for AI models documents complete chain of custody
+
+
+    9.5 - ML-BOM (training data lineage, framework versions, training infrastructure identity); 6.4 - ML-BOM generation'
+  control_id: SAFE-K8S-0905-043
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(4)
+  framework_requirement_title: Supply Chain Integrity -- Pedigree
+  framework_mapping_notes: 'Supply chain pedigree for AI models documents complete chain of custody
+
+
+    9.5 - ML-BOM (training data lineage, framework versions, training infrastructure identity); 6.4 - ML-BOM generation'
+  control_id: SAFE-K8S-0905-059
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-4(4)
+  framework_requirement_title: Supply Chain Integrity -- Pedigree
+  framework_mapping_notes: 'Supply chain pedigree for AI models documents complete chain of custody
+
+
+    9.5 - ML-BOM (training data lineage, framework versions, training infrastructure identity); 6.4 - ML-BOM generation'
+  control_id: SAFE-K8S-0910-024
   relation_type: direct
   strength_level: strong
   applicability: required
@@ -74004,6 +76543,38 @@
   framework_code: NIST-800-53R5
   framework_name: NIST SP 800-53 Revision 5
   framework_version: 5.2.0
+  framework_requirement_id: SR-6
+  framework_requirement_title: Supplier Assessments and Reviews
+  framework_mapping_notes: 'Supplier assessments for AI model providers and tool vendors validate security practices
+
+
+    6.4 - VEX (vendor vulnerability communication); 9.5 - ML dependency vulnerability management (supplier review)'
+  control_id: SAFE-K8S-0905-053
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
+  framework_requirement_id: SR-6
+  framework_requirement_title: Supplier Assessments and Reviews
+  framework_mapping_notes: 'Supplier assessments for AI model providers and tool vendors validate security practices
+
+
+    6.4 - VEX (vendor vulnerability communication); 9.5 - ML dependency vulnerability management (supplier review)'
+  control_id: SAFE-K8S-0905-057
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-800-53R5
+  framework_name: NIST SP 800-53 Revision 5
+  framework_version: 5.2.0
   framework_requirement_id: SR-6(1)
   framework_requirement_title: Testing and Analysis
   framework_mapping_notes: 'Testing and analysis of AI components from suppliers detects vulnerabilities and backdoors
@@ -74432,6 +77003,331 @@
   applicability: required
   applicability_condition: null
   strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: GOVERN 3.2
+  framework_requirement_title: Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations and oversight of AI systems.
+  framework_mapping_notes: AI system classification assigns control profiles based on risk tier, implicitly defining human oversight requirements. Model promotion gates enforce approval workflows requiring human review before deployment.
+  control_id: SAFE-K8S-0905-045
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: GOVERN 3.2
+  framework_requirement_title: Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations and oversight of AI systems.
+  framework_mapping_notes: AI system classification assigns control profiles based on risk tier, implicitly defining human oversight requirements. Model promotion gates enforce approval workflows requiring human review before deployment.
+  control_id: SAFE-K8S-0905-050
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: GOVERN 3.2
+  framework_requirement_title: Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations and oversight of AI systems.
+  framework_mapping_notes: AI system classification assigns control profiles based on risk tier, implicitly defining human oversight requirements. Model promotion gates enforce approval workflows requiring human review before deployment.
+  control_id: SAFE-K8S-0905-057
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: GOVERN 4.1
+  framework_requirement_title: Organizational policies and practices are in place to foster a critical thinking and safety-first mindset in the design, development, deployment, and uses of AI systems to minimize potential negative impacts.
+  framework_mapping_notes: AI system classification enforces risk-proportionate controls. Model promotion gates require validation before deployment, embedding a safety-first workflow in the AI lifecycle.
+  control_id: SAFE-K8S-0905-045
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 1.1
+  framework_requirement_title: A determination is made as to whether the AI system achieves its intended purposes and stated objectives and whether its development or deployment should proceed.
+  framework_mapping_notes: AI system classification defines expected control profiles. Model promotion gates enforce go/no-go decisions before production deployment based on validation criteria.
+  control_id: SAFE-K8S-0606-017
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 1.1
+  framework_requirement_title: A determination is made as to whether the AI system achieves its intended purposes and stated objectives and whether its development or deployment should proceed.
+  framework_mapping_notes: AI system classification defines expected control profiles. Model promotion gates enforce go/no-go decisions before production deployment based on validation criteria.
+  control_id: SAFE-K8S-0606-018
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 1.1
+  framework_requirement_title: A determination is made as to whether the AI system achieves its intended purposes and stated objectives and whether its development or deployment should proceed.
+  framework_mapping_notes: AI system classification defines expected control profiles. Model promotion gates enforce go/no-go decisions before production deployment based on validation criteria.
+  control_id: SAFE-K8S-0910-018
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 1.3
+  framework_requirement_title: Responses to the AI risks deemed high priority, as identified by the MAP function, are developed, planned, and documented. Risk response options can include mitigating, transferring, avoiding, or accepting.
+  framework_mapping_notes: IR lifecycle playbooks define response procedures for AI-specific incidents (compromised training, model poisoning, GPU cryptomining). Containment strategies document specific mitigation actions.
+  control_id: SAFE-K8S-0910-033
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 3.1
+  framework_requirement_title: AI risks and benefits from third-party resources are regularly monitored, and risk controls are applied and documented.
+  framework_mapping_notes: Dependency tracking with SLSA build provenance monitors third-party component risks. Vulnerability prioritization for AI workloads provides ongoing risk assessment. Restricted use policies govern external AI service consumption.
+  control_id: SAFE-K8S-0905-052
+  relation_type: supports
+  strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 3.1
+  framework_requirement_title: AI risks and benefits from third-party resources are regularly monitored, and risk controls are applied and documented.
+  framework_mapping_notes: Dependency tracking with SLSA build provenance monitors third-party component risks. Vulnerability prioritization for AI workloads provides ongoing risk assessment. Restricted use policies govern external AI service consumption.
+  control_id: SAFE-K8S-0905-053
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 3.1
+  framework_requirement_title: AI risks and benefits from third-party resources are regularly monitored, and risk controls are applied and documented.
+  framework_mapping_notes: Dependency tracking with SLSA build provenance monitors third-party component risks. Vulnerability prioritization for AI workloads provides ongoing risk assessment. Restricted use policies govern external AI service consumption.
+  control_id: SAFE-K8S-0905-057
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MANAGE 3.2
+  framework_requirement_title: Pre-trained models which are used for development are monitored as part of AI system regular monitoring and maintenance.
+  framework_mapping_notes: Model signing and provenance verification ensures pre-trained model integrity. Model registry hardening protects stored models. ML dependency vulnerability management tracks vulnerabilities in model dependencies.
+  control_id: SAFE-K8S-0905-056
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MAP 4.2
+  framework_requirement_title: Internal risk controls for components of the AI system, including third-party AI technologies, are identified and documented.
+  framework_mapping_notes: Compliance mapping maintains documented control-to-framework mappings. Automated audit readiness generates continuous compliance evidence showing control coverage.
+  control_id: SAFE-K8S-0910-028
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-AI-RMF
+  framework_name: NIST AI Risk Management Framework
+  framework_version: '1.0'
+  framework_requirement_id: MEASURE 2.4
+  framework_requirement_title: The functionality and behavior of the AI system and its components - as identified in the MAP function - are monitored when in production.
+  framework_mapping_notes: 'SAFE-K8S mandates comprehensive production monitoring: audit policies capture AI-relevant CRD operations, SIEM integration detects AI-specific attack patterns, metrics endpoints monitor model performance, and distributed tracing tracks pipeline execution.'
+  control_id: SAFE-K8S-0910-032
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PO.3.2
+  framework_requirement_title: Follow recommended security practices to deploy, operate, and maintain tools and toolchains.
+  framework_mapping_notes: CI/CD pipeline hardening controls in SAFE-K8S secure the build and deployment toolchain that produces artifacts admitted to the cluster.
+  control_id: SAFE-K8S-0606-017
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PS.2.1
+  framework_requirement_title: Make software integrity verification information available to software acquirers.
+  framework_mapping_notes: SAFE-K8S requires image signing (cosign/Sigstore, Notary v2), SLSA provenance, and transparency logging to provide integrity verification for container images, ML models, and deployment artifacts.
+  control_id: SAFE-K8S-0606-018
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PS.2.1
+  framework_requirement_title: Make software integrity verification information available to software acquirers.
+  framework_mapping_notes: SAFE-K8S requires image signing (cosign/Sigstore, Notary v2), SLSA provenance, and transparency logging to provide integrity verification for container images, ML models, and deployment artifacts.
+  control_id: SAFE-K8S-0606-021
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PS.2.1
+  framework_requirement_title: Make software integrity verification information available to software acquirers.
+  framework_mapping_notes: SAFE-K8S requires image signing (cosign/Sigstore, Notary v2), SLSA provenance, and transparency logging to provide integrity verification for container images, ML models, and deployment artifacts.
+  control_id: SAFE-K8S-0905-058
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PS.3.2
+  framework_requirement_title: Collect, safeguard, maintain, and share provenance data for all components of each software release (e.g., in an SBOM).
+  framework_mapping_notes: SAFE-K8S has dedicated controls for SBOM generation, ML-BOM generation, SBOM distribution as OCI artifacts, VEX publication, and SLSA build provenance. These directly implement provenance data collection and sharing for Kubernetes-deployed software.
+  control_id: SAFE-K8S-0910-024
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PW.4.1
+  framework_requirement_title: Acquire and maintain well-secured software components from commercial, open-source, and other third-party developers.
+  framework_mapping_notes: 'SAFE-K8S enforces vetting of third-party components at admission: image vulnerability scanning, signature verification, public model quarantine workflows, and approved source allowlists.'
+  control_id: SAFE-K8S-0606-019
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PW.4.1
+  framework_requirement_title: Acquire and maintain well-secured software components from commercial, open-source, and other third-party developers.
+  framework_mapping_notes: 'SAFE-K8S enforces vetting of third-party components at admission: image vulnerability scanning, signature verification, public model quarantine workflows, and approved source allowlists.'
+  control_id: SAFE-K8S-0606-020
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PW.4.1
+  framework_requirement_title: Acquire and maintain well-secured software components from commercial, open-source, and other third-party developers.
+  framework_mapping_notes: 'SAFE-K8S enforces vetting of third-party components at admission: image vulnerability scanning, signature verification, public model quarantine workflows, and approved source allowlists.'
+  control_id: SAFE-K8S-0905-044
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PW.4.1
+  framework_requirement_title: Acquire and maintain well-secured software components from commercial, open-source, and other third-party developers.
+  framework_mapping_notes: 'SAFE-K8S enforces vetting of third-party components at admission: image vulnerability scanning, signature verification, public model quarantine workflows, and approved source allowlists.'
+  control_id: SAFE-K8S-0905-052
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PW.9.1
+  framework_requirement_title: Define a secure baseline by determining how to configure each setting that has an effect on security.
+  framework_mapping_notes: 'SAFE-K8S defines secure baseline configurations for Kubernetes components: CIS Benchmark automated assessment, Pod Security Standards, Cloud Native 8 secure defaults, and inference server hardening.'
+  control_id: SAFE-K8S-0606-020
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SP 800-53r5
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PW.9.2
+  framework_requirement_title: Implement the default settings (or groups of default settings) and document each setting for software administrators.
+  framework_mapping_notes: SAFE-K8S enforces default settings through admission control policies, PSA enforcement, and policy-as-code engines that reject non-compliant configurations.
+  control_id: SAFE-K8S-0905-055
+  relation_type: supports
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
 - mapping_set_name: SAFE-K8S to NIST SSDF 1.1
   framework_code: NIST-SSDF
   framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
@@ -74670,6 +77566,32 @@
   framework_code: NIST-SSDF
   framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
   framework_version: '1.1'
+  framework_requirement_id: PS.2.1
+  framework_requirement_title: Make software integrity verification information available to software acquirers.
+  framework_mapping_notes: SAFE-K8S requires image signing (cosign/Sigstore, Notary v2), SLSA provenance, and transparency logging to provide integrity verification for container images, ML models, and deployment artifacts.
+  control_id: SAFE-K8S-0905-046
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SSDF 1.1
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: PS.2.1
+  framework_requirement_title: Make software integrity verification information available to software acquirers.
+  framework_mapping_notes: SAFE-K8S requires image signing (cosign/Sigstore, Notary v2), SLSA provenance, and transparency logging to provide integrity verification for container images, ML models, and deployment artifacts.
+  control_id: SAFE-K8S-0905-047
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SSDF 1.1
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
   framework_requirement_id: PS.3.1
   framework_requirement_title: Securely archive the necessary files and supporting data to be retained for each software release.
   framework_mapping_notes: SAFE-K8S requires retention policies for container images and artifacts (SAFE-K8S-0601-005), model registry hardening with version retention (SAFE-K8S-0905-003), artifact lifecycle management (SAFE-K8S-0905-006), and encryption at rest for stored artifacts. Retention policies ensure integrity metadata is preserved alongside the artifacts it describes.
@@ -74881,7 +77803,7 @@
   framework_requirement_id: PW.9.1
   framework_requirement_title: Define a secure baseline by determining how to configure each setting that has an effect on security.
   framework_mapping_notes: 'SAFE-K8S defines secure baseline configurations for Kubernetes components: CIS Benchmark automated assessment, Pod Security Standards, Cloud Native 8 secure defaults, and inference server hardening.'
-  control_id: SAFE-K8S-0304-001
+  control_id: SAFE-K8S-0302-001
   relation_type: direct
   strength_level: moderate
   applicability: required
@@ -74998,6 +77920,32 @@
   framework_requirement_id: RV.1.1
   framework_requirement_title: Gather information from software acquirers, users, and public sources on potential vulnerabilities in the software and third-party components, and investigate all credible reports.
   framework_mapping_notes: SAFE-K8S requires continuous vulnerability monitoring for container images, ML dependencies, GPU drivers, and Kubernetes components. VEX publication and threat intelligence integration formalize vulnerability information gathering.
+  control_id: SAFE-K8S-0905-028
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SSDF 1.1
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: RV.1.1
+  framework_requirement_title: Gather information from software acquirers, users, and public sources on potential vulnerabilities in the software and third-party components, and investigate all credible reports.
+  framework_mapping_notes: SAFE-K8S requires continuous vulnerability monitoring for container images, ML dependencies, GPU drivers, and Kubernetes components. VEX publication and threat intelligence integration formalize vulnerability information gathering.
+  control_id: SAFE-K8S-0905-029
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SSDF 1.1
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: RV.1.1
+  framework_requirement_title: Gather information from software acquirers, users, and public sources on potential vulnerabilities in the software and third-party components, and investigate all credible reports.
+  framework_mapping_notes: SAFE-K8S requires continuous vulnerability monitoring for container images, ML dependencies, GPU drivers, and Kubernetes components. VEX publication and threat intelligence integration formalize vulnerability information gathering.
   control_id: SAFE-K8S-1004-004
   relation_type: supports
   strength_level: moderate
@@ -75053,6 +78001,32 @@
   control_id: SAFE-K8S-0604-009
   relation_type: direct
   strength_level: moderate
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SSDF 1.1
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: RV.2.1
+  framework_requirement_title: Analyze each vulnerability to gather sufficient information about risk to plan its remediation or other risk response.
+  framework_mapping_notes: SAFE-K8S includes vulnerability prioritization for AI workloads that accounts for exploitability context, blast radius in the cluster, and AI-specific impact factors.
+  control_id: SAFE-K8S-0905-028
+  relation_type: direct
+  strength_level: strong
+  applicability: required
+  applicability_condition: null
+  strength_reason_code: null
+- mapping_set_name: SAFE-K8S to NIST SSDF 1.1
+  framework_code: NIST-SSDF
+  framework_name: 'NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1'
+  framework_version: '1.1'
+  framework_requirement_id: RV.2.1
+  framework_requirement_title: Analyze each vulnerability to gather sufficient information about risk to plan its remediation or other risk response.
+  framework_mapping_notes: SAFE-K8S includes vulnerability prioritization for AI workloads that accounts for exploitability context, blast radius in the cluster, and AI-specific impact factors.
+  control_id: SAFE-K8S-0905-029
+  relation_type: direct
+  strength_level: strong
   applicability: required
   applicability_condition: null
   strength_reason_code: null

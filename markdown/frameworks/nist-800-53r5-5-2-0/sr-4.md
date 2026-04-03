@@ -65,6 +65,15 @@ Provenance tracking for AI models, training data, and agent tools verifies origi
 - Applicability: required
 - Strength Reason Code: n/a
 
+### [SAFE-K8S-0606-018 - Zero-trust CI/CD handoff verification and independent evidence generation](../../controls/SAFE-K8S-0606-018.md)
+
+- Domain: D06 - Supply Chain, Images, and Admission Control
+- Knowledge Area: 6.6
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
 ### [SAFE-K8S-0905-001 - AI system lifecycle classification](../../controls/SAFE-K8S-0905-001.md)
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
@@ -105,6 +114,33 @@ Provenance tracking for AI models, training data, and agent tools verifies origi
 
 - Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
 - Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-047 - Training pipeline attestation generation for ML artifacts](../../controls/SAFE-K8S-0905-047.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-056 - External model publisher identity and provenance metadata verification](../../controls/SAFE-K8S-0905-056.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-024 - Cross-cluster model provenance chain-of-custody preservation](../../controls/SAFE-K8S-0910-024.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
 - Relation Type: direct
 - Strength: strong
 - Applicability: required

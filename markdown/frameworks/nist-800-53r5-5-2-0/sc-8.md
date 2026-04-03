@@ -73,3 +73,30 @@ Agent communications must be protected for confidentiality and integrity in tran
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-004 - Federated learning cross-cluster coordination security](../../controls/SAFE-K8S-0910-004.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-020 - Cross-cluster transport encryption for distributed AI traffic](../../controls/SAFE-K8S-0910-020.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-030 - Cross-cluster registry replication channel mutual authentication](../../controls/SAFE-K8S-0910-030.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

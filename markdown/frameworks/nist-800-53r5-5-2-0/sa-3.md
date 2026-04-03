@@ -38,6 +38,15 @@ SDLC for agentic AI must integrate security at every phase including model train
 - Applicability: required
 - Strength Reason Code: n/a
 
+### [SAFE-K8S-0606-017 - CNCF lifecycle phase security coverage](../../controls/SAFE-K8S-0606-017.md)
+
+- Domain: D06 - Supply Chain, Images, and Admission Control
+- Knowledge Area: 6.6
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
 ### [SAFE-K8S-1004-001 - ML threat taxonomy per CTA-2114 mapped to Kubernetes](../../controls/SAFE-K8S-1004-001.md)
 
 - Domain: D10 - Observability, Incident Response, and Governance

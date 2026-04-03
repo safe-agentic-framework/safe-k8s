@@ -11,6 +11,15 @@ Protecting agent audit logs from tampering
 
 ## SAFE-K8S Controls
 
+### [SAFE-K8S-0905-037 - Manual emergency halt governance and forensic evidence preservation](../../controls/SAFE-K8S-0905-037.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
 ### [SAFE-K8S-1001-004 - Audit volume management for AI workloads](../../controls/SAFE-K8S-1001-004.md)
 
 - Domain: D10 - Observability, Incident Response, and Governance

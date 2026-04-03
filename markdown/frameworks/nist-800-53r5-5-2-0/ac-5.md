@@ -55,3 +55,12 @@ Separating agent roles (executor vs. approver)
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0905-025 - Separation of duties enforcement for model promotion approvals](../../controls/SAFE-K8S-0905-025.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

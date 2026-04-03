@@ -118,3 +118,39 @@ Foundational -- agents must operate with minimum necessary permissions
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0905-038 - Model registry RBAC and workload pull authorization scoping](../../controls/SAFE-K8S-0905-038.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-016 - Cross-cluster orchestration identity federation and authorization](../../controls/SAFE-K8S-0910-016.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-022 - Cross-cluster communication authorization policy enforcement](../../controls/SAFE-K8S-0910-022.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-025 - Cross-cluster registry federation endpoint authorization and reconciliation governance](../../controls/SAFE-K8S-0910-025.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

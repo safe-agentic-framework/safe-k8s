@@ -73,3 +73,21 @@ Core to agent data flow control between trust boundaries
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-034 - Canary and A/B candidate version isolation and traffic-splitting integrity](../../controls/SAFE-K8S-0905-034.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-022 - Cross-cluster communication authorization policy enforcement](../../controls/SAFE-K8S-0910-022.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

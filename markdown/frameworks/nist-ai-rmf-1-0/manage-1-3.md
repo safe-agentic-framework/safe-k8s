@@ -26,3 +26,12 @@ IR lifecycle playbooks define response procedures for AI-specific incidents (com
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: framework-language-interpretation
+
+### [SAFE-K8S-0910-033 - Investigation of anomalous cross-cluster AI communication](../../controls/SAFE-K8S-0910-033.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

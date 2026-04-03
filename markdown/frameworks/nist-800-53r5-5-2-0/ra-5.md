@@ -64,3 +64,21 @@ Vulnerability scanning of agentic AI components, dependencies, and models is ess
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-028 - ML framework and Python dependency vulnerability management](../../controls/SAFE-K8S-0905-028.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-029 - CUDA and GPU accelerator dependency vulnerability management](../../controls/SAFE-K8S-0905-029.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

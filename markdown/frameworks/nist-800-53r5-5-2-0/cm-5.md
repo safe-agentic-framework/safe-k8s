@@ -64,3 +64,12 @@ Restricting who can change agent configs
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0606-024 - Policy-as-code and runtime configuration integrity governance](../../controls/SAFE-K8S-0606-024.md)
+
+- Domain: D06 - Supply Chain, Images, and Admission Control
+- Knowledge Area: 6.6
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

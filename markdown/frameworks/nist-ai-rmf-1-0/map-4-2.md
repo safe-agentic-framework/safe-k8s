@@ -26,3 +26,12 @@ Compliance mapping maintains documented control-to-framework mappings. Automated
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0910-028 - Unified multi-cluster compliance reporting](../../controls/SAFE-K8S-0910-028.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

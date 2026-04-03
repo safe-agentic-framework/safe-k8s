@@ -40,7 +40,7 @@
   knowledge_area: '2.3'
   knowledge_area_name: Host OS and Kernel Hardening
   maturity: Foundational
-  knowledge_area_description: 'Minimal host OS selection and hardening (unnecessary service removal, package minimization, purpose-built OS distributions) Immutable root filesystem enforcement (dm-verity, read-only root mounts) to prevent persistent host modifications Kernel parameter hardening via sysctl: network stack, memory protection, and namespace isolation settings Cloud provider metadata service protection (IMDSv2 enforcement, network-level metadata endpoint restriction) Secure boot and verified boot chain enforcement Kernel module restriction and lockdown mode (module loading controls, blacklisting, kernel lockdown mode)'
+  knowledge_area_description: 'Minimal host OS selection and hardening (unnecessary service removal, package minimization, purpose-built OS distributions) Immutable root filesystem enforcement (dm-verity, read-only root mounts) to prevent persistent host modifications Node time synchronization using approved authoritative time sources with drift monitoring and alerting to preserve audit, tracing, certificate, token, and forensic timestamp integrity Kernel parameter hardening via sysctl: network stack, memory protection, and namespace isolation settings Cloud provider metadata service protection (IMDSv2 enforcement, network-level metadata endpoint restriction) Secure boot and verified boot chain enforcement Kernel module restriction and lockdown mode (module loading controls, blacklisting, kernel lockdown mode)'
 - domain_code: D02
   domain_name: Node, Runtime, and OS Security
   knowledge_area: '2.4'

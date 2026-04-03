@@ -2,8 +2,8 @@
 
 - Framework Code: NIST-AI-RMF
 - Version: 1.0
-- Total Reverse Mappings: 106
-- Distinct Requirements Mapped: 51
+- Total Reverse Mappings: 127
+- Distinct Requirements Mapped: 52
 
 ## Requirements
 
@@ -29,6 +29,7 @@
 - [MANAGE 2.3 - Procedures are followed to respond to and recover from a previously unknown risk when it is identified.](manage-2-3.md)
 - [MANAGE 2.4 - Mechanisms are in place and applied, and responsibilities are assigned and understood, to supersede, disengage, or deactivate AI systems that demonstrate performance or outcomes inconsistent with intended use.](manage-2-4.md)
 - [MANAGE 3.1 - AI risks and benefits from third-party resources are regularly monitored, and risk controls are applied and documented.](manage-3-1.md)
+- [MANAGE 3.2 - Pre-trained models which are used for development are monitored as part of AI system regular monitoring and maintenance.](manage-3-2.md)
 - [MANAGE 4.1 - Post-deployment AI system monitoring plans are implemented, including mechanisms for capturing and evaluating input from users and other relevant AI actors, appeal and override, decommissioning, incident response, recovery, and change management.](manage-4-1.md)
 - [MANAGE 4.2 - Measurable activities for continual improvements are integrated into AI system updates and include regular engagement with interested parties, including relevant AI actors.](manage-4-2.md)
 - [MANAGE 4.3 - Responses to the AI risks deemed high priority - as identified through the MAP function - are documented and monitored, and the risk management plan is updated as needed.](manage-4-3.md)

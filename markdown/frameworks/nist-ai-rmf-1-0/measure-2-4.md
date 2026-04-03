@@ -44,3 +44,12 @@ SAFE-K8S mandates comprehensive production monitoring: audit policies capture AI
 - Strength: moderate
 - Applicability: required
 - Strength Reason Code: partial-coverage
+
+### [SAFE-K8S-0910-032 - Cross-cluster traffic anomaly monitoring for distributed AI workloads](../../controls/SAFE-K8S-0910-032.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

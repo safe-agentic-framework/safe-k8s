@@ -73,3 +73,30 @@ Agent/service account lifecycle management
 - Strength: moderate
 - Applicability: required
 - Strength Reason Code: framework-language-interpretation
+
+### [SAFE-K8S-0905-039 - Model registry access review and stale-permission remediation](../../controls/SAFE-K8S-0905-039.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-025 - Cross-cluster registry federation endpoint authorization and reconciliation governance](../../controls/SAFE-K8S-0910-025.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-031 - Cross-cluster registry endpoint enrollment approval](../../controls/SAFE-K8S-0910-031.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

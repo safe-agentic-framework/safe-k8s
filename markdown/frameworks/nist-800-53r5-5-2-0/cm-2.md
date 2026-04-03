@@ -55,3 +55,12 @@ Agent system baseline configs
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-026 - Multi-cluster security policy baseline federation](../../controls/SAFE-K8S-0910-026.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

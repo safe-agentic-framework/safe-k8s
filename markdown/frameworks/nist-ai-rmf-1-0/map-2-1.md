@@ -26,3 +26,12 @@ AI system classification requires documenting system type (training, serving, pi
 - Strength: moderate
 - Applicability: required
 - Strength Reason Code: framework-language-interpretation
+
+### [SAFE-K8S-0905-015 - AI system control profile enforcement](../../controls/SAFE-K8S-0905-015.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

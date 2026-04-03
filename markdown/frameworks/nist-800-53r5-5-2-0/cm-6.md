@@ -73,3 +73,30 @@ Secure config settings for agent systems
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0606-020 - Helm values override restriction and dependency integrity governance](../../controls/SAFE-K8S-0606-020.md)
+
+- Domain: D06 - Supply Chain, Images, and Admission Control
+- Knowledge Area: 6.6
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-018 - Security-aware target-cluster posture verification before multi-cluster placement](../../controls/SAFE-K8S-0910-018.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-026 - Multi-cluster security policy baseline federation](../../controls/SAFE-K8S-0910-026.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

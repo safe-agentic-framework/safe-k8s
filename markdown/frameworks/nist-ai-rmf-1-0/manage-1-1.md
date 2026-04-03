@@ -26,3 +26,39 @@ AI system classification defines expected control profiles. Model promotion gate
 - Strength: moderate
 - Applicability: required
 - Strength Reason Code: partial-coverage
+
+### [SAFE-K8S-0905-015 - AI system control profile enforcement](../../controls/SAFE-K8S-0905-015.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0606-017 - CNCF lifecycle phase security coverage](../../controls/SAFE-K8S-0606-017.md)
+
+- Domain: D06 - Supply Chain, Images, and Admission Control
+- Knowledge Area: 6.6
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0606-018 - Zero-trust CI/CD handoff verification and independent evidence generation](../../controls/SAFE-K8S-0606-018.md)
+
+- Domain: D06 - Supply Chain, Images, and Admission Control
+- Knowledge Area: 6.6
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-018 - Security-aware target-cluster posture verification before multi-cluster placement](../../controls/SAFE-K8S-0910-018.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

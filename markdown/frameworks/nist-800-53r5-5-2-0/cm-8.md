@@ -11,6 +11,15 @@ Inventory of agent components (models, tools, plugins)
 
 ## SAFE-K8S Controls
 
+### [SAFE-K8S-0905-059 - External-origin annotation and internal registry enrollment for approved external models](../../controls/SAFE-K8S-0905-059.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
 ### [SAFE-K8S-1007-004 - Continuous security posture management for AI clusters](../../controls/SAFE-K8S-1007-004.md)
 
 - Domain: D10 - Observability, Incident Response, and Governance

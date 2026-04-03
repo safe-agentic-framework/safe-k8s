@@ -26,3 +26,39 @@ AI system classification assigns control profiles based on risk tier, implicitly
 - Strength: moderate
 - Applicability: required
 - Strength Reason Code: partial-control-coverage
+
+### [SAFE-K8S-0905-015 - AI system control profile enforcement](../../controls/SAFE-K8S-0905-015.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: moderate
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-045 - Sandboxed external model behavioral vetting and disposition review](../../controls/SAFE-K8S-0905-045.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: moderate
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-050 - Authenticated reviewer identity validation for model promotion approvals](../../controls/SAFE-K8S-0905-050.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: moderate
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-057 - External model trust-signal assessment and approval review](../../controls/SAFE-K8S-0905-057.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

@@ -46,3 +46,12 @@ Malicious code protection for agent systems detects injected payloads and compro
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-044 - Public model quarantine isolation and malicious artifact scanning](../../controls/SAFE-K8S-0905-044.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

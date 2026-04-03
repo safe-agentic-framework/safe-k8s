@@ -100,3 +100,12 @@ Software and information integrity for agent systems prevents unauthorized modif
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-046 - ML artifact cryptographic signing with Sigstore or equivalent](../../controls/SAFE-K8S-0905-046.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

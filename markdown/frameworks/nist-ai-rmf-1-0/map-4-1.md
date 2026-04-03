@@ -26,3 +26,12 @@ SBOM and ML-BOM generation documents all software and model dependencies. ML dep
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0905-042 - CTA-2114 ML-BOM generation and lineage metadata capture](../../controls/SAFE-K8S-0905-042.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

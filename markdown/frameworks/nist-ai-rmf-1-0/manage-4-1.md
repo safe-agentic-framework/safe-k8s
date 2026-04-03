@@ -27,6 +27,15 @@ SAFE-K8S provides comprehensive post-deployment infrastructure: audit policies f
 - Applicability: required
 - Strength Reason Code: n/a
 
+### [SAFE-K8S-0203-016 - Node time synchronization with authoritative time sources](../../controls/SAFE-K8S-0203-016.md)
+
+- Domain: D02 - Node, Runtime, and OS Security
+- Knowledge Area: 2.3
+- Relation Type: supports
+- Strength: moderate
+- Applicability: required
+- Strength Reason Code: n/a
+
 ### [SAFE-K8S-1001-016 - Audit policy coverage for AI-specific resource and workflow events](../../controls/SAFE-K8S-1001-016.md)
 
 - Domain: D10 - Observability, Incident Response, and Governance

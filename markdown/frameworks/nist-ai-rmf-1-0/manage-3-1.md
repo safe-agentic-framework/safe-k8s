@@ -26,3 +26,30 @@ Dependency tracking with SLSA build provenance monitors third-party component ri
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: exact-text-match
+
+### [SAFE-K8S-0905-052 - Approved external model source allowlist definition and maintenance](../../controls/SAFE-K8S-0905-052.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: moderate
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-053 - Approved external model source periodic review and allowlist update governance](../../controls/SAFE-K8S-0905-053.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: direct
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a
+
+### [SAFE-K8S-0905-057 - External model trust-signal assessment and approval review](../../controls/SAFE-K8S-0905-057.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.5
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

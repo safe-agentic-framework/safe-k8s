@@ -1718,6 +1718,26 @@
   superseded_by_control_id: null
   date_created: '2026-03-16'
   date_modified: '2026-03-17'
+- control_id: SAFE-K8S-0203-016
+  domain_code: D02
+  domain_name: Node, Runtime, and OS Security
+  knowledge_area: '2.3'
+  control_seq: '016'
+  control_title: Node time synchronization with authoritative time sources
+  control_statement: Production Kubernetes nodes must synchronize system time using organization-approved authoritative time sources, must monitor for clock drift beyond organization-defined thresholds, and must alert or remediate when synchronization fails.
+  objective: Preserve trustworthy time on Kubernetes nodes so security telemetry, distributed tracing, certificate validation, token lifetime enforcement, and forensic reconstruction remain accurate across the cluster.
+  rationale: Accurate time is a foundational dependency for multiple Kubernetes and AI platform security controls. Clock skew breaks cross-node audit log correlation, distorts OpenTelemetry span ordering and latency analysis across ML pipelines, causes TLS certificate NotBefore and NotAfter validation failures, and can cause projected service account tokens or OIDC tokens to be rejected incorrectly or accepted beyond intended expiry windows. During incident response, timestamp drift undermines forensic sequence reconstruction and weakens the evidentiary value of collected node, container, and network artifacts.
+  scope: Applies to all production Kubernetes worker and control-plane nodes, including GPU nodes, training nodes, and inference-serving nodes. Nodes in managed Kubernetes services satisfy this control through provider-managed time synchronization only when provider documentation or attestation confirms the service and the organization monitors observed drift or synchronization health using available telemetry. Development clusters may use different time-source hierarchies only with documented exceptions.
+  primary_enforcement_point: Node operating system time synchronization service configuration and monitoring integrated into node provisioning, compliance checks, and alerting.
+  implementation_surface: Chrony, systemd-timesyncd, ntpd, or equivalent node time synchronization services; organization-approved NTP source configuration; drift and synchronization health monitoring; node compliance scans; and alerting or automated remediation workflows for unsynchronized nodes.
+  owner_primary: Platform Engineering
+  owner_supporting: OS/Infrastructure; Security Engineering; Security Operations (SOC)
+  baseline_or_ai_specific: baseline
+  maturity: Foundational
+  status: draft
+  superseded_by_control_id: null
+  date_created: '2026-04-02'
+  date_modified: '2026-04-02'
 - control_id: SAFE-K8S-0204-001
   domain_code: D02
   domain_name: Node, Runtime, and OS Security
@@ -2317,26 +2337,6 @@
   status: draft
   superseded_by_control_id: null
   date_created: '2026-03-13'
-  date_modified: '2026-03-17'
-- control_id: SAFE-K8S-0304-001
-  domain_code: D03
-  domain_name: Workload and Pod Security
-  knowledge_area: '3.4'
-  control_seq: '001'
-  control_title: Cloud Native 8 secure defaults enforcement
-  control_statement: 'All Kubernetes workloads must comply with the CNCF Cloud Native 8 secure defaults: non-root execution, read-only root filesystem, minimal capabilities, no privilege escalation, resource limits defined, service account token opt-out where unused, seccomp profile applied, and no host namespace sharing.'
-  objective: Establish a comprehensive baseline security posture for all Kubernetes workloads by enforcing the eight CNCF-recommended secure defaults as a non-negotiable minimum standard.
-  rationale: The Cloud Native 8 represents the consensus minimum security configuration endorsed by the cloud native community. Workloads that violate any of these defaults carry known, well-documented risks including container escape, privilege escalation, and lateral movement. Enforcing all eight defaults as a cohesive set prevents the common pattern of hardening some aspects while leaving others open, which creates a false sense of security.
-  scope: Applies to all workloads in production and staging clusters. Each of the eight defaults must be enforced unless a documented exception exists. Managed Kubernetes services must verify that provider-managed components do not violate these defaults. System-level workloads in kube-system may require documented exceptions for specific defaults.
-  primary_enforcement_point: Pod Security Admission (Restricted level covers most defaults), policy engine rules covering remaining defaults not fully addressed by PSA, and CI/CD pipeline manifest validation.
-  implementation_surface: Pod Security Admission (Restricted level covering non-root, minimal capabilities, no privilege escalation, seccomp, no host namespaces), policy engine rules (OPA Gatekeeper, Kyverno) enforcing read-only root filesystem, resource limits, and SA token opt-out not covered by PSA, LimitRange objects for resource defaults, ServiceAccount automountServiceAccountToken field, CI/CD pipeline manifest validation for Cloud Native 8 compliance, and cluster-wide compliance scanning scripts (jq-based kubectl audits).
-  owner_primary: Platform Engineering
-  owner_supporting: Security Engineering; Application Development teams
-  baseline_or_ai_specific: baseline
-  maturity: Foundational
-  status: draft
-  superseded_by_control_id: null
-  date_created: '2026-02-28'
   date_modified: '2026-03-17'
 - control_id: SAFE-K8S-0304-003
   domain_code: D03

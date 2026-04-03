@@ -55,3 +55,12 @@ Agent/device identity authentication (non-human identity)
 - Strength: strong
 - Applicability: required
 - Strength Reason Code: n/a
+
+### [SAFE-K8S-0910-021 - Cross-cluster endpoint and workload authentication for AI communication](../../controls/SAFE-K8S-0910-021.md)
+
+- Domain: D09 - AI Workload Security: Training, Serving, and Pipelines
+- Knowledge Area: 9.10
+- Relation Type: supports
+- Strength: strong
+- Applicability: required
+- Strength Reason Code: n/a

@@ -18,7 +18,7 @@ This repository publishes the public SAFE-K8S security control catalog for Kuber
 - Domains: 10
 - Knowledge areas: 55
 - Controls: 593
-- Crosswalk rows: 4723
+- Crosswalk rows: 4916
 
 ## YAML Files
 
@@ -279,7 +279,7 @@ This knowledge area focuses on: RuntimeClass configuration for workload-appropri
 
 - Domain: D02 - Node, Runtime, and OS Security
 - Maturity: Foundational
-- Controls: 10
+- Controls: 11
 
 ### Description
 
@@ -299,6 +299,7 @@ This knowledge area focuses on: Kernel parameter hardening via sysctl, Secure bo
 | [SAFE-K8S-0203-013](markdown/controls/SAFE-K8S-0203-013.md) | Kernel lockdown mode enforcement for runtime integrity | Foundational | baseline |
 | [SAFE-K8S-0203-014](markdown/controls/SAFE-K8S-0203-014.md) | Authenticated cloud metadata service mode enforcement | Foundational | baseline |
 | [SAFE-K8S-0203-015](markdown/controls/SAFE-K8S-0203-015.md) | Cloud metadata endpoint restriction settings | Foundational | baseline |
+| [SAFE-K8S-0203-016](markdown/controls/SAFE-K8S-0203-016.md) | Node time synchronization with authoritative time sources | Foundational | baseline |
 
 <a id="knowledge-area-2-4"></a>
 ## 2.4 - Runtime Threat Detection
@@ -415,17 +416,16 @@ This knowledge area focuses on: Seccomp profile enforcement, SELinux context ass
 
 - Domain: D03 - Workload and Pod Security
 - Maturity: Foundational
-- Controls: 10
+- Controls: 9
 
 ### Description
 
-This knowledge area focuses on: Cloud Native 8 secure defaults enforcement, QoS class assignment for workload stability, Ephemeral container security context enforcement, Host volume mount restriction, and Service account token automount opt-out. Additional controls in the table below extend this coverage.
+This knowledge area focuses on: QoS class assignment for workload stability, Ephemeral container security context enforcement, Host volume mount restriction, Service account token automount opt-out, and Temporary checkpoint storage encryption, integrity, and access control. Additional controls in the table below extend this coverage.
 
 ### Controls
 
 | Control ID | Title | Maturity | Class |
 | --- | --- | --- | --- |
-| [SAFE-K8S-0304-001](markdown/controls/SAFE-K8S-0304-001.md) | Cloud Native 8 secure defaults enforcement | Foundational | baseline |
 | [SAFE-K8S-0304-003](markdown/controls/SAFE-K8S-0304-003.md) | QoS class assignment for workload stability | Foundational | baseline |
 | [SAFE-K8S-0304-004](markdown/controls/SAFE-K8S-0304-004.md) | Ephemeral container security context enforcement | Foundational | baseline |
 | [SAFE-K8S-0304-006](markdown/controls/SAFE-K8S-0304-006.md) | Host volume mount restriction | Foundational | baseline |
